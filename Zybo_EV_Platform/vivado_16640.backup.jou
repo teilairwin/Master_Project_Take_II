@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Thu Jan 13 17:00:42 2022
+# Process ID: 16640
+# Current directory: U:/Xilinx/Projects/Zybo_EV_Platform
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12720 U:\Xilinx\Projects\Zybo_EV_Platform\block_compile.xpr
+# Log file: U:/Xilinx/Projects/Zybo_EV_Platform/vivado.log
+# Journal file: U:/Xilinx/Projects/Zybo_EV_Platform\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project U:/Xilinx/Projects/Zybo_EV_Platform/block_compile.xpr
+update_compile_order -fileset sources_1
+add_files -fileset constrs_1 -norecurse U:/Xilinx/Projects/Zybo_EV_Platform/block_compile.srcs/sources_1/bd/design_1/ip/design_1_dvi2rgb_1_1/src/ila_timing_workaround.xdc
+import_files -fileset constrs_1 U:/Xilinx/Projects/Zybo_EV_Platform/block_compile.srcs/sources_1/bd/design_1/ip/design_1_dvi2rgb_1_1/src/ila_timing_workaround.xdc
+reset_run synth_1
+launch_runs synth_1
+wait_on_run synth_1
+launch_runs impl_1
+wait_on_run impl_1
+launch_simulation

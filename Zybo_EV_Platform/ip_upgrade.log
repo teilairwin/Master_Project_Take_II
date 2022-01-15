@@ -1,0 +1,449 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue Jan 11 21:30:38 2022
+| Host         : DESKTOP-M0FE9RU running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_axi_dynclk_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of design_1_axi_dynclk_0_0 from digilentinc.com:ip:axi_dynclk:1.0 (Rev. 3) to digilentinc.com:ip:axi_dynclk:1.1 (Rev. 16)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_axi_dynclk_0_0'.
+
+
+-Upgrade has removed interface 's00_axi'
+
+-Upgrade has removed interface 's00_axi_signal_clock'
+
+-Upgrade has removed interface 's00_axi_signal_reset'
+
+-Upgrade has added interface 'S_AXI_LITE' (xilinx.com:interface:aximm:1.0)
+
+-Upgrade has added interface 'S_AXI_LITE_CLK' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 'S_AXI_LITE_RST' (xilinx.com:signal:reset:1.0)
+
+-Upgrade has added interface 's_axi_lite_aclk' (xilinx.com:signal:clock:1.0)
+
+-Upgrade has added interface 's_axi_lite_aresetn' (xilinx.com:signal:reset:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_axi_dynclk_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 's00_axi_aclk'
+
+-Upgrade has removed port 's00_axi_araddr'
+
+-Upgrade has removed port 's00_axi_aresetn'
+
+-Upgrade has removed port 's00_axi_arprot'
+
+-Upgrade has removed port 's00_axi_arready'
+
+-Upgrade has removed port 's00_axi_arvalid'
+
+-Upgrade has removed port 's00_axi_awaddr'
+
+-Upgrade has removed port 's00_axi_awprot'
+
+-Upgrade has removed port 's00_axi_awready'
+
+-Upgrade has removed port 's00_axi_awvalid'
+
+-Upgrade has removed port 's00_axi_bready'
+
+-Upgrade has removed port 's00_axi_bresp'
+
+-Upgrade has removed port 's00_axi_bvalid'
+
+-Upgrade has removed port 's00_axi_rdata'
+
+-Upgrade has removed port 's00_axi_rready'
+
+-Upgrade has removed port 's00_axi_rresp'
+
+-Upgrade has removed port 's00_axi_rvalid'
+
+-Upgrade has removed port 's00_axi_wdata'
+
+-Upgrade has removed port 's00_axi_wready'
+
+-Upgrade has removed port 's00_axi_wstrb'
+
+-Upgrade has removed port 's00_axi_wvalid'
+
+-Upgrade has added port 's_axi_lite_aclk'
+
+-Upgrade has added port 's_axi_lite_araddr'
+
+-Upgrade has added port 's_axi_lite_aresetn'
+
+-Upgrade has added port 's_axi_lite_arprot'
+
+-Upgrade has added port 's_axi_lite_arready'
+
+-Upgrade has added port 's_axi_lite_arvalid'
+
+-Upgrade has added port 's_axi_lite_awaddr'
+
+-Upgrade has added port 's_axi_lite_awprot'
+
+-Upgrade has added port 's_axi_lite_awready'
+
+-Upgrade has added port 's_axi_lite_awvalid'
+
+-Upgrade has added port 's_axi_lite_bready'
+
+-Upgrade has added port 's_axi_lite_bresp'
+
+-Upgrade has added port 's_axi_lite_bvalid'
+
+-Upgrade has added port 's_axi_lite_rdata'
+
+-Upgrade has added port 's_axi_lite_rready'
+
+-Upgrade has added port 's_axi_lite_rresp'
+
+-Upgrade has added port 's_axi_lite_rvalid'
+
+-Upgrade has added port 's_axi_lite_wdata'
+
+-Upgrade has added port 's_axi_lite_wready'
+
+-Upgrade has added port 's_axi_lite_wstrb'
+
+-Upgrade has added port 's_axi_lite_wvalid'
+
+
+4. Customization warnings
+-------------------------
+
+Parameter 'ADD_BUFMR' is no longer present on the upgraded IP 'design_1_axi_dynclk_0_0', and cannot be set to 'false'
+
+
+5. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  You may consult any warnings from within this upgrade, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv digilentinc.com:ip:axi_dynclk:1.1 -user_name design_1_axi_dynclk_0_0
+set_property -dict "\
+  CONFIG.Component_Name {design_1_axi_dynclk_0_0} \
+  CONFIG.PXL_CLK_5X_O.ASSOCIATED_BUSIF {} \
+  CONFIG.PXL_CLK_5X_O.ASSOCIATED_RESET {} \
+  CONFIG.PXL_CLK_5X_O.CLK_DOMAIN {design_1_axi_dynclk_0_0_PXL_CLK_5X_O} \
+  CONFIG.PXL_CLK_5X_O.FREQ_HZ {100000000} \
+  CONFIG.PXL_CLK_5X_O.PHASE {0.000} \
+  CONFIG.PXL_CLK_O.ASSOCIATED_BUSIF {} \
+  CONFIG.PXL_CLK_O.ASSOCIATED_RESET {} \
+  CONFIG.PXL_CLK_O.CLK_DOMAIN {design_1_axi_dynclk_0_0_PXL_CLK_O} \
+  CONFIG.PXL_CLK_O.FREQ_HZ {100000000} \
+  CONFIG.PXL_CLK_O.PHASE {0.000} \
+  CONFIG.REF_CLK_I.ASSOCIATED_BUSIF {} \
+  CONFIG.REF_CLK_I.ASSOCIATED_RESET {} \
+  CONFIG.REF_CLK_I.CLK_DOMAIN {design_1_processing_system7_0_0_FCLK_CLK1} \
+  CONFIG.REF_CLK_I.FREQ_HZ {100000000} \
+  CONFIG.REF_CLK_I.PHASE {0.000} " [get_ips design_1_axi_dynclk_0_0]
+
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4_AR70530_AR70530 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Sun May  6 21:35:15 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+----------------------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_dvi2rgb_1_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_dvi2rgb_1_1 (digilentinc.com:ip:dvi2rgb:1.9 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_v_tc_1_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_v_tc_1_0 (xilinx.com:ip:v_tc:6.1) from (Rev. 11) to (Rev. 12)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_v_tc_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_v_tc_0_1 (xilinx.com:ip:v_tc:6.1) from (Rev. 11) to (Rev. 12)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_v_axi4s_vid_out_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_v_axi4s_vid_out_0_0 (xilinx.com:ip:v_axi4s_vid_out:4.0) from (Rev. 7) to (Rev. 8)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_rst_ps7_0_50M_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_rst_ps7_0_50M_0 (xilinx.com:ip:proc_sys_reset:5.0 (Rev. 12)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_rgb2dvi_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_rgb2dvi_0_1 (digilentinc.com:ip:rgb2dvi:1.4 (Rev. 7)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ps7_0_axi_periph_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_ps7_0_axi_periph_0 (xilinx.com:ip:axi_interconnect:2.1) from (Rev. 15) to (Rev. 16)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_processing_system7_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_processing_system7_0_0 (xilinx.com:ip:processing_system7:5.5 (Rev. 6)) to Vivado generation flows.
+
+2. Upgrade messages
+-------------------
+
+WARNING: upgrade cannot add parameter PCW_TRACE_INTERNAL_WIDTH with default value 32 : a parameter called PCW_TRACE_INTERNAL_WIDTH already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_USE_AXI_NONSECURE with default value 0 : a parameter called PCW_USE_AXI_NONSECURE already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_EN_PTP_ENET0 with default value 1 : a parameter called PCW_EN_PTP_ENET0 already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_EN_PTP_ENET0 with default value 1 : a parameter called PCW_EN_PTP_ENET0 already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_GP0_NUM_WRITE_THREADS with default value 4 : a parameter called PCW_GP0_NUM_WRITE_THREADS already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_GP0_NUM_READ_THREADS with default value 4 : a parameter called PCW_GP0_NUM_READ_THREADS already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_GP1_NUM_WRITE_THREADS with default value 4 : a parameter called PCW_GP1_NUM_WRITE_THREADS already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_GP1_NUM_READ_THREADS with default value 4 : a parameter called PCW_GP1_NUM_READ_THREADS already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_GP0_EN_MODIFIABLE_TXN with default value 0 : a parameter called PCW_GP0_EN_MODIFIABLE_TXN already exists in processing_system7_v5_5
+WARNING: upgrade cannot add parameter PCW_GP1_EN_MODIFIABLE_TXN with default value 0 : a parameter called PCW_GP1_EN_MODIFIABLE_TXN already exists in processing_system7_v5_5
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_ila_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_ila_0_0 (xilinx.com:ip:ila:6.2) from (Rev. 4) to (Rev. 5)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_dvi2rgb_1_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of design_1_dvi2rgb_1_1 (digilentinc.com:ip:dvi2rgb:1.9 (Rev. 1)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_axi_vdma_0_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_axi_vdma_0_0 (xilinx.com:ip:axi_vdma:6.3) from (Rev. 2) to (Rev. 3)
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.4 (win64) Build 2086221 Fri Dec 15 20:55:39 MST 2017
+| Date         : Tue May  1 19:32:03 2018
+| Host         : DESKTOP-HQKVQ13 running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z020clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_axi_smc_0'
+
+1. Summary
+----------
+
+SUCCESS in the upgrade of design_1_axi_smc_0 (xilinx.com:ip:smartconnect:1.0) from (Rev. 6) to (Rev. 7)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'design_1_axi_smc_0'.
+
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'design_1_axi_smc_0'. These changes may impact your design.
+
+
+
