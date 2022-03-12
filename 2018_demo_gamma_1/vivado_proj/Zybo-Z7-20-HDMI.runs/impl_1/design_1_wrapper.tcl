@@ -66,26 +66,26 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   create_project -in_memory -part xc7z020clg400-1
-  set_property board_part_repo_paths U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.board [current_project]
+  set_property board_part_repo_paths U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.board [current_project]
   set_property board_part digilentinc.com:zybo-z7-20:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.cache/wt [current_project]
-  set_property parent.project_path U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.xpr [current_project]
+  set_property webtalk.parent_dir U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.cache/wt [current_project]
+  set_property parent.project_path U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.xpr [current_project]
   set_property ip_repo_paths {
-  U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.ipdefs/repo_0
+  U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.ipdefs/repo_0
   U:/Xilinx/digilent/vivado-library
 } [current_project]
-  set_property ip_output_repo U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.cache/ip [current_project]
+  set_property ip_output_repo U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.runs/synth_1/design_1_wrapper.dcp
+  add_files -quiet U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/synth_1/design_1_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/design_1.bd
+  add_files U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/design_1.bd
   set_param project.isImplRun false
-  read_xdc U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc
-  read_xdc U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/constrs_1/imports/constraints/default.xdc
+  read_xdc U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc
+  read_xdc U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/constrs_1/imports/constraints/default.xdc
   set_param project.isImplRun true
   link_design -top design_1_wrapper -part xc7z020clg400-1
   set_param project.isImplRun false

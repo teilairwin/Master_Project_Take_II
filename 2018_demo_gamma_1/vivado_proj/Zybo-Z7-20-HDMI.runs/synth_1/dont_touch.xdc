@@ -77,6 +77,12 @@ set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_cl
 # IP: bd/design_1/ip/design_1_hls_gamma_correction_0_0/design_1_hls_gamma_correction_0_0.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_hls_gamma_correction_0_0 || ORIG_REF_NAME==design_1_hls_gamma_correction_0_0} -quiet] -quiet
 
+# IP: bd/design_1/ip/design_1_hls_saturation_enhan_0_0/design_1_hls_saturation_enhan_0_0.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_hls_saturation_enhan_0_0 || ORIG_REF_NAME==design_1_hls_saturation_enhan_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_axi_clock_converter_0_1/design_1_axi_clock_converter_0_1.xci
+set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_clock_converter_0_1 || ORIG_REF_NAME==design_1_axi_clock_converter_0_1} -quiet] -quiet
+
 # IP: bd/design_1/ip/design_1_auto_pc_1/design_1_auto_pc_1.xci
 set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_auto_pc_1 || ORIG_REF_NAME==design_1_auto_pc_1} -quiet] -quiet
 

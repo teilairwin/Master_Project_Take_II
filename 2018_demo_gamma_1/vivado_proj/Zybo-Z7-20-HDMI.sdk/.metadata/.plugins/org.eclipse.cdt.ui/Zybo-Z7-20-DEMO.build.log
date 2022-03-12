@@ -1,8 +1,8 @@
-11:22:57 **** Incremental Build of configuration Debug for project Zybo-Z7-20-DEMO ****
+16:08:51 **** Incremental Build of configuration Debug for project Zybo-Z7-20-DEMO ****
 make pre-build main-build 
 a9-linaro-pre-build-step
 ' '
 make: Nothing to be done for `main-build'.
 
-11:22:57 Build Finished (took 407ms)
+16:08:52 Build Finished (took 440ms)
 

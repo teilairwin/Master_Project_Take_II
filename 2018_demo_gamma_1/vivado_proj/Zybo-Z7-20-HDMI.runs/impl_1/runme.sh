@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.runs/impl_1'
+HD_PWD='U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

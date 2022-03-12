@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc rfile:../../../Zybo-Z7-20-HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc rfile:../../../Zybo-Z7-20-HDMI.srcs/constrs_1/imports/constraints/Zybo-Z7-Master.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:70 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict {PACKAGE_PIN W19 IOSTANDARD LVCMOS33} [get_ports hdmi_in_hpd_tri_o]
 set_property src_info {type:XDC file:1 line:71 export:INPUT save:INPUT read:READ} [current_design]

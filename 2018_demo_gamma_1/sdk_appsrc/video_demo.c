@@ -29,6 +29,7 @@
 #include "video_capture/video_capture.h"
 #include "display_ctrl/display_ctrl.h"
 #include "hls_gamma_correction_v1_0/src/xhls_gamma_correction.h"
+#include "hls_saturation_enhance_v1_0/src/xhls_saturation_enhance.h"
 #include "intc/intc.h"
 #include <stdio.h>
 #include "xuartps.h"
@@ -69,6 +70,11 @@ INTC intc;
  */
 XHls_gamma_correction_Config     *gamma_lut_Config;
 XHls_gamma_correction            gamma_lut;
+/*
+ * Saturation Structs
+ */
+XHls_saturation_enhance_Config     *sat_Config;
+XHls_saturation_enhance            sat_enh;
 
 char fRefresh; //flag used to trigger a refresh of the Menu on video detect
 
@@ -169,6 +175,23 @@ void DemoInitialize()
     }
     
 	/*
+	 * Initialize the Saturation Enhancement
+	 */ 
+    sat_Config = XHls_saturation_enhance_LookupConfig(XPAR_HLS_SATURATION_ENHAN_0_DEVICE_ID);
+    if(sat_Config == NULL)
+    {
+        xil_printf("ERROR:: Saturation Enhancement device not found\r\n");
+        return;
+    }
+    Status = XHls_saturation_enhance_CfgInitialize(&sat_enh, sat_Config);
+    sat_enh.SatSel = 0;
+    if(Status != XST_SUCCESS)
+    {
+        xil_printf("ERROR:: Saturation Enhancement Initialization failed %d\r\n", Status);
+        return;
+    }
+    
+	/*
 	 * Initialize the Interrupt controller and start it.
 	 */
 	Status = fnInitInterruptController(&intc);
@@ -192,6 +215,9 @@ void DemoInitialize()
 	 * Set the Video Detect callback to trigger the menu to reset, displaying the new detected resolution
 	 */
 	VideoSetCallback(&videoCapt, DemoISR, &fRefresh);
+    
+    GammaSet(&videoCapt);
+    SatSet(&videoCapt);
 
 	DemoPrintTest(dispCtrl.framePtr[dispCtrl.curFrame], dispCtrl.vMode.width, dispCtrl.vMode.height, dispCtrl.stride, DEMO_PATTERN_1);
 
@@ -296,6 +322,9 @@ void DemoRun()
 		case '8':
 			DemoChangeGF();
 			break;
+		case '9':
+			DemoChangeSat();
+			break;
 		case 'q':
 			break;
 		case 'r':
@@ -309,6 +338,115 @@ void DemoRun()
 	return;
 }
 
+void SatSet(VideoCapture *videoPtr)
+{
+	XHls_saturation_enhance_Set_width(&sat_enh, videoPtr->timing.HActiveVideo);
+	XHls_saturation_enhance_Set_height(&sat_enh, videoPtr->timing.VActiveVideo);
+	XHls_saturation_enhance_Set_sat(&sat_enh, sat_enh.SatSel);
+}
+void DemoChangeSat()
+{
+	int fResSet = 0;
+	int status;
+	char userInput = 0;
+
+	/* Flush UART FIFO */
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	while (!fResSet)
+	{
+		DemoSatMenu();
+
+		/* Wait for data on UART */
+		while (!XUartPs_IsReceiveData(UART_BASEADDR))
+		{}
+
+		/* Store the first character in the UART receive FIFO and echo it */
+		userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+		xil_printf("%c", userInput);
+		status = XST_SUCCESS;
+		switch (userInput)
+		{
+		case '0':
+            sat_enh.SatSel = 0;
+			SatSet(&videoCapt);
+			fResSet = 1;
+			break;
+		case '1':
+            sat_enh.SatSel = 1;
+			SatSet(&videoCapt);
+			fResSet = 1;
+			break;
+		case '2':
+            sat_enh.SatSel = 2;
+			SatSet(&videoCapt);
+			fResSet = 1;
+			break; 
+		case '3':
+            sat_enh.SatSel = 3;
+			SatSet(&videoCapt);
+			fResSet = 1;
+			break;
+		case '4':
+            sat_enh.SatSel = 4;
+			SatSet(&videoCapt);
+			fResSet = 1;
+			break;
+		case '5':
+            sat_enh.SatSel = 5;
+			SatSet(&videoCapt);
+			fResSet = 1;
+			break;
+		case '6':
+            sat_enh.SatSel = 6;
+			SatSet(&videoCapt);
+			fResSet = 1;
+			break;
+		case '7':
+            sat_enh.SatSel = 7;
+			SatSet(&videoCapt);
+			fResSet = 1;
+			break; 
+		case 'q':
+			fResSet = 1;
+			break;
+		default :
+			xil_printf("\n\rInvalid Selection");
+			TimerDelay(500000);
+		}
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+	}
+}
+
+void DemoSatMenu()
+{
+	xil_printf("\x1B[H"); //Set cursor to top left of terminal
+	xil_printf("\x1B[2J"); //Clear terminal
+	xil_printf("**************************************************\n\r");
+	xil_printf("*                ZYBO Video Demo                 *\n\r");
+	xil_printf("**************************************************\n\r");
+	xil_printf("*Current Saturation Enhance Factor: %13d*\n\r", sat_enh.SatSel); 
+	xil_printf("**************************************************\n\r");
+	xil_printf("\n\r");
+	xil_printf("0 - 0  \n\r");
+	xil_printf("1 - -0.2\n\r");
+	xil_printf("2 - 0.2\n\r");
+	xil_printf("3 - 0.4\n\r");
+	xil_printf("4 - 0.6\n\r");
+	xil_printf("5 - 0.8\n\r");
+	xil_printf("6 - 1.0\n\r");
+	xil_printf("7 - 1.2\n\r"); 
+	xil_printf("q - Quit (don't change factor)\n\r");
+	xil_printf("\n\r");
+	xil_printf("Select a new Gamma Factor:");
+}
+
 void DemoGFMenu()
 {
 	xil_printf("\x1B[H"); //Set cursor to top left of terminal
@@ -316,7 +454,7 @@ void DemoGFMenu()
 	xil_printf("**************************************************\n\r");
 	xil_printf("*                ZYBO Video Demo                 *\n\r");
 	xil_printf("**************************************************\n\r");
-	xil_printf("*Current Gamma Factor: %28d*\n\r", gamma_lut.FactorSel); 
+	xil_printf("*Current Gamma Factor: %26d*\n\r", gamma_lut.FactorSel); 
 	xil_printf("**************************************************\n\r");
 	xil_printf("\n\r");
 	xil_printf("0 - 1  \n\r");
@@ -434,7 +572,8 @@ void DemoPrintMenu()
 	xil_printf("*Display Resolution: %28s*\n\r", dispCtrl.vMode.label);
 	printf("*Display Pixel Clock Freq. (MHz): %15.3f*\n\r", dispCtrl.pxlFreq);
 	xil_printf("*Display Frame Index: %27d*\n\r", dispCtrl.curFrame);
-	xil_printf("*Current Gamma Factor: %28d*\n\r", gamma_lut.FactorSel); 
+	xil_printf("*Current Gamma Factor: %26d*\n\r", gamma_lut.FactorSel); 
+	xil_printf("*Current Saturation Enhance Factor: %13d*\n\r", sat_enh.SatSel); 
 	if (videoCapt.state == VIDEO_DISCONNECTED) xil_printf("*Video Capture Resolution: %22s*\n\r", "!HDMI UNPLUGGED!");
 	else xil_printf("*Video Capture Resolution: %17dx%-4d*\n\r", videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo);
 	xil_printf("*Video Frame Index: %29d*\n\r", videoCapt.curFrame);
@@ -448,6 +587,7 @@ void DemoPrintMenu()
 	xil_printf("6 - Grab Video Frame and scale to Display resolution using pixel averaging algorithm\n\r");
 	xil_printf("7 - Start/Stop Video stream into Video Framebuffer\n\r");
 	xil_printf("8 - Change Gamma Factor Value\n\r");
+	xil_printf("9 - Change Saturation Enhance Factor Value\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");

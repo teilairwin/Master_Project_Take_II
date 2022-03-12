@@ -16,3 +16,48 @@ open_bd_design {U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI
 file copy -force U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/impl_1/design_1_wrapper.sysdef U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk/design_1_wrapper.hdf
 
 launch_sdk -workspace U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk -hwspec U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk/design_1_wrapper.hdf
+create_bd_cell -type ip -vlnv digilentinc.com:IP:hls_saturation_enhance:1.0 hls_saturation_enhan_0
+delete_bd_objs [get_bd_intf_nets hls_gamma_correction_0_stream_out]
+connect_bd_intf_net [get_bd_intf_pins hls_gamma_correction_0/stream_out] [get_bd_intf_pins hls_saturation_enhan_0/stream_in]
+connect_bd_intf_net [get_bd_intf_pins hls_saturation_enhan_0/stream_out] [get_bd_intf_pins axi_vdma_0/S_AXIS_S2MM]
+copy_bd_objs /  [get_bd_cells {axi_clock_converter_0}]
+connect_bd_intf_net [get_bd_intf_pins axi_clock_converter_1/M_AXI] [get_bd_intf_pins hls_saturation_enhan_0/s_axi_AXILiteS]
+connect_bd_net [get_bd_pins axi_clock_converter_1/m_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK1]
+connect_bd_net [get_bd_pins axi_clock_converter_1/m_axi_aresetn] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins axi_clock_converter_1/s_axi_aresetn] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins axi_clock_converter_1/s_axi_aclk] [get_bd_pins processing_system7_0/FCLK_CLK0]
+startgroup
+set_property -dict [list CONFIG.NUM_MI {7}] [get_bd_cells ps7_0_axi_periph_GP0]
+endgroup
+connect_bd_intf_net -boundary_type upper [get_bd_intf_pins ps7_0_axi_periph_GP0/M06_AXI] [get_bd_intf_pins axi_clock_converter_1/S_AXI]
+set_property location {5 1760 570} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1760 560} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1760 550} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1760 540} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1760 530} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1760 520} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1760 510} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1770 500} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1770 490} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1780 480} [get_bd_cells axi_clock_converter_1]
+set_property location {5 1790 470} [get_bd_cells axi_clock_converter_1]
+connect_bd_net [get_bd_pins hls_saturation_enhan_0/ap_clk] [get_bd_pins processing_system7_0/FCLK_CLK1]
+connect_bd_net [get_bd_pins hls_saturation_enhan_0/ap_rst_n] [get_bd_pins xlconstant_0/dout]
+connect_bd_net [get_bd_pins ps7_0_axi_periph_GP0/M06_ARESETN] [get_bd_pins rst_ps7_0_100M/peripheral_aresetn]
+connect_bd_net [get_bd_pins ps7_0_axi_periph_GP0/M06_ACLK] [get_bd_pins processing_system7_0/FCLK_CLK0]
+assign_bd_address
+validate_bd_design
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+wait_on_run impl_1
+generate_target all [get_files  U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/design_1.bd]
+export_ip_user_files -of_objects [get_files U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/design_1.bd] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/design_1.bd]
+export_simulation -of_objects [get_files U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/design_1.bd] -directory U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.ip_user_files/sim_scripts -ip_user_files_dir U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.ip_user_files -ipstatic_source_dir U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.ip_user_files/ipstatic -lib_map_path [list {modelsim=U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.cache/compile_simlib/modelsim} {questa=U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.cache/compile_simlib/questa} {riviera=U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.cache/compile_simlib/riviera} {activehdl=U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+file copy -force U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/impl_1/design_1_wrapper.sysdef U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk -hwspec U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk/design_1_wrapper.hdf
+file copy -force U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/impl_1/design_1_wrapper.sysdef U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk/design_1_wrapper.hdf
+
+launch_sdk -workspace U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk -hwspec U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.sdk/design_1_wrapper.hdf
