@@ -1,0 +1,1162 @@
+
+*** Running vivado
+    with args -log design_1_hls_gamma_correction_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_hls_gamma_correction_0_0.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_hls_gamma_correction_0_0.tcl -notrace
+Command: synth_design -top design_1_hls_gamma_correction_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 16048 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 433.492 ; gain = 97.945
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_hls_gamma_correction_0_0' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_hls_gamma_correction_0_0/synth/design_1_hls_gamma_correction_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'hls_gamma_correction' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/hls_gamma_correction.v:12]
+	Parameter C_S_AXI_AXILITES_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_AXILITES_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_AXILITES_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_gamma_correction_AXILiteS_s_axi' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/hls_gamma_correction_AXILiteS_s_axi.v:9]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_GAMMA_DATA_0 bound to: 6'b010000 
+	Parameter ADDR_GAMMA_CTRL bound to: 6'b010100 
+	Parameter ADDR_HEIGHT_DATA_0 bound to: 6'b011000 
+	Parameter ADDR_HEIGHT_CTRL bound to: 6'b011100 
+	Parameter ADDR_WIDTH_DATA_0 bound to: 6'b100000 
+	Parameter ADDR_WIDTH_CTRL bound to: 6'b100100 
+	Parameter WRIDLE bound to: 2'b00 
+	Parameter WRDATA bound to: 2'b01 
+	Parameter WRRESP bound to: 2'b10 
+	Parameter WRRESET bound to: 2'b11 
+	Parameter RDIDLE bound to: 2'b00 
+	Parameter RDDATA bound to: 2'b01 
+	Parameter RDRESET bound to: 2'b10 
+	Parameter ADDR_BITS bound to: 6 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/hls_gamma_correction_AXILiteS_s_axi.v:182]
+INFO: [Synth 8-6155] done synthesizing module 'hls_gamma_correction_AXILiteS_s_axi' (1#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/hls_gamma_correction_AXILiteS_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'Block_Mat_exit570_pr' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Block_Mat_exit570_pr.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 1'b1 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Block_Mat_exit570_pr.v:90]
+INFO: [Synth 8-6155] done synthesizing module 'Block_Mat_exit570_pr' (2#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Block_Mat_exit570_pr.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AXIvideo2Mat' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/AXIvideo2Mat.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 8'b00000001 
+	Parameter ap_ST_fsm_state2 bound to: 8'b00000010 
+	Parameter ap_ST_fsm_state3 bound to: 8'b00000100 
+	Parameter ap_ST_fsm_state4 bound to: 8'b00001000 
+	Parameter ap_ST_fsm_pp1_stage0 bound to: 8'b00010000 
+	Parameter ap_ST_fsm_state7 bound to: 8'b00100000 
+	Parameter ap_ST_fsm_pp2_stage0 bound to: 8'b01000000 
+	Parameter ap_ST_fsm_state10 bound to: 8'b10000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/AXIvideo2Mat.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'AXIvideo2Mat' (3#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/AXIvideo2Mat.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_pro' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 5'b00001 
+	Parameter ap_ST_fsm_state2 bound to: 5'b00010 
+	Parameter ap_ST_fsm_state3 bound to: 5'b00100 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 5'b01000 
+	Parameter ap_ST_fsm_state9 bound to: 5'b10000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:102]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_bkb' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:71]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_bkb_rom' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:27]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:28]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_bkb_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:31]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_bkb_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_bkb_rom' (4#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_bkb' (5#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:71]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_cud' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:71]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_cud_rom' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:27]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:28]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_cud_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:31]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_cud_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_cud_rom' (6#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_cud' (7#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:71]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_dEe' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:71]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_dEe_rom' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:27]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:28]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_dEe_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:31]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_dEe_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_dEe_rom' (8#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_dEe' (9#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:71]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_eOg' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:71]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_eOg_rom' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:27]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:28]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_eOg_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:31]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_eOg_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_eOg_rom' (10#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_eOg' (11#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:71]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_fYi' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:71]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_fYi_rom' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:27]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:28]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_fYi_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:31]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_fYi_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_fYi_rom' (12#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_fYi' (13#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:71]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_g8j' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:71]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_g8j_rom' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:27]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:28]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_g8j_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:31]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_g8j_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_g8j_rom' (14#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_g8j' (15#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:71]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_hbi' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:71]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_hbi_rom' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:27]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:28]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_hbi_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:31]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_hbi_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_hbi_rom' (16#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_hbi' (17#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:71]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_ibs' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:71]
+	Parameter DataWidth bound to: 8 - type: integer 
+	Parameter AddressRange bound to: 256 - type: integer 
+	Parameter AddressWidth bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_ibs_rom' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:9]
+	Parameter DWIDTH bound to: 8 - type: integer 
+	Parameter AWIDTH bound to: 8 - type: integer 
+	Parameter MEM_SIZE bound to: 256 - type: integer 
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:27]
+INFO: [Synth 8-5534] Detected attribute (* ram_style = "block" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:28]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_ibs_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:31]
+INFO: [Synth 8-3876] $readmem data file './Loop_loop_height_ibs_rom.dat' is read successfully [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_ibs_rom' (18#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_ibs' (19#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:71]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1114]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1116]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1118]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1170]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1172]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1174]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1176]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1178]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1180]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1182]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1184]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1186]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1188]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1190]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1192]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1194]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1196]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1198]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1200]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1202]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1204]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1206]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1208]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:1210]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_pro' (20#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_pro.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Mat2AXIvideo' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Mat2AXIvideo.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 4'b0001 
+	Parameter ap_ST_fsm_state2 bound to: 4'b0010 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 4'b0100 
+	Parameter ap_ST_fsm_state6 bound to: 4'b1000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Mat2AXIvideo.v:91]
+WARNING: [Synth 8-6014] Unused sequential element AXI_video_strm_V_dest_V_1_sel_rd_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Mat2AXIvideo.v:280]
+WARNING: [Synth 8-6014] Unused sequential element AXI_video_strm_V_id_V_1_sel_rd_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Mat2AXIvideo.v:306]
+WARNING: [Synth 8-6014] Unused sequential element AXI_video_strm_V_keep_V_1_sel_rd_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Mat2AXIvideo.v:332]
+WARNING: [Synth 8-6014] Unused sequential element AXI_video_strm_V_strb_V_1_sel_rd_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Mat2AXIvideo.v:394]
+INFO: [Synth 8-6155] done synthesizing module 'Mat2AXIvideo' (21#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Mat2AXIvideo.v:10]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d3_A' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w16_d3_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d3_A_shiftReg' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w16_d3_A.v:11]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d3_A_shiftReg' (22#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w16_d3_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d3_A' (23#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w16_d3_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w12_d2_A' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w12_d2_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w12_d2_A_shiftReg' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w12_d2_A.v:11]
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w12_d2_A_shiftReg' (24#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w12_d2_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w12_d2_A' (25#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w12_d2_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w8_d2_A' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w8_d2_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w8_d2_A_shiftReg' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w8_d2_A.v:11]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w8_d2_A_shiftReg' (26#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w8_d2_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w8_d2_A' (27#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w8_d2_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d2_A' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w16_d2_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d2_A_shiftReg' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w16_d2_A.v:11]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d2_A_shiftReg' (28#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w16_d2_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d2_A' (29#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w16_d2_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w8_d1_A' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w8_d1_A.v:45]
+	Parameter MEM_STYLE bound to: auto - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w8_d1_A_shiftReg' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w8_d1_A.v:11]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w8_d1_A_shiftReg' (30#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w8_d1_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w8_d1_A' (31#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/fifo_w8_d1_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'start_for_Loop_lojbC' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/start_for_Loop_lojbC.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'start_for_Loop_lojbC_shiftReg' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/start_for_Loop_lojbC.v:11]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'start_for_Loop_lojbC_shiftReg' (32#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/start_for_Loop_lojbC.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'start_for_Loop_lojbC' (33#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/start_for_Loop_lojbC.v:45]
+INFO: [Synth 8-6157] synthesizing module 'start_for_Mat2AXIkbM' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/start_for_Mat2AXIkbM.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'start_for_Mat2AXIkbM_shiftReg' [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/start_for_Mat2AXIkbM.v:11]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'start_for_Mat2AXIkbM_shiftReg' (34#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/start_for_Mat2AXIkbM.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'start_for_Mat2AXIkbM' (35#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/start_for_Mat2AXIkbM.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'hls_gamma_correction' (36#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/hls_gamma_correction.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_hls_gamma_correction_0_0' (37#1) [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_hls_gamma_correction_0_0/synth/design_1_hls_gamma_correction_0_0.v:57]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[15]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[14]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[13]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[12]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[15]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[14]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[13]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[12]
+WARNING: [Synth 8-3331] design Loop_loop_height_ibs has unconnected port reset
+WARNING: [Synth 8-3331] design Loop_loop_height_hbi has unconnected port reset
+WARNING: [Synth 8-3331] design Loop_loop_height_g8j has unconnected port reset
+WARNING: [Synth 8-3331] design Loop_loop_height_fYi has unconnected port reset
+WARNING: [Synth 8-3331] design Loop_loop_height_eOg has unconnected port reset
+WARNING: [Synth 8-3331] design Loop_loop_height_dEe has unconnected port reset
+WARNING: [Synth 8-3331] design Loop_loop_height_cud has unconnected port reset
+WARNING: [Synth 8-3331] design Loop_loop_height_bkb has unconnected port reset
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TID[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TDEST[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_rows_V_read[15]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_rows_V_read[14]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_rows_V_read[13]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_rows_V_read[12]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_cols_V_read[15]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_cols_V_read[14]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_cols_V_read[13]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_cols_V_read[12]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[31]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[30]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[29]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[28]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[27]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[26]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[25]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[24]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[23]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[22]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[21]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[20]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[19]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[18]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[17]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:03 . Memory (MB): peak = 500.820 ; gain = 165.273
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 500.820 ; gain = 165.273
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 500.820 ; gain = 165.273
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_hls_gamma_correction_0_0/constraints/hls_gamma_correction_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_hls_gamma_correction_0_0/constraints/hls_gamma_correction_ooc.xdc] for cell 'inst'
+Parsing XDC File [U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.runs/design_1_hls_gamma_correction_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.runs/design_1_hls_gamma_correction_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 868.363 ; gain = 1.742
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 868.363 ; gain = 532.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 868.363 ; gain = 532.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.runs/design_1_hls_gamma_correction_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 868.363 ; gain = 532.816
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'hls_gamma_correction_AXILiteS_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'hls_gamma_correction_AXILiteS_s_axi'
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram1" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-6014] Unused sequential element q0_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:41]
+WARNING: [Synth 8-6014] Unused sequential element q1_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:51]
+WARNING: [Synth 8-6014] Unused sequential element q2_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_bkb.v:61]
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram1" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-6014] Unused sequential element q0_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:41]
+WARNING: [Synth 8-6014] Unused sequential element q1_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:51]
+WARNING: [Synth 8-6014] Unused sequential element q2_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_cud.v:61]
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram1" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-6014] Unused sequential element q0_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:41]
+WARNING: [Synth 8-6014] Unused sequential element q1_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:51]
+WARNING: [Synth 8-6014] Unused sequential element q2_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_dEe.v:61]
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram1" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-6014] Unused sequential element q0_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:41]
+WARNING: [Synth 8-6014] Unused sequential element q1_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:51]
+WARNING: [Synth 8-6014] Unused sequential element q2_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_eOg.v:61]
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram1" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-6014] Unused sequential element q0_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:41]
+WARNING: [Synth 8-6014] Unused sequential element q1_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:51]
+WARNING: [Synth 8-6014] Unused sequential element q2_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_fYi.v:61]
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram1" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-6014] Unused sequential element q0_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:41]
+WARNING: [Synth 8-6014] Unused sequential element q1_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:51]
+WARNING: [Synth 8-6014] Unused sequential element q2_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_g8j.v:61]
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram1" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-6014] Unused sequential element q0_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:41]
+WARNING: [Synth 8-6014] Unused sequential element q1_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:51]
+WARNING: [Synth 8-6014] Unused sequential element q2_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_hbi.v:61]
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram0" into Block RAM due to explicit "ram_style" or "rom_style" specification
+INFO: [Synth 8-5547] Trying to map ROM "ram1" into Block RAM due to explicit "ram_style" or "rom_style" specification
+WARNING: [Synth 8-6014] Unused sequential element q0_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:41]
+WARNING: [Synth 8-6014] Unused sequential element q1_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:51]
+WARNING: [Synth 8-6014] Unused sequential element q2_reg was removed.  [u:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed51/hdl/verilog/Loop_loop_height_ibs.v:61]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5546] ROM "sel_tmp6_fu_470_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp4_fu_465_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp5_fu_490_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp3_fu_485_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp8_fu_475_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp1_fu_480_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp_fu_455_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp2_fu_460_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                               11
+*
+                  WRIDLE |                             0010 |                               00
+                  WRDATA |                             0100 |                               01
+                  WRRESP |                             1000 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'hls_gamma_correction_AXILiteS_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               10
+*
+                  RDIDLE |                              010 |                               00
+                  RDDATA |                              100 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'hls_gamma_correction_AXILiteS_s_axi'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 868.363 ; gain = 532.816
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 9     
+	   2 Input      2 Bit       Adders := 6     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               24 Bit    Registers := 8     
+	               16 Bit    Registers := 4     
+	               12 Bit    Registers := 7     
+	               11 Bit    Registers := 9     
+	                8 Bit    Registers := 66    
+	                6 Bit    Registers := 1     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 9     
+	                2 Bit    Registers := 17    
+	                1 Bit    Registers := 95    
++---ROMs : 
+	                              ROMs := 24    
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 14    
+	   2 Input     16 Bit        Muxes := 6     
+	   2 Input      8 Bit        Muxes := 31    
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   3 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 6     
+	   3 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 2     
+	   2 Input      2 Bit        Muxes := 23    
+	   4 Input      2 Bit        Muxes := 11    
+	   2 Input      1 Bit        Muxes := 125   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module hls_gamma_correction_AXILiteS_s_axi 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+Module Block_Mat_exit570_pr 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 3     
+Module AXIvideo2Mat 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 6     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 24    
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 13    
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 25    
+Module Loop_loop_height_bkb_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---ROMs : 
+	                              ROMs := 3     
+Module Loop_loop_height_cud_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---ROMs : 
+	                              ROMs := 3     
+Module Loop_loop_height_dEe_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---ROMs : 
+	                              ROMs := 3     
+Module Loop_loop_height_eOg_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---ROMs : 
+	                              ROMs := 3     
+Module Loop_loop_height_fYi_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---ROMs : 
+	                              ROMs := 3     
+Module Loop_loop_height_g8j_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---ROMs : 
+	                              ROMs := 3     
+Module Loop_loop_height_hbi_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---ROMs : 
+	                              ROMs := 3     
+Module Loop_loop_height_ibs_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 3     
++---ROMs : 
+	                              ROMs := 3     
+Module Loop_loop_height_pro 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
+	                8 Bit    Registers := 28    
+	                5 Bit    Registers := 1     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 24    
+	   3 Input      5 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 13    
+Module Mat2AXIvideo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 2     
+	               12 Bit    Registers := 3     
+	               11 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 8     
+	   4 Input      2 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 14    
+Module fifo_w16_d3_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module fifo_w12_d2_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module fifo_w8_d2_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module fifo_w16_d2_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module fifo_w8_d1_A_shiftReg 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module fifo_w8_d1_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module start_for_Loop_lojbC 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module start_for_Mat2AXIkbM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module hls_gamma_correction 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "data41" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "sel_tmp6_fu_470_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp2_fu_460_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp4_fu_465_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp1_fu_480_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp8_fu_475_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp3_fu_485_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp5_fu_490_p2" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "sel_tmp_fu_455_p2" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[15]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[14]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[13]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[12]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[15]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[14]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[13]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[12]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TID[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TDEST[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_rows_V_read[15]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_rows_V_read[14]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_rows_V_read[13]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_rows_V_read[12]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_cols_V_read[15]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_cols_V_read[14]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_cols_V_read[13]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port img_cols_V_read[12]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[31]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[30]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[29]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[28]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[27]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[26]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[25]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[24]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[23]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[22]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[21]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[20]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[19]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[18]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[17]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WDATA[16]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WSTRB[3]
+WARNING: [Synth 8-3331] design hls_gamma_correction_AXILiteS_s_axi has unconnected port WSTRB[2]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/ap_done_reg_reg )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/\Block_Mat_exit570_pr_U0/ap_CS_fsm_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\AXIvideo2Mat_U0/ap_done_reg_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Mat2AXIvideo_U0/ap_done_reg_reg )
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[16]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[17]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[18]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[19]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[20]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[21]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[22]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[23]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[24]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[25]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[26]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[27]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[28]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[29]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[30]' (FDE) to 'inst/hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31] )
+WARNING: [Synth 8-3332] Sequential element (hls_gamma_correction_AXILiteS_s_axi_U/rdata_reg[31]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_CS_fsm_reg[0]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_return_0_preg_reg[15]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_return_0_preg_reg[14]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_return_0_preg_reg[13]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_return_0_preg_reg[12]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_return_1_preg_reg[15]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_return_1_preg_reg[14]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_return_1_preg_reg[13]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit570_pr_U0/ap_return_1_preg_reg[12]) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (AXIvideo2Mat_U0/ap_done_reg_reg) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Loop_loop_height_pro_U0/ap_done_reg_reg) is unused and will be removed from module hls_gamma_correction.
+WARNING: [Synth 8-3332] Sequential element (Mat2AXIvideo_U0/ap_done_reg_reg) is unused and will be removed from module hls_gamma_correction.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 868.363 ; gain = 532.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++-------------------------+------------+---------------+----------------+
+|Module Name              | RTL Object | Depth x Width | Implemented As | 
++-------------------------+------------+---------------+----------------+
+|Loop_loop_height_bkb_rom | q0_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_bkb_rom | q1_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_bkb_rom | q2_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_cud_rom | q0_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_cud_rom | q1_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_cud_rom | q2_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_dEe_rom | q0_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_dEe_rom | q1_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_dEe_rom | q2_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_eOg_rom | q0_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_eOg_rom | q1_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_eOg_rom | q2_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_fYi_rom | q0_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_fYi_rom | q1_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_fYi_rom | q2_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_g8j_rom | q0_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_g8j_rom | q1_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_g8j_rom | q2_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_hbi_rom | q0_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_hbi_rom | q1_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_hbi_rom | q2_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_ibs_rom | q0_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_ibs_rom | q1_reg     | 256x8         | Block RAM      | 
+|Loop_loop_height_ibs_rom | q2_reg     | 256x8         | Block RAM      | 
++-------------------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_bkb_rom_Ui_12/Loop_loop_height_pro_U0/lut2_2_U/Loop_loop_height_bkb_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_bkb_rom_Ui_13/Loop_loop_height_pro_U0/lut2_2_U/Loop_loop_height_bkb_rom_U/q1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_bkb_rom_Ui_14/Loop_loop_height_pro_U0/lut2_2_U/Loop_loop_height_bkb_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_cud_rom_Ui_15/Loop_loop_height_pro_U0/lut0_4_U/Loop_loop_height_cud_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_cud_rom_Ui_16/Loop_loop_height_pro_U0/lut0_4_U/Loop_loop_height_cud_rom_U/q1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_cud_rom_Ui_17/Loop_loop_height_pro_U0/lut0_4_U/Loop_loop_height_cud_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_dEe_rom_Ui_18/Loop_loop_height_pro_U0/lut0_2_U/Loop_loop_height_dEe_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_dEe_rom_Ui_19/Loop_loop_height_pro_U0/lut0_2_U/Loop_loop_height_dEe_rom_U/q1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_dEe_rom_Ui_20/Loop_loop_height_pro_U0/lut0_2_U/Loop_loop_height_dEe_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_eOg_rom_Ui_21/Loop_loop_height_pro_U0/lut1_2_U/Loop_loop_height_eOg_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_eOg_rom_Ui_22/Loop_loop_height_pro_U0/lut1_2_U/Loop_loop_height_eOg_rom_U/q1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_eOg_rom_Ui_23/Loop_loop_height_pro_U0/lut1_2_U/Loop_loop_height_eOg_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_fYi_rom_Ui_24/Loop_loop_height_pro_U0/lut1_4_U/Loop_loop_height_fYi_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_fYi_rom_Ui_25/Loop_loop_height_pro_U0/lut1_4_U/Loop_loop_height_fYi_rom_U/q1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_fYi_rom_Ui_26/Loop_loop_height_pro_U0/lut1_4_U/Loop_loop_height_fYi_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_g8j_rom_Ui_27/Loop_loop_height_pro_U0/lut1_6_U/Loop_loop_height_g8j_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_g8j_rom_Ui_28/Loop_loop_height_pro_U0/lut1_6_U/Loop_loop_height_g8j_rom_U/q1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_g8j_rom_Ui_29/Loop_loop_height_pro_U0/lut1_6_U/Loop_loop_height_g8j_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_hbi_rom_Ui_30/Loop_loop_height_pro_U0/lut1_8_U/Loop_loop_height_hbi_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_hbi_rom_Ui_31/Loop_loop_height_pro_U0/lut1_8_U/Loop_loop_height_hbi_rom_U/q1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_hbi_rom_Ui_32/Loop_loop_height_pro_U0/lut1_8_U/Loop_loop_height_hbi_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_ibs_rom_Ui_33/Loop_loop_height_pro_U0/lut2_0_U/Loop_loop_height_ibs_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_ibs_rom_Ui_34/Loop_loop_height_pro_U0/lut2_0_U/Loop_loop_height_ibs_rom_U/q1_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_ibs_rom_Ui_35/Loop_loop_height_pro_U0/lut2_0_U/Loop_loop_height_ibs_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 868.363 ; gain = 532.816
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:26 ; elapsed = 00:00:29 . Memory (MB): peak = 927.270 ; gain = 591.723
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut2_2_U/Loop_loop_height_bkb_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut2_2_U/Loop_loop_height_bkb_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut2_2_U/Loop_loop_height_bkb_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut1_2_U/Loop_loop_height_eOg_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut1_2_U/Loop_loop_height_eOg_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut1_2_U/Loop_loop_height_eOg_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut1_4_U/Loop_loop_height_fYi_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut1_4_U/Loop_loop_height_fYi_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut1_4_U/Loop_loop_height_fYi_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut2_0_U/Loop_loop_height_ibs_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut2_0_U/Loop_loop_height_ibs_rom_U/q0_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4480] The timing for the instance inst/Loop_loop_height_pro_U0/lut2_0_U/Loop_loop_height_ibs_rom_U/q2_reg (implemented as a block RAM) might be sub-optimal as no optional output register could be merged into the block ram. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:27 ; elapsed = 00:00:30 . Memory (MB): peak = 928.309 ; gain = 592.762
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 928.309 ; gain = 592.762
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 928.309 ; gain = 592.762
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 928.309 ; gain = 592.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 928.309 ; gain = 592.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 928.309 ; gain = 592.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 928.309 ; gain = 592.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Dynamic Shift Register Report:
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | SRL_SIG_reg[3] | 16     | 16         | 16     | 0       | 0      | 0      | 0      | 
+|dsrl__1     | SRL_SIG_reg[2] | 12     | 12         | 12     | 0       | 0      | 0      | 0      | 
+|dsrl__2     | SRL_SIG_reg[2] | 8      | 8          | 8      | 0       | 0      | 0      | 0      | 
+|dsrl__3     | SRL_SIG_reg[2] | 16     | 16         | 16     | 0       | 0      | 0      | 0      | 
+|dsrl__4     | SRL_SIG_reg[2] | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
+|dsrl__5     | SRL_SIG_reg[3] | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+------------+------+
+|      |Cell        |Count |
++------+------------+------+
+|1     |CARRY4      |    10|
+|2     |LUT1        |    32|
+|3     |LUT2        |    39|
+|4     |LUT3        |   244|
+|5     |LUT4        |   120|
+|6     |LUT5        |   242|
+|7     |LUT6        |   111|
+|8     |RAMB18E1    |     2|
+|9     |RAMB18E1_10 |     1|
+|10    |RAMB18E1_11 |     1|
+|11    |RAMB18E1_12 |     1|
+|12    |RAMB18E1_13 |     1|
+|13    |RAMB18E1_14 |     1|
+|14    |RAMB18E1_15 |     1|
+|15    |RAMB18E1_3  |     2|
+|16    |RAMB18E1_4  |     2|
+|17    |RAMB18E1_7  |     2|
+|18    |RAMB18E1_8  |     1|
+|19    |RAMB18E1_9  |     1|
+|20    |SRL16E      |    80|
+|21    |FDRE        |   817|
+|22    |FDSE        |    44|
++------+------------+------+
+
+Report Instance Areas: 
++------+------------------------------------------+------------------------------------+------+
+|      |Instance                                  |Module                              |Cells |
++------+------------------------------------------+------------------------------------+------+
+|1     |top                                       |                                    |  1755|
+|2     |  inst                                    |hls_gamma_correction                |  1755|
+|3     |    AXIvideo2Mat_U0                       |AXIvideo2Mat                        |   456|
+|4     |    Block_Mat_exit570_pr_U0               |Block_Mat_exit570_pr                |    29|
+|5     |    Loop_loop_height_pro_U0               |Loop_loop_height_pro                |   422|
+|6     |      lut0_2_U                            |Loop_loop_height_dEe                |     4|
+|7     |        Loop_loop_height_dEe_rom_U        |Loop_loop_height_dEe_rom            |     4|
+|8     |      lut0_4_U                            |Loop_loop_height_cud                |    51|
+|9     |        Loop_loop_height_cud_rom_U        |Loop_loop_height_cud_rom            |    51|
+|10    |      lut1_2_U                            |Loop_loop_height_eOg                |     2|
+|11    |        Loop_loop_height_eOg_rom_U        |Loop_loop_height_eOg_rom            |     2|
+|12    |      lut1_4_U                            |Loop_loop_height_fYi                |     2|
+|13    |        Loop_loop_height_fYi_rom_U        |Loop_loop_height_fYi_rom            |     2|
+|14    |      lut1_6_U                            |Loop_loop_height_g8j                |    27|
+|15    |        Loop_loop_height_g8j_rom_U        |Loop_loop_height_g8j_rom            |    27|
+|16    |      lut1_8_U                            |Loop_loop_height_hbi                |     3|
+|17    |        Loop_loop_height_hbi_rom_U        |Loop_loop_height_hbi_rom            |     3|
+|18    |      lut2_0_U                            |Loop_loop_height_ibs                |     5|
+|19    |        Loop_loop_height_ibs_rom_U        |Loop_loop_height_ibs_rom            |     5|
+|20    |      lut2_2_U                            |Loop_loop_height_bkb                |     2|
+|21    |        Loop_loop_height_bkb_rom_U        |Loop_loop_height_bkb_rom            |     2|
+|22    |    Mat2AXIvideo_U0                       |Mat2AXIvideo                        |   284|
+|23    |    gamma_c_U                             |fifo_w8_d2_A                        |    22|
+|24    |      U_fifo_w8_d2_A_ram                  |fifo_w8_d2_A_shiftReg               |    10|
+|25    |    hls_gamma_correction_AXILiteS_s_axi_U |hls_gamma_correction_AXILiteS_s_axi |   163|
+|26    |    img0_cols_V_channel_U                 |fifo_w16_d2_A                       |    26|
+|27    |      U_fifo_w16_d2_A_ram                 |fifo_w16_d2_A_shiftReg_15           |    14|
+|28    |    img0_data_stream_0_s_U                |fifo_w8_d1_A                        |    32|
+|29    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_14            |    24|
+|30    |    img0_data_stream_1_s_U                |fifo_w8_d1_A_0                      |    32|
+|31    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_13            |    24|
+|32    |    img0_data_stream_2_s_U                |fifo_w8_d1_A_1                      |    32|
+|33    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_12            |    24|
+|34    |    img0_rows_V_channel_U                 |fifo_w16_d2_A_2                     |    25|
+|35    |      U_fifo_w16_d2_A_ram                 |fifo_w16_d2_A_shiftReg              |    14|
+|36    |    img3_cols_V_c_U                       |fifo_w16_d3_A                       |    25|
+|37    |      U_fifo_w16_d3_A_ram                 |fifo_w16_d3_A_shiftReg_11           |    14|
+|38    |    img3_data_stream_0_s_U                |fifo_w8_d1_A_3                      |    32|
+|39    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_10            |    24|
+|40    |    img3_data_stream_1_s_U                |fifo_w8_d1_A_4                      |    32|
+|41    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_9             |    24|
+|42    |    img3_data_stream_2_s_U                |fifo_w8_d1_A_5                      |    32|
+|43    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg               |    24|
+|44    |    img3_rows_V_c_U                       |fifo_w16_d3_A_6                     |    27|
+|45    |      U_fifo_w16_d3_A_ram                 |fifo_w16_d3_A_shiftReg              |    14|
+|46    |    p_cols_assign_cast_lo_U               |fifo_w12_d2_A                       |    25|
+|47    |      U_fifo_w12_d2_A_ram                 |fifo_w12_d2_A_shiftReg_8            |    14|
+|48    |    p_rows_assign_cast_lo_U               |fifo_w12_d2_A_7                     |    25|
+|49    |      U_fifo_w12_d2_A_ram                 |fifo_w12_d2_A_shiftReg              |    14|
+|50    |    start_for_Loop_lojbC_U                |start_for_Loop_lojbC                |    18|
+|51    |    start_for_Mat2AXIkbM_U                |start_for_Mat2AXIkbM                |    14|
++------+------------------------------------------+------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 928.309 ; gain = 592.762
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 79 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:23 . Memory (MB): peak = 928.309 ; gain = 225.219
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:31 . Memory (MB): peak = 928.309 ; gain = 592.762
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 26 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+242 Infos, 155 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:34 . Memory (MB): peak = 928.309 ; gain = 604.258
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'U:/Xilinx/Projects/2018_dgamma/vivado_proj/Zybo-Z7-20-HDMI.runs/design_1_hls_gamma_correction_0_0_synth_1/design_1_hls_gamma_correction_0_0.dcp' has been generated.

@@ -1,0 +1,6 @@
+//arch = zynq; split = false; format = BIN
+the_ROM_image:
+{
+	[bootloader]U:\Xilinx\Projects\2018_video\vivado_proj\Zybo-Z7-20-HDMI.sdk\Zybo-Z7-20-HDMI\Debug\Zybo-Z7-20-HDMI.elf
+	U:\Xilinx\Projects\2018_video\vivado_proj\Zybo-Z7-20-HDMI.runs\impl_1\design_1_wrapper.bit
+}

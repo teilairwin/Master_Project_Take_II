@@ -1,0 +1,4 @@
+NumberHits:2
+Timestamp: Sun Mar 06 17:19:38 UTC 2022
+VLNV: xilinx.com:ip:v_gamma_lut:1.0
+SynthRuntime: 45
