@@ -346,6 +346,27 @@ vlog -work xil_defaultlib -64 "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_
 "../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/57e3/hdl/verilog/start_for_Mat2AXIvdy.v" \
 "../../../bd/design_1/ip/design_1_hls_saturation_enhan_0_0/sim/design_1_hls_saturation_enhan_0_0.v" \
 "../../../bd/design_1/ip/design_1_axi_clock_converter_0_1/sim/design_1_axi_clock_converter_0_1.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/AXIvideo2Mat.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Block_Mat_exit1573_p.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strebkb.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strecud.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stredEe.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streeOg.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streg8j.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strehbi.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streibs.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stretch.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stretch_AXILiteS_s_axi.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Loop_loop_height_pro.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColokbM.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColomb6.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Loop_lojbC.v" \
+"../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Mat2AXIlbW.v" \
+"../../../bd/design_1/ip/design_1_hls_contrast_stretch_0_0/sim/design_1_hls_contrast_stretch_0_0.v" \
+"../../../bd/design_1/ip/design_1_axi_clock_converter_1_0/sim/design_1_axi_clock_converter_1_0.v" \
 
 vlog -work axi_protocol_converter_v2_1_17 -64 "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/b37e/hdl" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/0ab1/hdl" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/5bb9/hdl/verilog" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/70fd/hdl" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_dvi2rgb_1_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_dvi2rgb_1_0/src/ila_refclk/hdl/verilog" "+incdir+U:/Xilinx/2018_2/Vivado/2018.2/data/xilinx_vip/include" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/b37e/hdl" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/0ab1/hdl" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ec67/hdl" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/5bb9/hdl/verilog" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/70fd/hdl" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_dvi2rgb_1_0/src/ila_pixclk/hdl/verilog" "+incdir+../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_dvi2rgb_1_0/src/ila_refclk/hdl/verilog" "+incdir+U:/Xilinx/2018_2/Vivado/2018.2/data/xilinx_vip/include" \
 "../../../../Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ccfb/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \

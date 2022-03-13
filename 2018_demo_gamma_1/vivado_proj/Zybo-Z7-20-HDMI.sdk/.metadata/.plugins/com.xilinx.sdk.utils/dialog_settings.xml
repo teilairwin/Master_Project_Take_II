@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="U:\Xilinx\Projects\2018_video\vivado_proj\Zybo-Z7-20-HDMI.runs\impl_1" key="bootgen_files_selection"/>
-	<item value="U:\Xilinx\Projects\2018_demo_gamma_1\vivado_proj\Zybo-Z7-20-HDMI.sdk\design_1_wrapper_hw_platform_3" key="program_fpga_view_bit_bmm_browse_key"/>
+	<item value="U:\Xilinx\Projects\2018_demo_gamma_1\vivado_proj\Zybo-Z7-20-HDMI.sdk\design_1_wrapper_hw_platform_0" key="program_fpga_view_bit_bmm_browse_key"/>
 	<item value="U:\Xilinx\Projects\2018_video\vivado_proj\Zybo-Z7-20-HDMI.sdk" key="zynq_flash_files_selection"/>
-	<item value="U:\Xilinx\Projects\2018_demo_gamma_1\vivado_proj\Zybo-Z7-20-HDMI.sdk\design_1_wrapper_hw_platform_3" key="last_stored_selection"/>
+	<item value="U:\Xilinx\Projects\2018_demo_gamma_1\vivado_proj\Zybo-Z7-20-HDMI.sdk\design_1_wrapper_hw_platform_0" key="last_stored_selection"/>
 </section>

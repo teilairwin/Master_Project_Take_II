@@ -1,4 +1,4 @@
-NumberHits:8
-Timestamp: Sat Mar 12 22:04:51 UTC 2022
+NumberHits:9
+Timestamp: Sun Mar 13 17:19:33 UTC 2022
 VLNV: xilinx.com:ip:v_tc:6.1
 SynthRuntime: 53

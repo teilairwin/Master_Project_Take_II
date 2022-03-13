@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Sat Mar 12 15:13:27 2022'>
+<webTalkData  fileName='usage_statistics_webtalk.xml'  majorVersion='1' minorVersion='0' timeStamp='Sun Mar 13 11:29:17 2022'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="2258646" description="" />
-  <keyValuePair key="date_generated" value="Sat Mar 12 15:13:26 2022" description="" />
+  <keyValuePair key="date_generated" value="Sun Mar 13 11:29:17 2022" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="Vivado v2018.2 (64-bit)" description="" />
   <keyValuePair key="project_id" value="0eeccd17758f43f895aa3a2a32c66b2b" description="" />
-  <keyValuePair key="project_iteration" value="7" description="" />
+  <keyValuePair key="project_iteration" value="8" description="" />
   <keyValuePair key="random_id" value="beb55001-1ce0-4e6d-ae13-10d0c78c6457" description="" />
   <keyValuePair key="registration_id" value="beb55001-1ce0-4e6d-ae13-10d0c78c6457" description="" />
   <keyValuePair key="route_design" value="TRUE" description="" />
@@ -33,13 +33,13 @@
    <keyValuePair key="da_axi4_cnt" value="1" description="" />
    <keyValuePair key="iptotal" value="1" description="" />
    <keyValuePair key="maxhierdepth" value="0" description="" />
-   <keyValuePair key="numblks" value="38" description="" />
+   <keyValuePair key="numblks" value="41" description="" />
    <keyValuePair key="numhdlrefblks" value="0" description="" />
-   <keyValuePair key="numhierblks" value="13" description="" />
-   <keyValuePair key="numhlsblks" value="2" description="" />
-   <keyValuePair key="numnonxlnxblks" value="5" description="" />
+   <keyValuePair key="numhierblks" value="14" description="" />
+   <keyValuePair key="numhlsblks" value="3" description="" />
+   <keyValuePair key="numnonxlnxblks" value="6" description="" />
    <keyValuePair key="numpkgbdblks" value="0" description="" />
-   <keyValuePair key="numreposblks" value="25" description="" />
+   <keyValuePair key="numreposblks" value="27" description="" />
    <keyValuePair key="numsysgenblks" value="0" description="" />
    <keyValuePair key="synth_mode" value="OOC_per_IP" description="" />
    <keyValuePair key="x_iplanguage" value="VERILOG" description="" />
@@ -67,7 +67,7 @@
    <keyValuePair key="c_s_axi_aclk_ratio" value="1" description="" />
    <keyValuePair key="c_synchronizer_stage" value="3" description="" />
    <keyValuePair key="core_container" value="NA" description="" />
-   <keyValuePair key="iptotal" value="2" description="" />
+   <keyValuePair key="iptotal" value="3" description="" />
    <keyValuePair key="x_ipcorerevision" value="16" description="" />
    <keyValuePair key="x_iplanguage" value="VERILOG" description="" />
    <keyValuePair key="x_iplibrary" value="ip" description="" />
@@ -131,15 +131,15 @@
    <keyValuePair key="c_axi_wuser_width" value="1" description="" />
    <keyValuePair key="c_connectivity_mode" value="0" description="" />
    <keyValuePair key="c_family" value="zynq" description="" />
-   <keyValuePair key="c_m_axi_addr_width" value="0x00000010000000100000001000000010000000100000001000000010" description="" />
-   <keyValuePair key="c_m_axi_base_addr" value="0x0000000043c400000000000043c300000000000043c200000000000043c1000000000000412000000000000043c000000000000043000000" description="" />
-   <keyValuePair key="c_m_axi_read_connectivity" value="0x00000001000000010000000100000001000000010000000100000001" description="" />
-   <keyValuePair key="c_m_axi_read_issuing" value="0x00000001000000010000000100000001000000010000000100000001" description="" />
-   <keyValuePair key="c_m_axi_secure" value="0x00000000000000000000000000000000000000000000000000000000" description="" />
-   <keyValuePair key="c_m_axi_write_connectivity" value="0x00000001000000010000000100000001000000010000000100000001" description="" />
-   <keyValuePair key="c_m_axi_write_issuing" value="0x00000001000000010000000100000001000000010000000100000001" description="" />
+   <keyValuePair key="c_m_axi_addr_width" value="0x0000001000000010000000100000001000000010000000100000001000000010" description="" />
+   <keyValuePair key="c_m_axi_base_addr" value="0x0000000043c500000000000043c400000000000043c300000000000043c200000000000043c1000000000000412000000000000043c000000000000043000000" description="" />
+   <keyValuePair key="c_m_axi_read_connectivity" value="0x0000000100000001000000010000000100000001000000010000000100000001" description="" />
+   <keyValuePair key="c_m_axi_read_issuing" value="0x0000000100000001000000010000000100000001000000010000000100000001" description="" />
+   <keyValuePair key="c_m_axi_secure" value="0x0000000000000000000000000000000000000000000000000000000000000000" description="" />
+   <keyValuePair key="c_m_axi_write_connectivity" value="0x0000000100000001000000010000000100000001000000010000000100000001" description="" />
+   <keyValuePair key="c_m_axi_write_issuing" value="0x0000000100000001000000010000000100000001000000010000000100000001" description="" />
    <keyValuePair key="c_num_addr_ranges" value="1" description="" />
-   <keyValuePair key="c_num_master_slots" value="7" description="" />
+   <keyValuePair key="c_num_master_slots" value="8" description="" />
    <keyValuePair key="c_num_slave_slots" value="1" description="" />
    <keyValuePair key="c_r_register" value="1" description="" />
    <keyValuePair key="c_s_axi_arb_priority" value="0x00000000" description="" />
@@ -326,6 +326,23 @@
    <keyValuePair key="hls_input_float" value="0" description="" />
    <keyValuePair key="hls_input_part" value="xc7z020clg400-1" description="" />
    <keyValuePair key="hls_input_type" value="cxx" description="" />
+   <keyValuePair key="hls_syn_clock" value="6.380000" description="" />
+   <keyValuePair key="hls_syn_dsp" value="9" description="" />
+   <keyValuePair key="hls_syn_ff" value="3094" description="" />
+   <keyValuePair key="hls_syn_lat" value="-1" description="" />
+   <keyValuePair key="hls_syn_lut" value="4583" description="" />
+   <keyValuePair key="hls_syn_mem" value="0" description="" />
+   <keyValuePair key="hls_syn_tpt" value="-1" description="" />
+   <keyValuePair key="iptotal" value="1" description="" />
+  </section>
+  <section name="hls_ip_2017_4/2" level="2" order="10" description="">
+   <keyValuePair key="core_container" value="NA" description="" />
+   <keyValuePair key="hls_input_arch" value="dataflow" description="" />
+   <keyValuePair key="hls_input_clock" value="6.670000" description="" />
+   <keyValuePair key="hls_input_fixed" value="0" description="" />
+   <keyValuePair key="hls_input_float" value="0" description="" />
+   <keyValuePair key="hls_input_part" value="xc7z020clg400-1" description="" />
+   <keyValuePair key="hls_input_type" value="cxx" description="" />
    <keyValuePair key="hls_syn_clock" value="5.658125" description="" />
    <keyValuePair key="hls_syn_dsp" value="0" description="" />
    <keyValuePair key="hls_syn_ff" value="1097" description="" />
@@ -335,7 +352,7 @@
    <keyValuePair key="hls_syn_tpt" value="-1" description="" />
    <keyValuePair key="iptotal" value="1" description="" />
   </section>
-  <section name="hls_ip_2017_4/2" level="2" order="10" description="">
+  <section name="hls_ip_2017_4/3" level="2" order="11" description="">
    <keyValuePair key="core_container" value="NA" description="" />
    <keyValuePair key="hls_input_arch" value="dataflow" description="" />
    <keyValuePair key="hls_input_clock" value="6.670000" description="" />
@@ -352,7 +369,7 @@
    <keyValuePair key="hls_syn_tpt" value="-1" description="" />
    <keyValuePair key="iptotal" value="1" description="" />
   </section>
-  <section name="proc_sys_reset/1" level="2" order="11" description="">
+  <section name="proc_sys_reset/1" level="2" order="12" description="">
    <keyValuePair key="c_aux_reset_high" value="0" description="" />
    <keyValuePair key="c_aux_rst_width" value="4" description="" />
    <keyValuePair key="c_ext_reset_high" value="0" description="" />
@@ -373,7 +390,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="5.0" description="" />
   </section>
-  <section name="proc_sys_reset/2" level="2" order="12" description="">
+  <section name="proc_sys_reset/2" level="2" order="13" description="">
    <keyValuePair key="c_aux_reset_high" value="0" description="" />
    <keyValuePair key="c_aux_rst_width" value="4" description="" />
    <keyValuePair key="c_ext_reset_high" value="0" description="" />
@@ -394,7 +411,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="5.0" description="" />
   </section>
-  <section name="processing_system7_v5.5_user_configuration/1" level="2" order="13" description="">
+  <section name="processing_system7_v5.5_user_configuration/1" level="2" order="14" description="">
    <keyValuePair key="core_container" value="NA" description="" />
    <keyValuePair key="iptotal" value="1" description="" />
    <keyValuePair key="pcw_apu_clk_ratio_enable" value="6:2:1" description="" />
@@ -692,7 +709,7 @@
    <keyValuePair key="pcw_wdt_peripheral_enable" value="0" description="" />
    <keyValuePair key="pcw_wdt_peripheral_freqmhz" value="133.333333" description="" />
   </section>
-  <section name="processing_system7_v5_5_processing_system7/1" level="2" order="14" description="">
+  <section name="processing_system7_v5_5_processing_system7/1" level="2" order="15" description="">
    <keyValuePair key="c_dm_width" value="4" description="" />
    <keyValuePair key="c_dq_width" value="32" description="" />
    <keyValuePair key="c_dqs_width" value="4" description="" />
@@ -760,7 +777,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="5.5" description="" />
   </section>
-  <section name="top_design_1_axis_subset_converter_in_0/1" level="2" order="15" description="">
+  <section name="top_design_1_axis_subset_converter_in_0/1" level="2" order="16" description="">
    <keyValuePair key="c_default_tlast" value="0" description="" />
    <keyValuePair key="c_family" value="zynq" description="" />
    <keyValuePair key="c_m_axis_signal_set" value="0b00000000000000000000000010010011" description="" />
@@ -784,7 +801,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="1.1" description="" />
   </section>
-  <section name="top_design_1_axis_subset_converter_out_0/1" level="2" order="16" description="">
+  <section name="top_design_1_axis_subset_converter_out_0/1" level="2" order="17" description="">
    <keyValuePair key="c_default_tlast" value="0" description="" />
    <keyValuePair key="c_family" value="zynq" description="" />
    <keyValuePair key="c_m_axis_signal_set" value="0b00000000000000000000000010011011" description="" />
@@ -808,7 +825,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="1.1" description="" />
   </section>
-  <section name="v_axi4s_vid_out_v4_0_9/1" level="2" order="17" description="">
+  <section name="v_axi4s_vid_out_v4_0_9/1" level="2" order="18" description="">
    <keyValuePair key="c_addr_width" value="12" description="" />
    <keyValuePair key="c_addr_width_pixel_remap_420" value="10" description="" />
    <keyValuePair key="c_components_per_pixel" value="3" description="" />
@@ -835,7 +852,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="4.0" description="" />
   </section>
-  <section name="v_tc/1" level="2" order="18" description="">
+  <section name="v_tc/1" level="2" order="19" description="">
    <keyValuePair key="c_det_achroma_en" value="0" description="" />
    <keyValuePair key="c_det_avideo_en" value="1" description="" />
    <keyValuePair key="c_det_fieldid_en" value="0" description="" />
@@ -932,7 +949,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="6.1" description="" />
   </section>
-  <section name="v_tc/2" level="2" order="19" description="">
+  <section name="v_tc/2" level="2" order="20" description="">
    <keyValuePair key="c_det_achroma_en" value="0" description="" />
    <keyValuePair key="c_det_avideo_en" value="1" description="" />
    <keyValuePair key="c_det_fieldid_en" value="0" description="" />
@@ -1029,7 +1046,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="6.1" description="" />
   </section>
-  <section name="v_vid_in_axi4s_v4_0_8/1" level="2" order="20" description="">
+  <section name="v_vid_in_axi4s_v4_0_8/1" level="2" order="21" description="">
    <keyValuePair key="c_addr_width" value="12" description="" />
    <keyValuePair key="c_addr_width_pixel_remap_420" value="10" description="" />
    <keyValuePair key="c_components_per_pixel" value="3" description="" />
@@ -1053,7 +1070,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="4.0" description="" />
   </section>
-  <section name="xlconcat_v2_1_1_xlconcat/1" level="2" order="21" description="">
+  <section name="xlconcat_v2_1_1_xlconcat/1" level="2" order="22" description="">
    <keyValuePair key="core_container" value="NA" description="" />
    <keyValuePair key="dout_width" value="6" description="" />
    <keyValuePair key="in0_width" value="1" description="" />
@@ -1099,7 +1116,7 @@
    <keyValuePair key="x_ipvendor" value="xilinx.com" description="" />
    <keyValuePair key="x_ipversion" value="2.1" description="" />
   </section>
-  <section name="xpm_cdc_async_rst/1" level="2" order="22" description="">
+  <section name="xpm_cdc_async_rst/1" level="2" order="23" description="">
    <keyValuePair key="core_container" value="NA" description="" />
    <keyValuePair key="def_val" value="1&apos;b0" description="" />
    <keyValuePair key="dest_sync_ff" value="2" description="" />
@@ -1109,7 +1126,7 @@
    <keyValuePair key="rst_active_high" value="1" description="" />
    <keyValuePair key="version" value="0" description="" />
   </section>
-  <section name="xpm_cdc_gray/1" level="2" order="23" description="">
+  <section name="xpm_cdc_gray/1" level="2" order="24" description="">
    <keyValuePair key="core_container" value="NA" description="" />
    <keyValuePair key="dest_sync_ff" value="4" description="" />
    <keyValuePair key="init_sync_ff" value="1" description="" />
@@ -1120,27 +1137,27 @@
    <keyValuePair key="version" value="0" description="" />
    <keyValuePair key="width" value="12" description="" />
   </section>
-  <section name="xpm_cdc_handshake/1" level="2" order="24" description="">
+  <section name="xpm_cdc_handshake/1" level="2" order="25" description="">
    <keyValuePair key="core_container" value="NA" description="" />
    <keyValuePair key="dest_ext_hsk" value="1" description="" />
    <keyValuePair key="dest_sync_ff" value="3" description="" />
    <keyValuePair key="init_sync_ff" value="0" description="" />
-   <keyValuePair key="iptotal" value="10" description="" />
+   <keyValuePair key="iptotal" value="15" description="" />
    <keyValuePair key="sim_assert_chk" value="0" description="" />
    <keyValuePair key="src_sync_ff" value="3" description="" />
    <keyValuePair key="version" value="0" description="" />
    <keyValuePair key="width" value="34" description="" />
   </section>
-  <section name="xpm_cdc_single/1" level="2" order="25" description="">
+  <section name="xpm_cdc_single/1" level="2" order="26" description="">
    <keyValuePair key="core_container" value="NA" description="" />
    <keyValuePair key="dest_sync_ff" value="3" description="" />
    <keyValuePair key="init_sync_ff" value="0" description="" />
-   <keyValuePair key="iptotal" value="20" description="" />
+   <keyValuePair key="iptotal" value="30" description="" />
    <keyValuePair key="sim_assert_chk" value="0" description="" />
    <keyValuePair key="src_input_reg" value="0" description="" />
    <keyValuePair key="version" value="0" description="" />
   </section>
-  <section name="xpm_cdc_sync_rst/1" level="2" order="26" description="">
+  <section name="xpm_cdc_sync_rst/1" level="2" order="27" description="">
    <keyValuePair key="core_container" value="NA" description="" />
    <keyValuePair key="def_val" value="1&apos;b0" description="" />
    <keyValuePair key="dest_sync_ff" value="4" description="" />
@@ -1150,7 +1167,7 @@
    <keyValuePair key="sim_assert_chk" value="0" description="" />
    <keyValuePair key="version" value="0" description="" />
   </section>
-  <section name="xpm_fifo_base/1" level="2" order="27" description="">
+  <section name="xpm_fifo_base/1" level="2" order="28" description="">
    <keyValuePair key="cdc_dest_sync_ff" value="4" description="" />
    <keyValuePair key="common_clock" value="0" description="" />
    <keyValuePair key="core_container" value="NA" description="" />
@@ -1205,7 +1222,7 @@
    <keyValuePair key="wr_rd_ratio" value="0" description="" />
    <keyValuePair key="write_data_width" value="27" description="" />
   </section>
-  <section name="xpm_memory_base/1" level="2" order="28" description="">
+  <section name="xpm_memory_base/1" level="2" order="29" description="">
    <keyValuePair key="addr_width_a" value="12" description="" />
    <keyValuePair key="addr_width_b" value="12" description="" />
    <keyValuePair key="auto_sleep_time" value="0" description="" />
@@ -1291,6 +1308,16 @@
    <keyValuePair key="-verbose" value="default::[not_specified]" description="" />
    <keyValuePair key="-vhfn" value="default::[not_specified]" description="" />
   </section>
+  <section name="usage" level="2" order="2" description="">
+   <keyValuePair key="postths" value="-3.147106" description="" />
+   <keyValuePair key="posttns" value="0.000000" description="" />
+   <keyValuePair key="postwhs" value="-0.152244" description="" />
+   <keyValuePair key="postwns" value="0.597686" description="" />
+   <keyValuePair key="preths" value="-3.677484" description="" />
+   <keyValuePair key="pretns" value="0.000000" description="" />
+   <keyValuePair key="prewhs" value="-0.267797" description="" />
+   <keyValuePair key="prewns" value="0.597686" description="" />
+  </section>
  </section>
  <section name="phys_opt_design_post_route" level="1" order="5" description="">
   <section name="command_line_options" level="2" order="1" description="">
@@ -1330,10 +1357,10 @@
    <keyValuePair key="flow_state" value="default" description="" />
    <keyValuePair key="slice_registers_augmented" value="0" description="" />
    <keyValuePair key="slice_registers_newly_gated" value="0" description="" />
-   <keyValuePair key="slice_registers_total" value="16982" description="" />
+   <keyValuePair key="slice_registers_total" value="19142" description="" />
    <keyValuePair key="srls_augmented" value="0" description="" />
    <keyValuePair key="srls_newly_gated" value="0" description="" />
-   <keyValuePair key="srls_total" value="698" description="" />
+   <keyValuePair key="srls_total" value="858" description="" />
   </section>
  </section>
  <section name="report_drc" level="1" order="7" description="">
@@ -1354,9 +1381,9 @@
    <keyValuePair key="-waived" value="default::[not_specified]" description="" />
   </section>
   <section name="results" level="2" order="2" description="">
-   <keyValuePair key="dpip-1" value="6" description="" />
-   <keyValuePair key="dpop-1" value="6" description="" />
-   <keyValuePair key="dpop-2" value="8" description="" />
+   <keyValuePair key="dpip-1" value="8" description="" />
+   <keyValuePair key="dpop-1" value="13" description="" />
+   <keyValuePair key="dpop-2" value="16" description="" />
    <keyValuePair key="reqp-165" value="2" description="" />
    <keyValuePair key="reqp-181" value="2" description="" />
    <keyValuePair key="rtstat-10" value="1" description="" />
@@ -1407,7 +1434,7 @@
    <keyValuePair key="board_layers" value="8to11 (8 to 11 Layers)" description="" />
    <keyValuePair key="board_selection" value="medium (10&quot;x10&quot;)" description="" />
    <keyValuePair key="bram" value="0.016582" description="" />
-   <keyValuePair key="clocks" value="0.072647" description="" />
+   <keyValuePair key="clocks" value="0.082696" description="" />
    <keyValuePair key="confidence_level_clock_activity" value="Medium" description="" />
    <keyValuePair key="confidence_level_design_state" value="High" description="" />
    <keyValuePair key="confidence_level_device_models" value="High" description="" />
@@ -1416,11 +1443,11 @@
    <keyValuePair key="confidence_level_overall" value="Low" description="" />
    <keyValuePair key="customer" value="TBD" description="" />
    <keyValuePair key="customer_class" value="TBD" description="" />
-   <keyValuePair key="devstatic" value="0.158825" description="" />
+   <keyValuePair key="devstatic" value="0.159980" description="" />
    <keyValuePair key="die" value="xc7z020clg400-1" description="" />
-   <keyValuePair key="dsp" value="0.009267" description="" />
+   <keyValuePair key="dsp" value="0.021449" description="" />
    <keyValuePair key="dsp_output_toggle" value="12.500000" description="" />
-   <keyValuePair key="dynamic" value="1.928360" description="" />
+   <keyValuePair key="dynamic" value="1.963425" description="" />
    <keyValuePair key="effective_thetaja" value="11.5" description="" />
    <keyValuePair key="enable_probability" value="0.990000" description="" />
    <keyValuePair key="family" value="zynq" description="" />
@@ -1429,8 +1456,8 @@
    <keyValuePair key="heatsink" value="none" description="" />
    <keyValuePair key="i/o" value="0.172726" description="" />
    <keyValuePair key="input_toggle" value="12.500000" description="" />
-   <keyValuePair key="junction_temp" value="49.1 (C)" description="" />
-   <keyValuePair key="logic" value="0.034287" description="" />
+   <keyValuePair key="junction_temp" value="49.5 (C)" description="" />
+   <keyValuePair key="logic" value="0.039442" description="" />
    <keyValuePair key="mgtavcc_dynamic_current" value="0.000000" description="" />
    <keyValuePair key="mgtavcc_static_current" value="0.000000" description="" />
    <keyValuePair key="mgtavcc_total_current" value="0.000000" description="" />
@@ -1446,7 +1473,7 @@
    <keyValuePair key="mmcm" value="0.175969" description="" />
    <keyValuePair key="netlist_net_matched" value="NA" description="" />
    <keyValuePair key="off-chip_power" value="0.000000" description="" />
-   <keyValuePair key="on-chip_power" value="2.087185" description="" />
+   <keyValuePair key="on-chip_power" value="2.123405" description="" />
    <keyValuePair key="output_enable" value="1.000000" description="" />
    <keyValuePair key="output_load" value="5.000000" description="" />
    <keyValuePair key="output_toggle" value="12.500000" description="" />
@@ -1461,7 +1488,7 @@
    <keyValuePair key="read_saif" value="False" description="" />
    <keyValuePair key="set/reset_probability" value="0.000000" description="" />
    <keyValuePair key="signal_rate" value="False" description="" />
-   <keyValuePair key="signals" value="0.041285" description="" />
+   <keyValuePair key="signals" value="0.048963" description="" />
    <keyValuePair key="simulation_file" value="None" description="" />
    <keyValuePair key="speedgrade" value="-1" description="" />
    <keyValuePair key="static_prob" value="False" description="" />
@@ -1471,7 +1498,7 @@
    <keyValuePair key="toggle_rate" value="False" description="" />
    <keyValuePair key="user_board_temp" value="25.0 (C)" description="" />
    <keyValuePair key="user_effective_thetaja" value="11.5" description="" />
-   <keyValuePair key="user_junc_temp" value="49.1 (C)" description="" />
+   <keyValuePair key="user_junc_temp" value="49.5 (C)" description="" />
    <keyValuePair key="user_thetajb" value="7.4 (C/W)" description="" />
    <keyValuePair key="user_thetasa" value="0.0 (C/W)" description="" />
    <keyValuePair key="vccadc_dynamic_current" value="0.000000" description="" />
@@ -1483,16 +1510,16 @@
    <keyValuePair key="vccaux_io_static_current" value="0.000000" description="" />
    <keyValuePair key="vccaux_io_total_current" value="0.000000" description="" />
    <keyValuePair key="vccaux_io_voltage" value="1.800000" description="" />
-   <keyValuePair key="vccaux_static_current" value="0.016782" description="" />
-   <keyValuePair key="vccaux_total_current" value="0.130717" description="" />
+   <keyValuePair key="vccaux_static_current" value="0.016937" description="" />
+   <keyValuePair key="vccaux_total_current" value="0.130873" description="" />
    <keyValuePair key="vccaux_voltage" value="1.800000" description="" />
    <keyValuePair key="vccbram_dynamic_current" value="0.001233" description="" />
-   <keyValuePair key="vccbram_static_current" value="0.002999" description="" />
-   <keyValuePair key="vccbram_total_current" value="0.004232" description="" />
+   <keyValuePair key="vccbram_static_current" value="0.003047" description="" />
+   <keyValuePair key="vccbram_total_current" value="0.004280" description="" />
    <keyValuePair key="vccbram_voltage" value="1.000000" description="" />
-   <keyValuePair key="vccint_dynamic_current" value="0.178961" description="" />
-   <keyValuePair key="vccint_static_current" value="0.019370" description="" />
-   <keyValuePair key="vccint_total_current" value="0.198330" description="" />
+   <keyValuePair key="vccint_dynamic_current" value="0.214025" description="" />
+   <keyValuePair key="vccint_static_current" value="0.019697" description="" />
+   <keyValuePair key="vccint_total_current" value="0.233723" description="" />
    <keyValuePair key="vccint_voltage" value="1.000000" description="" />
    <keyValuePair key="vcco12_dynamic_current" value="0.000000" description="" />
    <keyValuePair key="vcco12_static_current" value="0.000000" description="" />
@@ -1535,8 +1562,8 @@
    <keyValuePair key="vccpaux_total_current" value="0.061452" description="" />
    <keyValuePair key="vccpaux_voltage" value="1.800000" description="" />
    <keyValuePair key="vccpint_dynamic_current" value="0.723747" description="" />
-   <keyValuePair key="vccpint_static_current" value="0.035155" description="" />
-   <keyValuePair key="vccpint_total_current" value="0.758902" description="" />
+   <keyValuePair key="vccpint_static_current" value="0.035655" description="" />
+   <keyValuePair key="vccpint_total_current" value="0.759402" description="" />
    <keyValuePair key="vccpint_voltage" value="1.000000" description="" />
    <keyValuePair key="vccpll_dynamic_current" value="0.013878" description="" />
    <keyValuePair key="vccpll_static_current" value="0.003000" description="" />
@@ -1579,11 +1606,11 @@
    <keyValuePair key="plle2_adv_util_percentage" value="0.00" description="" />
   </section>
   <section name="dsp" level="2" order="2" description="">
-   <keyValuePair key="dsp48e1_only_used" value="8" description="" />
+   <keyValuePair key="dsp48e1_only_used" value="17" description="" />
    <keyValuePair key="dsps_available" value="220" description="" />
    <keyValuePair key="dsps_fixed" value="0" description="" />
-   <keyValuePair key="dsps_used" value="8" description="" />
-   <keyValuePair key="dsps_util_percentage" value="3.64" description="" />
+   <keyValuePair key="dsps_used" value="17" description="" />
+   <keyValuePair key="dsps_util_percentage" value="7.73" description="" />
   </section>
   <section name="io_standard" level="2" order="3" description="">
    <keyValuePair key="blvds_25" value="0" description="" />
@@ -1650,17 +1677,17 @@
    <keyValuePair key="bufr_functional_category" value="Clock" description="" />
    <keyValuePair key="bufr_used" value="2" description="" />
    <keyValuePair key="carry4_functional_category" value="CarryLogic" description="" />
-   <keyValuePair key="carry4_used" value="720" description="" />
+   <keyValuePair key="carry4_used" value="835" description="" />
    <keyValuePair key="dsp48e1_functional_category" value="Block Arithmetic" description="" />
-   <keyValuePair key="dsp48e1_used" value="8" description="" />
+   <keyValuePair key="dsp48e1_used" value="17" description="" />
    <keyValuePair key="fdce_functional_category" value="Flop &amp; Latch" description="" />
    <keyValuePair key="fdce_used" value="85" description="" />
    <keyValuePair key="fdpe_functional_category" value="Flop &amp; Latch" description="" />
    <keyValuePair key="fdpe_used" value="55" description="" />
    <keyValuePair key="fdre_functional_category" value="Flop &amp; Latch" description="" />
-   <keyValuePair key="fdre_used" value="16095" description="" />
+   <keyValuePair key="fdre_used" value="18157" description="" />
    <keyValuePair key="fdse_functional_category" value="Flop &amp; Latch" description="" />
-   <keyValuePair key="fdse_used" value="749" description="" />
+   <keyValuePair key="fdse_used" value="847" description="" />
    <keyValuePair key="ibuf_functional_category" value="IO" description="" />
    <keyValuePair key="ibuf_used" value="4" description="" />
    <keyValuePair key="ibufds_functional_category" value="IO" description="" />
@@ -1672,17 +1699,17 @@
    <keyValuePair key="iserdese2_functional_category" value="IO" description="" />
    <keyValuePair key="iserdese2_used" value="6" description="" />
    <keyValuePair key="lut1_functional_category" value="LUT" description="" />
-   <keyValuePair key="lut1_used" value="1048" description="" />
+   <keyValuePair key="lut1_used" value="1215" description="" />
    <keyValuePair key="lut2_functional_category" value="LUT" description="" />
-   <keyValuePair key="lut2_used" value="2102" description="" />
+   <keyValuePair key="lut2_used" value="2448" description="" />
    <keyValuePair key="lut3_functional_category" value="LUT" description="" />
-   <keyValuePair key="lut3_used" value="3259" description="" />
+   <keyValuePair key="lut3_used" value="3680" description="" />
    <keyValuePair key="lut4_functional_category" value="LUT" description="" />
-   <keyValuePair key="lut4_used" value="1741" description="" />
+   <keyValuePair key="lut4_used" value="2220" description="" />
    <keyValuePair key="lut5_functional_category" value="LUT" description="" />
-   <keyValuePair key="lut5_used" value="2036" description="" />
+   <keyValuePair key="lut5_used" value="2335" description="" />
    <keyValuePair key="lut6_functional_category" value="LUT" description="" />
-   <keyValuePair key="lut6_used" value="2283" description="" />
+   <keyValuePair key="lut6_used" value="2476" description="" />
    <keyValuePair key="mmcme2_adv_functional_category" value="Clock" description="" />
    <keyValuePair key="mmcme2_adv_used" value="2" description="" />
    <keyValuePair key="muxf7_functional_category" value="MuxFx" description="" />
@@ -1708,9 +1735,9 @@
    <keyValuePair key="rams32_functional_category" value="Distributed Memory" description="" />
    <keyValuePair key="rams32_used" value="20" description="" />
    <keyValuePair key="srl16e_functional_category" value="Distributed Memory" description="" />
-   <keyValuePair key="srl16e_used" value="607" description="" />
+   <keyValuePair key="srl16e_used" value="747" description="" />
    <keyValuePair key="srlc32e_functional_category" value="Distributed Memory" description="" />
-   <keyValuePair key="srlc32e_used" value="91" description="" />
+   <keyValuePair key="srlc32e_used" value="111" description="" />
   </section>
   <section name="slice_logic" level="2" order="6" description="">
    <keyValuePair key="f7_muxes_available" value="26600" description="" />
@@ -1721,8 +1748,8 @@
    <keyValuePair key="f8_muxes_fixed" value="0" description="" />
    <keyValuePair key="f8_muxes_used" value="8" description="" />
    <keyValuePair key="f8_muxes_util_percentage" value="0.06" description="" />
-   <keyValuePair key="fully_used_lut_ff_pairs_fixed" value="15.96" description="" />
-   <keyValuePair key="fully_used_lut_ff_pairs_used" value="1657" description="" />
+   <keyValuePair key="fully_used_lut_ff_pairs_fixed" value="17.99" description="" />
+   <keyValuePair key="fully_used_lut_ff_pairs_used" value="1941" description="" />
    <keyValuePair key="lut_as_distributed_ram_fixed" value="0" description="" />
    <keyValuePair key="lut_as_distributed_ram_fixed" value="0" description="" />
    <keyValuePair key="lut_as_distributed_ram_used" value="42" description="" />
@@ -1731,34 +1758,34 @@
    <keyValuePair key="lut_as_logic_available" value="53200" description="" />
    <keyValuePair key="lut_as_logic_fixed" value="0" description="" />
    <keyValuePair key="lut_as_logic_fixed" value="0" description="" />
-   <keyValuePair key="lut_as_logic_used" value="10132" description="" />
-   <keyValuePair key="lut_as_logic_used" value="10132" description="" />
-   <keyValuePair key="lut_as_logic_util_percentage" value="19.05" description="" />
-   <keyValuePair key="lut_as_logic_util_percentage" value="19.05" description="" />
+   <keyValuePair key="lut_as_logic_used" value="11640" description="" />
+   <keyValuePair key="lut_as_logic_used" value="11640" description="" />
+   <keyValuePair key="lut_as_logic_util_percentage" value="21.88" description="" />
+   <keyValuePair key="lut_as_logic_util_percentage" value="21.88" description="" />
    <keyValuePair key="lut_as_memory_available" value="17400" description="" />
    <keyValuePair key="lut_as_memory_available" value="17400" description="" />
    <keyValuePair key="lut_as_memory_fixed" value="0" description="" />
    <keyValuePair key="lut_as_memory_fixed" value="0" description="" />
-   <keyValuePair key="lut_as_memory_used" value="517" description="" />
-   <keyValuePair key="lut_as_memory_used" value="517" description="" />
-   <keyValuePair key="lut_as_memory_util_percentage" value="2.97" description="" />
-   <keyValuePair key="lut_as_memory_util_percentage" value="2.97" description="" />
+   <keyValuePair key="lut_as_memory_used" value="625" description="" />
+   <keyValuePair key="lut_as_memory_used" value="625" description="" />
+   <keyValuePair key="lut_as_memory_util_percentage" value="3.59" description="" />
+   <keyValuePair key="lut_as_memory_util_percentage" value="3.59" description="" />
    <keyValuePair key="lut_as_shift_register_fixed" value="0" description="" />
    <keyValuePair key="lut_as_shift_register_fixed" value="0" description="" />
-   <keyValuePair key="lut_as_shift_register_used" value="475" description="" />
-   <keyValuePair key="lut_as_shift_register_used" value="475" description="" />
-   <keyValuePair key="lut_ff_pairs_with_one_unused_flip_flop_fixed" value="475" description="" />
-   <keyValuePair key="lut_ff_pairs_with_one_unused_flip_flop_used" value="3746" description="" />
-   <keyValuePair key="lut_ff_pairs_with_one_unused_lut_output_fixed" value="3746" description="" />
-   <keyValuePair key="lut_ff_pairs_with_one_unused_lut_output_used" value="3945" description="" />
+   <keyValuePair key="lut_as_shift_register_used" value="583" description="" />
+   <keyValuePair key="lut_as_shift_register_used" value="583" description="" />
+   <keyValuePair key="lut_ff_pairs_with_one_unused_flip_flop_fixed" value="583" description="" />
+   <keyValuePair key="lut_ff_pairs_with_one_unused_flip_flop_used" value="4305" description="" />
+   <keyValuePair key="lut_ff_pairs_with_one_unused_lut_output_fixed" value="4305" description="" />
+   <keyValuePair key="lut_ff_pairs_with_one_unused_lut_output_used" value="4517" description="" />
    <keyValuePair key="lut_flip_flop_pairs_available" value="53200" description="" />
    <keyValuePair key="lut_flip_flop_pairs_fixed" value="0" description="" />
-   <keyValuePair key="lut_flip_flop_pairs_used" value="5867" description="" />
-   <keyValuePair key="lut_flip_flop_pairs_util_percentage" value="11.03" description="" />
+   <keyValuePair key="lut_flip_flop_pairs_used" value="6758" description="" />
+   <keyValuePair key="lut_flip_flop_pairs_util_percentage" value="12.70" description="" />
    <keyValuePair key="register_as_flip_flop_available" value="106400" description="" />
    <keyValuePair key="register_as_flip_flop_fixed" value="0" description="" />
-   <keyValuePair key="register_as_flip_flop_used" value="16984" description="" />
-   <keyValuePair key="register_as_flip_flop_util_percentage" value="15.96" description="" />
+   <keyValuePair key="register_as_flip_flop_used" value="19144" description="" />
+   <keyValuePair key="register_as_flip_flop_util_percentage" value="17.99" description="" />
    <keyValuePair key="register_as_latch_available" value="106400" description="" />
    <keyValuePair key="register_as_latch_fixed" value="0" description="" />
    <keyValuePair key="register_as_latch_used" value="0" description="" />
@@ -1767,25 +1794,25 @@
    <keyValuePair key="slice_fixed" value="0" description="" />
    <keyValuePair key="slice_luts_available" value="53200" description="" />
    <keyValuePair key="slice_luts_fixed" value="0" description="" />
-   <keyValuePair key="slice_luts_used" value="10649" description="" />
-   <keyValuePair key="slice_luts_util_percentage" value="20.02" description="" />
+   <keyValuePair key="slice_luts_used" value="12265" description="" />
+   <keyValuePair key="slice_luts_util_percentage" value="23.05" description="" />
    <keyValuePair key="slice_registers_available" value="106400" description="" />
    <keyValuePair key="slice_registers_fixed" value="0" description="" />
-   <keyValuePair key="slice_registers_used" value="16984" description="" />
-   <keyValuePair key="slice_registers_util_percentage" value="15.96" description="" />
-   <keyValuePair key="slice_used" value="5906" description="" />
-   <keyValuePair key="slice_util_percentage" value="44.41" description="" />
+   <keyValuePair key="slice_registers_used" value="19144" description="" />
+   <keyValuePair key="slice_registers_util_percentage" value="17.99" description="" />
+   <keyValuePair key="slice_used" value="6316" description="" />
+   <keyValuePair key="slice_util_percentage" value="47.49" description="" />
    <keyValuePair key="slicel_fixed" value="0" description="" />
-   <keyValuePair key="slicel_used" value="4022" description="" />
+   <keyValuePair key="slicel_used" value="4258" description="" />
    <keyValuePair key="slicem_fixed" value="0" description="" />
-   <keyValuePair key="slicem_used" value="1884" description="" />
-   <keyValuePair key="unique_control_sets_used" value="625" description="" />
-   <keyValuePair key="using_o5_and_o6_fixed" value="625" description="" />
-   <keyValuePair key="using_o5_and_o6_used" value="223" description="" />
-   <keyValuePair key="using_o5_output_only_fixed" value="223" description="" />
-   <keyValuePair key="using_o5_output_only_used" value="51" description="" />
-   <keyValuePair key="using_o6_output_only_fixed" value="51" description="" />
-   <keyValuePair key="using_o6_output_only_used" value="201" description="" />
+   <keyValuePair key="slicem_used" value="2058" description="" />
+   <keyValuePair key="unique_control_sets_used" value="739" description="" />
+   <keyValuePair key="using_o5_and_o6_fixed" value="739" description="" />
+   <keyValuePair key="using_o5_and_o6_used" value="275" description="" />
+   <keyValuePair key="using_o5_output_only_fixed" value="275" description="" />
+   <keyValuePair key="using_o5_output_only_used" value="74" description="" />
+   <keyValuePair key="using_o6_output_only_fixed" value="74" description="" />
+   <keyValuePair key="using_o6_output_only_used" value="234" description="" />
   </section>
   <section name="specific_feature" level="2" order="7" description="">
    <keyValuePair key="bscane2_available" value="4" description="" />
@@ -1824,25 +1851,25 @@
  </section>
  <section name="router" level="1" order="11" description="">
   <section name="usage" level="2" order="1" description="">
-   <keyValuePair key="actual_expansions" value="11208003" description="" />
+   <keyValuePair key="actual_expansions" value="12233862" description="" />
    <keyValuePair key="bogomips" value="0" description="" />
    <keyValuePair key="bram18" value="27" description="" />
    <keyValuePair key="bram36" value="12" description="" />
    <keyValuePair key="bufg" value="0" description="" />
    <keyValuePair key="bufr" value="2" description="" />
    <keyValuePair key="congestion_level" value="0" description="" />
-   <keyValuePair key="ctrls" value="625" description="" />
-   <keyValuePair key="dsp" value="8" description="" />
+   <keyValuePair key="ctrls" value="739" description="" />
+   <keyValuePair key="dsp" value="17" description="" />
    <keyValuePair key="effort" value="2" description="" />
-   <keyValuePair key="estimated_expansions" value="18047268" description="" />
-   <keyValuePair key="ff" value="16984" description="" />
+   <keyValuePair key="estimated_expansions" value="20975994" description="" />
+   <keyValuePair key="ff" value="19144" description="" />
    <keyValuePair key="global_clocks" value="3" description="" />
-   <keyValuePair key="high_fanout_nets" value="16" description="" />
+   <keyValuePair key="high_fanout_nets" value="17" description="" />
    <keyValuePair key="iob" value="21" description="" />
-   <keyValuePair key="lut" value="11488" description="" />
-   <keyValuePair key="movable_instances" value="32420" description="" />
-   <keyValuePair key="nets" value="39352" description="" />
-   <keyValuePair key="pins" value="178450" description="" />
+   <keyValuePair key="lut" value="13545" description="" />
+   <keyValuePair key="movable_instances" value="36933" description="" />
+   <keyValuePair key="nets" value="44716" description="" />
+   <keyValuePair key="pins" value="205154" description="" />
    <keyValuePair key="pll" value="0" description="" />
    <keyValuePair key="router_runtime" value="0.000000" description="" />
    <keyValuePair key="router_timing_driven" value="1" description="" />
@@ -1890,8 +1917,8 @@
   <section name="usage" level="2" order="2" description="">
    <keyValuePair key="elapsed" value="00:00:27s" description="" />
    <keyValuePair key="hls_ip" value="0" description="" />
-   <keyValuePair key="memory_gain" value="513.832MB" description="" />
-   <keyValuePair key="memory_peak" value="879.715MB" description="" />
+   <keyValuePair key="memory_gain" value="512.691MB" description="" />
+   <keyValuePair key="memory_peak" value="878.168MB" description="" />
   </section>
  </section>
  <section name="unisim_transformation" level="1" order="13" description="">
@@ -1900,24 +1927,24 @@
    <keyValuePair key="bufg" value="3" description="" />
    <keyValuePair key="bufio" value="2" description="" />
    <keyValuePair key="bufr" value="2" description="" />
-   <keyValuePair key="carry4" value="781" description="" />
-   <keyValuePair key="dsp48e1" value="8" description="" />
+   <keyValuePair key="carry4" value="896" description="" />
+   <keyValuePair key="dsp48e1" value="17" description="" />
    <keyValuePair key="fdce" value="83" description="" />
    <keyValuePair key="fdpe" value="55" description="" />
-   <keyValuePair key="fdre" value="18473" description="" />
-   <keyValuePair key="fdse" value="883" description="" />
-   <keyValuePair key="gnd" value="530" description="" />
+   <keyValuePair key="fdre" value="20587" description="" />
+   <keyValuePair key="fdse" value="983" description="" />
+   <keyValuePair key="gnd" value="627" description="" />
    <keyValuePair key="ibuf" value="4" description="" />
    <keyValuePair key="ibufds" value="4" description="" />
    <keyValuePair key="idelayctrl" value="1" description="" />
    <keyValuePair key="idelaye2" value="3" description="" />
    <keyValuePair key="iserdese2" value="6" description="" />
-   <keyValuePair key="lut1" value="1472" description="" />
-   <keyValuePair key="lut2" value="2177" description="" />
-   <keyValuePair key="lut3" value="3905" description="" />
-   <keyValuePair key="lut4" value="1822" description="" />
-   <keyValuePair key="lut5" value="2011" description="" />
-   <keyValuePair key="lut6" value="2851" description="" />
+   <keyValuePair key="lut1" value="1666" description="" />
+   <keyValuePair key="lut2" value="2522" description="" />
+   <keyValuePair key="lut3" value="4321" description="" />
+   <keyValuePair key="lut4" value="2283" description="" />
+   <keyValuePair key="lut5" value="2256" description="" />
+   <keyValuePair key="lut6" value="3123" description="" />
    <keyValuePair key="mmcme2_adv" value="2" description="" />
    <keyValuePair key="muxf7" value="301" description="" />
    <keyValuePair key="muxf8" value="8" description="" />
@@ -1930,33 +1957,33 @@
    <keyValuePair key="ramb36e1" value="12" description="" />
    <keyValuePair key="ramd32" value="62" description="" />
    <keyValuePair key="rams32" value="20" description="" />
-   <keyValuePair key="srl16e" value="604" description="" />
-   <keyValuePair key="srlc32e" value="94" description="" />
-   <keyValuePair key="vcc" value="494" description="" />
+   <keyValuePair key="srl16e" value="744" description="" />
+   <keyValuePair key="srlc32e" value="114" description="" />
+   <keyValuePair key="vcc" value="562" description="" />
   </section>
   <section name="pre_unisim_transformation" level="2" order="2" description="">
    <keyValuePair key="bibuf" value="130" description="" />
    <keyValuePair key="bufg" value="3" description="" />
    <keyValuePair key="bufio" value="2" description="" />
    <keyValuePair key="bufr" value="2" description="" />
-   <keyValuePair key="carry4" value="781" description="" />
-   <keyValuePair key="dsp48e1" value="8" description="" />
+   <keyValuePair key="carry4" value="896" description="" />
+   <keyValuePair key="dsp48e1" value="17" description="" />
    <keyValuePair key="fdce" value="83" description="" />
    <keyValuePair key="fdpe" value="55" description="" />
-   <keyValuePair key="fdre" value="18473" description="" />
-   <keyValuePair key="fdse" value="883" description="" />
-   <keyValuePair key="gnd" value="530" description="" />
+   <keyValuePair key="fdre" value="20587" description="" />
+   <keyValuePair key="fdse" value="983" description="" />
+   <keyValuePair key="gnd" value="627" description="" />
    <keyValuePair key="ibufds" value="4" description="" />
    <keyValuePair key="idelayctrl" value="1" description="" />
    <keyValuePair key="idelaye2" value="3" description="" />
    <keyValuePair key="iobuf" value="4" description="" />
    <keyValuePair key="iserdese2" value="6" description="" />
-   <keyValuePair key="lut1" value="1472" description="" />
-   <keyValuePair key="lut2" value="2177" description="" />
-   <keyValuePair key="lut3" value="3905" description="" />
-   <keyValuePair key="lut4" value="1822" description="" />
-   <keyValuePair key="lut5" value="2011" description="" />
-   <keyValuePair key="lut6" value="2851" description="" />
+   <keyValuePair key="lut1" value="1666" description="" />
+   <keyValuePair key="lut2" value="2522" description="" />
+   <keyValuePair key="lut3" value="4321" description="" />
+   <keyValuePair key="lut4" value="2283" description="" />
+   <keyValuePair key="lut5" value="2256" description="" />
+   <keyValuePair key="lut6" value="3123" description="" />
    <keyValuePair key="mmcme2_adv" value="2" description="" />
    <keyValuePair key="muxf7" value="301" description="" />
    <keyValuePair key="muxf8" value="8" description="" />
@@ -1968,41 +1995,41 @@
    <keyValuePair key="ram32x1d" value="1" description="" />
    <keyValuePair key="ramb18e1" value="27" description="" />
    <keyValuePair key="ramb36e1" value="12" description="" />
-   <keyValuePair key="srl16e" value="604" description="" />
-   <keyValuePair key="srlc32e" value="94" description="" />
-   <keyValuePair key="vcc" value="494" description="" />
+   <keyValuePair key="srl16e" value="744" description="" />
+   <keyValuePair key="srlc32e" value="114" description="" />
+   <keyValuePair key="vcc" value="562" description="" />
   </section>
  </section>
  <section name="vivado_usage" level="1" order="14" description="">
   <section name="gui_handlers" level="2" order="1" description="">
    <keyValuePair key="abstractfileview_reload" value="2" description="" />
    <keyValuePair key="addrepositoryinfodialog_ok" value="1" description="" />
-   <keyValuePair key="addresstreetablepanel_address_tree_table" value="9" description="" />
+   <keyValuePair key="addresstreetablepanel_address_tree_table" value="13" description="" />
    <keyValuePair key="addsrcwizard_specify_or_create_constraint_files" value="1" description="" />
    <keyValuePair key="basedialog_apply" value="2" description="" />
    <keyValuePair key="basedialog_cancel" value="12" description="" />
-   <keyValuePair key="basedialog_ok" value="61" description="" />
+   <keyValuePair key="basedialog_ok" value="67" description="" />
    <keyValuePair key="basedialog_yes" value="6" description="" />
    <keyValuePair key="basereporttab_rerun" value="2" description="" />
    <keyValuePair key="boardgadget_url" value="2" description="" />
    <keyValuePair key="clkconfigtreetablepanel_clk_config_tree_table" value="22" description="" />
    <keyValuePair key="cmdmsgdialog_messages" value="14" description="" />
-   <keyValuePair key="cmdmsgdialog_ok" value="12" description="" />
+   <keyValuePair key="cmdmsgdialog_ok" value="13" description="" />
    <keyValuePair key="commandsinput_type_tcl_command_here" value="33" description="" />
    <keyValuePair key="compatiblefamiliesdialog_compatible_families_dialog_tree" value="2" description="" />
    <keyValuePair key="configruntablepanel_config_run_table" value="1" description="" />
    <keyValuePair key="constraintschooserpanel_add_files" value="1" description="" />
    <keyValuePair key="constraintschooserpanel_file_table" value="3" description="" />
-   <keyValuePair key="coretreetablepanel_core_tree_table" value="187" description="" />
+   <keyValuePair key="coretreetablepanel_core_tree_table" value="192" description="" />
    <keyValuePair key="customizecoredialog_ip_location" value="1" description="" />
    <keyValuePair key="customizecoredialog_presets" value="1" description="" />
    <keyValuePair key="delayvalueschooser_apply" value="10" description="" />
    <keyValuePair key="designtimingsumsectionpanel_worst_negative_slack" value="1" description="" />
    <keyValuePair key="expreporttreepanel_exp_report_tree_table" value="7" description="" />
-   <keyValuePair key="expruntreepanel_exp_run_tree_table" value="105" description="" />
-   <keyValuePair key="filesetpanel_file_set_panel_tree" value="378" description="" />
-   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="43" description="" />
-   <keyValuePair key="flownavigatortreepanel_reset_synthesis_run" value="1" description="" />
+   <keyValuePair key="expruntreepanel_exp_run_tree_table" value="106" description="" />
+   <keyValuePair key="filesetpanel_file_set_panel_tree" value="395" description="" />
+   <keyValuePair key="flownavigatortreepanel_flow_navigator_tree" value="48" description="" />
+   <keyValuePair key="flownavigatortreepanel_reset_synthesis_run" value="2" description="" />
    <keyValuePair key="gensettingtreetablepanel_gen_setting_tree_table" value="21" description="" />
    <keyValuePair key="gettingstartedview_open_project" value="1" description="" />
    <keyValuePair key="gictreetablepanel_gic_tree_table" value="29" description="" />
@@ -2011,19 +2038,19 @@
    <keyValuePair key="ipstatussectionpanel_upgrade_selected" value="1" description="" />
    <keyValuePair key="ipstatustablepanel_ip_status_table" value="2" description="" />
    <keyValuePair key="launchpanel_dont_show_this_dialog_again" value="1" description="" />
-   <keyValuePair key="mainmenumgr_checkpoint" value="23" description="" />
+   <keyValuePair key="mainmenumgr_checkpoint" value="29" description="" />
    <keyValuePair key="mainmenumgr_constraints" value="2" description="" />
-   <keyValuePair key="mainmenumgr_edit" value="4" description="" />
-   <keyValuePair key="mainmenumgr_export" value="23" description="" />
-   <keyValuePair key="mainmenumgr_file" value="46" description="" />
+   <keyValuePair key="mainmenumgr_edit" value="6" description="" />
+   <keyValuePair key="mainmenumgr_export" value="28" description="" />
+   <keyValuePair key="mainmenumgr_file" value="58" description="" />
    <keyValuePair key="mainmenumgr_flow" value="6" description="" />
    <keyValuePair key="mainmenumgr_import" value="6" description="" />
-   <keyValuePair key="mainmenumgr_ip" value="24" description="" />
+   <keyValuePair key="mainmenumgr_ip" value="31" description="" />
    <keyValuePair key="mainmenumgr_open_block_design" value="3" description="" />
-   <keyValuePair key="mainmenumgr_project" value="27" description="" />
+   <keyValuePair key="mainmenumgr_project" value="32" description="" />
    <keyValuePair key="mainmenumgr_reports" value="6" description="" />
    <keyValuePair key="mainmenumgr_settings" value="2" description="" />
-   <keyValuePair key="mainmenumgr_text_editor" value="21" description="" />
+   <keyValuePair key="mainmenumgr_text_editor" value="27" description="" />
    <keyValuePair key="mainmenumgr_tools" value="8" description="" />
    <keyValuePair key="mainmenumgr_view" value="4" description="" />
    <keyValuePair key="mainmenumgr_window" value="4" description="" />
@@ -2040,25 +2067,26 @@
    <keyValuePair key="openipexampledesign_example_project_directory" value="1" description="" />
    <keyValuePair key="openipexampledesign_overwrite_existing_example_project" value="1" description="" />
    <keyValuePair key="pacommandnames_add_sources" value="4" description="" />
-   <keyValuePair key="pacommandnames_auto_assign_address" value="2" description="" />
+   <keyValuePair key="pacommandnames_auto_assign_address" value="3" description="" />
    <keyValuePair key="pacommandnames_auto_update_hier" value="23" description="" />
    <keyValuePair key="pacommandnames_customize_rsb_bloc" value="2" description="" />
    <keyValuePair key="pacommandnames_design_ahead_synth" value="1" description="" />
    <keyValuePair key="pacommandnames_disconnect_rsb_pin" value="6" description="" />
-   <keyValuePair key="pacommandnames_export_hardware" value="6" description="" />
-   <keyValuePair key="pacommandnames_generate_composite_file" value="6" description="" />
+   <keyValuePair key="pacommandnames_export_hardware" value="8" description="" />
+   <keyValuePair key="pacommandnames_generate_composite_file" value="8" description="" />
    <keyValuePair key="pacommandnames_import_all_srcs" value="1" description="" />
    <keyValuePair key="pacommandnames_ip_settings" value="1" description="" />
-   <keyValuePair key="pacommandnames_launch_hardware" value="7" description="" />
+   <keyValuePair key="pacommandnames_launch_hardware" value="9" description="" />
    <keyValuePair key="pacommandnames_open_hardware_manager" value="3" description="" />
    <keyValuePair key="pacommandnames_open_ip_example_design" value="1" description="" />
    <keyValuePair key="pacommandnames_open_project" value="6" description="" />
    <keyValuePair key="pacommandnames_recustomize_core" value="1" description="" />
+   <keyValuePair key="pacommandnames_regenerate_layout" value="1" description="" />
    <keyValuePair key="pacommandnames_report_ip_status" value="2" description="" />
-   <keyValuePair key="pacommandnames_reports_window" value="2" description="" />
+   <keyValuePair key="pacommandnames_reports_window" value="3" description="" />
    <keyValuePair key="pacommandnames_reset_composite_file" value="2" description="" />
    <keyValuePair key="pacommandnames_run_bitgen" value="1" description="" />
-   <keyValuePair key="pacommandnames_save_rsb_design" value="2" description="" />
+   <keyValuePair key="pacommandnames_save_rsb_design" value="4" description="" />
    <keyValuePair key="pacommandnames_schematic" value="1" description="" />
    <keyValuePair key="pacommandnames_set_target_ucf" value="1" description="" />
    <keyValuePair key="pacommandnames_show_answer_record" value="1" description="" />
@@ -2067,7 +2095,7 @@
    <keyValuePair key="pacommandnames_show_product_guide" value="2" description="" />
    <keyValuePair key="pacommandnames_show_product_webpage" value="4" description="" />
    <keyValuePair key="pacommandnames_simulation_run" value="2" description="" />
-   <keyValuePair key="pacommandnames_validate_rsb_design" value="9" description="" />
+   <keyValuePair key="pacommandnames_validate_rsb_design" value="10" description="" />
    <keyValuePair key="pacommandnames_write_config_memory_file" value="1" description="" />
    <keyValuePair key="pacommandnames_zoom_fit" value="1" description="" />
    <keyValuePair key="paviews_code" value="3" description="" />
@@ -2088,10 +2116,10 @@
    <keyValuePair key="selectmenu_highlight" value="16" description="" />
    <keyValuePair key="settingsdialog_project_tree" value="7" description="" />
    <keyValuePair key="settingsprojectiprepositorypage_add_repository" value="1" description="" />
-   <keyValuePair key="signaltreepanel_signal_tree_panel" value="15" description="" />
+   <keyValuePair key="signaltreepanel_signal_tree_panel" value="20" description="" />
    <keyValuePair key="simpleoutputproductdialog_apply_options_and_dismiss_dialog_without" value="2" description="" />
    <keyValuePair key="simpleoutputproductdialog_close_dialog_unsaved_changes_will" value="1" description="" />
-   <keyValuePair key="simpleoutputproductdialog_generate_output_products_immediately" value="6" description="" />
+   <keyValuePair key="simpleoutputproductdialog_generate_output_products_immediately" value="8" description="" />
    <keyValuePair key="simpleoutputproductdialog_reset_output_products" value="2" description="" />
    <keyValuePair key="simpleoutputproductdialog_synthesize_all_ip_including_ip_contained" value="7" description="" />
    <keyValuePair key="simpleoutputproductdialog_synthesize_design_globally" value="2" description="" />
@@ -2099,13 +2127,13 @@
    <keyValuePair key="srcmenu_ip_documentation" value="4" description="" />
    <keyValuePair key="srcmenu_ip_hierarchy" value="31" description="" />
    <keyValuePair key="srcmenu_refresh_hierarchy" value="1" description="" />
-   <keyValuePair key="stalemoreaction_force_up_to_date" value="1" description="" />
-   <keyValuePair key="stalemoreaction_out_of_date_details" value="7" description="" />
+   <keyValuePair key="stalemoreaction_force_up_to_date" value="2" description="" />
+   <keyValuePair key="stalemoreaction_out_of_date_details" value="8" description="" />
    <keyValuePair key="syntheticagettingstartedview_recent_projects" value="3" description="" />
-   <keyValuePair key="systembuildermenu_ip_documentation" value="21" description="" />
-   <keyValuePair key="systembuilderview_expand_collapse" value="26" description="" />
+   <keyValuePair key="systembuildermenu_ip_documentation" value="22" description="" />
+   <keyValuePair key="systembuilderview_expand_collapse" value="27" description="" />
    <keyValuePair key="systembuilderview_orientation" value="21" description="" />
-   <keyValuePair key="systembuilderview_pinning" value="41" description="" />
+   <keyValuePair key="systembuilderview_pinning" value="43" description="" />
    <keyValuePair key="systemtab_report_ip_status" value="1" description="" />
    <keyValuePair key="systemtab_show_ip_status" value="1" description="" />
    <keyValuePair key="systemtreeview_system_tree" value="1" description="" />
@@ -2120,31 +2148,32 @@
   </section>
   <section name="java_command_handlers" level="2" order="2" description="">
    <keyValuePair key="addsources" value="4" description="" />
-   <keyValuePair key="autoassignaddress" value="2" description="" />
-   <keyValuePair key="coreview" value="4" description="" />
-   <keyValuePair key="customizecore" value="10" description="" />
-   <keyValuePair key="customizersbblock" value="19" description="" />
+   <keyValuePair key="autoassignaddress" value="3" description="" />
+   <keyValuePair key="coreview" value="5" description="" />
+   <keyValuePair key="customizecore" value="11" description="" />
+   <keyValuePair key="customizersbblock" value="20" description="" />
    <keyValuePair key="disconnectrsbpin" value="6" description="" />
-   <keyValuePair key="editcopy" value="1" description="" />
-   <keyValuePair key="editdelete" value="9" description="" />
-   <keyValuePair key="editpaste" value="1" description="" />
+   <keyValuePair key="editcopy" value="2" description="" />
+   <keyValuePair key="editdelete" value="10" description="" />
+   <keyValuePair key="editpaste" value="2" description="" />
    <keyValuePair key="editproperties" value="5" description="" />
-   <keyValuePair key="managecompositetargets" value="8" description="" />
-   <keyValuePair key="newexporthardware" value="6" description="" />
-   <keyValuePair key="newlaunchhardware" value="7" description="" />
+   <keyValuePair key="managecompositetargets" value="10" description="" />
+   <keyValuePair key="newexporthardware" value="8" description="" />
+   <keyValuePair key="newlaunchhardware" value="9" description="" />
    <keyValuePair key="openblockdesign" value="3" description="" />
    <keyValuePair key="openexistingreport" value="1" description="" />
    <keyValuePair key="openhardwaremanager" value="3" description="" />
    <keyValuePair key="openipexampledesign" value="1" description="" />
    <keyValuePair key="openproject" value="7" description="" />
    <keyValuePair key="recustomizecore" value="2" description="" />
+   <keyValuePair key="regeneratersblayout" value="1" description="" />
    <keyValuePair key="reportipstatus" value="3" description="" />
-   <keyValuePair key="runbitgen" value="7" description="" />
+   <keyValuePair key="runbitgen" value="10" description="" />
    <keyValuePair key="rundesignahead" value="1" description="" />
    <keyValuePair key="runimplementation" value="4" description="" />
    <keyValuePair key="runschematic" value="1" description="" />
    <keyValuePair key="runsynthesis" value="5" description="" />
-   <keyValuePair key="saversbdesign" value="2" description="" />
+   <keyValuePair key="saversbdesign" value="4" description="" />
    <keyValuePair key="settargetconstrfile" value="1" description="" />
    <keyValuePair key="showanswerrecord" value="1" description="" />
    <keyValuePair key="showcompatiblefamilies" value="1" description="" />
@@ -2156,14 +2185,14 @@
    <keyValuePair key="toolssettings" value="5" description="" />
    <keyValuePair key="ui.views.c.ap" value="1" description="" />
    <keyValuePair key="upgradeip" value="1" description="" />
-   <keyValuePair key="validatersbdesign" value="9" description="" />
+   <keyValuePair key="validatersbdesign" value="10" description="" />
    <keyValuePair key="viewtaskimplementation" value="3" description="" />
    <keyValuePair key="writecfgmemfile" value="1" description="" />
    <keyValuePair key="zoomfit" value="1" description="" />
   </section>
   <section name="other_data" level="2" order="3" description="">
    <keyValuePair key="batchmode" value="1" description="" />
-   <keyValuePair key="guimode" value="9" description="" />
+   <keyValuePair key="guimode" value="10" description="" />
   </section>
   <section name="project_data" level="2" order="4" description="">
    <keyValuePair key="constraintsetcount" value="2" description="" />
@@ -2172,13 +2201,13 @@
    <keyValuePair key="currentsynthesisrun" value="synth_1" description="" />
    <keyValuePair key="default_library" value="xil_defaultlib" description="" />
    <keyValuePair key="designmode" value="RTL" description="" />
-   <keyValuePair key="export_simulation_activehdl" value="5" description="" />
-   <keyValuePair key="export_simulation_ies" value="5" description="" />
-   <keyValuePair key="export_simulation_modelsim" value="5" description="" />
-   <keyValuePair key="export_simulation_questa" value="5" description="" />
-   <keyValuePair key="export_simulation_riviera" value="5" description="" />
-   <keyValuePair key="export_simulation_vcs" value="5" description="" />
-   <keyValuePair key="export_simulation_xsim" value="5" description="" />
+   <keyValuePair key="export_simulation_activehdl" value="7" description="" />
+   <keyValuePair key="export_simulation_ies" value="7" description="" />
+   <keyValuePair key="export_simulation_modelsim" value="7" description="" />
+   <keyValuePair key="export_simulation_questa" value="7" description="" />
+   <keyValuePair key="export_simulation_riviera" value="7" description="" />
+   <keyValuePair key="export_simulation_vcs" value="7" description="" />
+   <keyValuePair key="export_simulation_xsim" value="7" description="" />
    <keyValuePair key="implstrategy" value="Vivado Implementation Defaults" description="" />
    <keyValuePair key="launch_simulation_activehdl" value="0" description="" />
    <keyValuePair key="launch_simulation_ies" value="0" description="" />
@@ -2192,8 +2221,8 @@
    <keyValuePair key="synthesisstrategy" value="Vivado Synthesis Defaults" description="" />
    <keyValuePair key="target_language" value="Verilog" description="" />
    <keyValuePair key="target_simulator" value="XSim" description="" />
-   <keyValuePair key="totalimplruns" value="6" description="" />
-   <keyValuePair key="totalsynthesisruns" value="6" description="" />
+   <keyValuePair key="totalimplruns" value="7" description="" />
+   <keyValuePair key="totalsynthesisruns" value="7" description="" />
   </section>
  </section>
 </section>

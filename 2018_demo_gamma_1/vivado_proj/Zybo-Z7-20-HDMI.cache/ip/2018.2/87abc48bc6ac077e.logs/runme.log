@@ -1,0 +1,1468 @@
+
+*** Running vivado
+    with args -log design_1_hls_contrast_stretch_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_hls_contrast_stretch_0_0.tcl
+
+
+****** Vivado v2018.2 (64-bit)
+  **** SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+  **** IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_hls_contrast_stretch_0_0.tcl -notrace
+Command: synth_design -top design_1_hls_contrast_stretch_0_0 -part xc7z020clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 21536 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 435.285 ; gain = 99.496
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_hls_contrast_stretch_0_0' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_hls_contrast_stretch_0_0/synth/design_1_hls_contrast_stretch_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_stretch' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stretch.v:12]
+	Parameter C_S_AXI_AXILITES_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_AXILITES_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_AXILITES_WSTRB_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_WSTRB_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_stretch_AXILiteS_s_axi' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stretch_AXILiteS_s_axi.v:9]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_HEIGHT_DATA_0 bound to: 6'b010000 
+	Parameter ADDR_HEIGHT_CTRL bound to: 6'b010100 
+	Parameter ADDR_WIDTH_DATA_0 bound to: 6'b011000 
+	Parameter ADDR_WIDTH_CTRL bound to: 6'b011100 
+	Parameter ADDR_MIN_DATA_0 bound to: 6'b100000 
+	Parameter ADDR_MIN_CTRL bound to: 6'b100100 
+	Parameter ADDR_MAX_DATA_0 bound to: 6'b101000 
+	Parameter ADDR_MAX_CTRL bound to: 6'b101100 
+	Parameter WRIDLE bound to: 2'b00 
+	Parameter WRDATA bound to: 2'b01 
+	Parameter WRRESP bound to: 2'b10 
+	Parameter WRRESET bound to: 2'b11 
+	Parameter RDIDLE bound to: 2'b00 
+	Parameter RDDATA bound to: 2'b01 
+	Parameter RDRESET bound to: 2'b10 
+	Parameter ADDR_BITS bound to: 6 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stretch_AXILiteS_s_axi.v:190]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_stretch_AXILiteS_s_axi' (1#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stretch_AXILiteS_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'Block_Mat_exit1573_p' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Block_Mat_exit1573_p.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 1'b1 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Block_Mat_exit1573_p.v:128]
+INFO: [Synth 8-6155] done synthesizing module 'Block_Mat_exit1573_p' (2#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Block_Mat_exit1573_p.v:10]
+INFO: [Synth 8-6157] synthesizing module 'AXIvideo2Mat' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/AXIvideo2Mat.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 8'b00000001 
+	Parameter ap_ST_fsm_state2 bound to: 8'b00000010 
+	Parameter ap_ST_fsm_state3 bound to: 8'b00000100 
+	Parameter ap_ST_fsm_state4 bound to: 8'b00001000 
+	Parameter ap_ST_fsm_pp1_stage0 bound to: 8'b00010000 
+	Parameter ap_ST_fsm_state7 bound to: 8'b00100000 
+	Parameter ap_ST_fsm_pp2_stage0 bound to: 8'b01000000 
+	Parameter ap_ST_fsm_state10 bound to: 8'b10000000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/AXIvideo2Mat.v:117]
+INFO: [Synth 8-6155] done synthesizing module 'AXIvideo2Mat' (3#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/AXIvideo2Mat.v:10]
+INFO: [Synth 8-6157] synthesizing module 'CvtColor_1' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 4'b0001 
+	Parameter ap_ST_fsm_state2 bound to: 4'b0010 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 4'b0100 
+	Parameter ap_ST_fsm_state12 bound to: 4'b1000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:94]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strebkb' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strebkb.v:14]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 22 - type: integer 
+	Parameter dout_WIDTH bound to: 29 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strebkb_DSP48_0' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strebkb.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strebkb_DSP48_0' (4#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strebkb.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strebkb' (5#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strebkb.v:14]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strecud' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strecud.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 20 - type: integer 
+	Parameter din2_WIDTH bound to: 29 - type: integer 
+	Parameter dout_WIDTH bound to: 29 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strecud_DSP48_1' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strecud.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strecud_DSP48_1' (6#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strecud.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strecud' (7#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strecud.v:34]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_stredEe' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stredEe.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 23 - type: integer 
+	Parameter din2_WIDTH bound to: 29 - type: integer 
+	Parameter dout_WIDTH bound to: 30 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_stredEe_DSP48_2' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stredEe.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_stredEe_DSP48_2' (8#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stredEe.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_stredEe' (9#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stredEe.v:34]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_streeOg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streeOg.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 9 - type: integer 
+	Parameter din1_WIDTH bound to: 23 - type: integer 
+	Parameter din2_WIDTH bound to: 31 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_streeOg_DSP48_3' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streeOg.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_streeOg_DSP48_3' (10#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streeOg.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_streeOg' (11#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streeOg.v:34]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:869]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:871]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:935]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:943]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:945]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:947]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:949]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:951]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:953]
+INFO: [Synth 8-6155] done synthesizing module 'CvtColor_1' (12#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Loop_loop_height_pro' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Loop_loop_height_pro.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 4'b0001 
+	Parameter ap_ST_fsm_state2 bound to: 4'b0010 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 4'b0100 
+	Parameter ap_ST_fsm_state28 bound to: 4'b1000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Loop_loop_height_pro.v:115]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strefYi' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:156]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 21 - type: integer 
+	Parameter din0_WIDTH bound to: 17 - type: integer 
+	Parameter din1_WIDTH bound to: 9 - type: integer 
+	Parameter dout_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strefYi_div' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:76]
+	Parameter in0_WIDTH bound to: 17 - type: integer 
+	Parameter in1_WIDTH bound to: 9 - type: integer 
+	Parameter out_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strefYi_div_u' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:10]
+	Parameter in0_WIDTH bound to: 17 - type: integer 
+	Parameter in1_WIDTH bound to: 9 - type: integer 
+	Parameter out_WIDTH bound to: 8 - type: integer 
+	Parameter cal_WIDTH bound to: 17 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element loop[16].divisor_tmp_reg[17] was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strefYi_div_u' (13#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strefYi_div' (14#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:76]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strefYi' (15#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:156]
+INFO: [Synth 8-6155] done synthesizing module 'Loop_loop_height_pro' (16#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Loop_loop_height_pro.v:10]
+INFO: [Synth 8-6157] synthesizing module 'CvtColor' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 4'b0001 
+	Parameter ap_ST_fsm_state2 bound to: 4'b0010 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 4'b0100 
+	Parameter ap_ST_fsm_state9 bound to: 4'b1000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:94]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_streg8j' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streg8j.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 24 - type: integer 
+	Parameter din2_WIDTH bound to: 30 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_streg8j_DSP48_4' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streg8j.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_streg8j_DSP48_4' (17#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streg8j.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_streg8j' (18#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streg8j.v:34]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strehbi' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strehbi.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 22 - type: integer 
+	Parameter din2_WIDTH bound to: 30 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_strehbi_DSP48_5' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strehbi.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strehbi_DSP48_5' (19#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strehbi.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_strehbi' (20#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strehbi.v:34]
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_streibs' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streibs.v:34]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 1 - type: integer 
+	Parameter din0_WIDTH bound to: 8 - type: integer 
+	Parameter din1_WIDTH bound to: 23 - type: integer 
+	Parameter din2_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'hls_contrast_streibs_DSP48_6' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streibs.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_streibs_DSP48_6' (21#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streibs.v:10]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_streibs' (22#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streibs.v:34]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:796]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:798]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:800]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:860]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:866]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:870]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:874]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:876]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:878]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:880]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:882]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:884]
+INFO: [Synth 8-6155] done synthesizing module 'CvtColor' (23#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:10]
+INFO: [Synth 8-6157] synthesizing module 'Mat2AXIvideo' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Mat2AXIvideo.v:10]
+	Parameter ap_ST_fsm_state1 bound to: 4'b0001 
+	Parameter ap_ST_fsm_state2 bound to: 4'b0010 
+	Parameter ap_ST_fsm_pp0_stage0 bound to: 4'b0100 
+	Parameter ap_ST_fsm_state6 bound to: 4'b1000 
+INFO: [Synth 8-5534] Detected attribute (* fsm_encoding = "none" *) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Mat2AXIvideo.v:91]
+WARNING: [Synth 8-6014] Unused sequential element AXI_video_strm_V_dest_V_1_sel_rd_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Mat2AXIvideo.v:280]
+WARNING: [Synth 8-6014] Unused sequential element AXI_video_strm_V_id_V_1_sel_rd_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Mat2AXIvideo.v:306]
+WARNING: [Synth 8-6014] Unused sequential element AXI_video_strm_V_keep_V_1_sel_rd_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Mat2AXIvideo.v:332]
+WARNING: [Synth 8-6014] Unused sequential element AXI_video_strm_V_strb_V_1_sel_rd_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Mat2AXIvideo.v:394]
+INFO: [Synth 8-6155] done synthesizing module 'Mat2AXIvideo' (24#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/Mat2AXIvideo.v:10]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w8_d3_A' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w8_d3_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w8_d3_A_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w8_d3_A.v:11]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w8_d3_A_shiftReg' (25#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w8_d3_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w8_d3_A' (26#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w8_d3_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d1_A' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d1_A.v:45]
+	Parameter MEM_STYLE bound to: auto - type: string 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d1_A_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d1_A.v:11]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d1_A_shiftReg' (27#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d1_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d1_A' (28#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d1_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d4_A' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d4_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d4_A_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d4_A.v:11]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d4_A_shiftReg' (29#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d4_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d4_A' (30#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d4_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d5_A' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d5_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w16_d5_A_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d5_A.v:11]
+	Parameter DATA_WIDTH bound to: 16 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d5_A_shiftReg' (31#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d5_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w16_d5_A' (32#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d5_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w12_d3_A' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w12_d3_A.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w12_d3_A_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w12_d3_A.v:11]
+	Parameter DATA_WIDTH bound to: 12 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w12_d3_A_shiftReg' (33#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w12_d3_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w12_d3_A' (34#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w12_d3_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'fifo_w8_d1_A' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w8_d1_A.v:45]
+	Parameter MEM_STYLE bound to: auto - type: string 
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'fifo_w8_d1_A_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w8_d1_A.v:11]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 1 - type: integer 
+	Parameter DEPTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w8_d1_A_shiftReg' (35#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w8_d1_A.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'fifo_w8_d1_A' (36#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w8_d1_A.v:45]
+INFO: [Synth 8-6157] synthesizing module 'start_for_Loop_lojbC' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Loop_lojbC.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'start_for_Loop_lojbC_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Loop_lojbC.v:11]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'start_for_Loop_lojbC_shiftReg' (37#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Loop_lojbC.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'start_for_Loop_lojbC' (38#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Loop_lojbC.v:45]
+INFO: [Synth 8-6157] synthesizing module 'start_for_CvtColokbM' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColokbM.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'start_for_CvtColokbM_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColokbM.v:11]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'start_for_CvtColokbM_shiftReg' (39#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColokbM.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'start_for_CvtColokbM' (40#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColokbM.v:45]
+INFO: [Synth 8-6157] synthesizing module 'start_for_Mat2AXIlbW' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Mat2AXIlbW.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 6 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'start_for_Mat2AXIlbW_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Mat2AXIlbW.v:11]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'start_for_Mat2AXIlbW_shiftReg' (41#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Mat2AXIlbW.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'start_for_Mat2AXIlbW' (42#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Mat2AXIlbW.v:45]
+INFO: [Synth 8-6157] synthesizing module 'start_for_CvtColomb6' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColomb6.v:45]
+	Parameter MEM_STYLE bound to: shiftreg - type: string 
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'start_for_CvtColomb6_shiftReg' [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColomb6.v:11]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 2 - type: integer 
+	Parameter DEPTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'start_for_CvtColomb6_shiftReg' (43#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColomb6.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'start_for_CvtColomb6' (44#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColomb6.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'hls_contrast_stretch' (45#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stretch.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_hls_contrast_stretch_0_0' (46#1) [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_hls_contrast_stretch_0_0/synth/design_1_hls_contrast_stretch_0_0.v:57]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[15]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[14]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[13]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[12]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[15]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[14]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[13]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[12]
+WARNING: [Synth 8-3331] design hls_contrast_strefYi_div_u has unconnected port reset
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TID[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TDEST[0]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[31]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[30]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[29]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[28]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[27]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[26]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[25]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[24]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[23]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[22]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[21]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[20]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[19]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[18]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[17]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[16]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 513.336 ; gain = 177.547
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 513.336 ; gain = 177.547
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 513.336 ; gain = 177.547
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_hls_contrast_stretch_0_0/constraints/hls_contrast_stretch_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ip/design_1_hls_contrast_stretch_0_0/constraints/hls_contrast_stretch_ooc.xdc] for cell 'inst'
+Parsing XDC File [U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/design_1_hls_contrast_stretch_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/design_1_hls_contrast_stretch_0_0_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.067 . Memory (MB): peak = 886.492 ; gain = 2.977
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 886.492 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 886.492 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for inst. (constraint file  U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/design_1_hls_contrast_stretch_0_0_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 886.492 ; gain = 550.703
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'hls_contrast_stretch_AXILiteS_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'hls_contrast_stretch_AXILiteS_s_axi'
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "wnext" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "Range1_all_ones_1_fu_479_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Range1_all_ones_fu_415_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Range1_all_zeros_fu_420_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Range1_all_zeros_1_fu_484_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[16].remd_tmp_reg[17]' and it is trimmed from '17' to '8' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[16].dividend_tmp_reg[17]' and it is trimmed from '17' to '8' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[15].remd_tmp_reg[16]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[14].remd_tmp_reg[15]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[13].remd_tmp_reg[14]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[12].remd_tmp_reg[13]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[11].remd_tmp_reg[12]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[10].remd_tmp_reg[11]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[9].remd_tmp_reg[10]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[8].remd_tmp_reg[9]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[7].remd_tmp_reg[8]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[6].remd_tmp_reg[7]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[5].remd_tmp_reg[6]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[4].remd_tmp_reg[5]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[3].remd_tmp_reg[4]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[2].remd_tmp_reg[3]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[1].remd_tmp_reg[2]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-3936] Found unconnected internal register 'loop[0].remd_tmp_reg[1]' and it is trimmed from '17' to '16' bits. [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "Range1_all_ones_fu_349_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Range1_all_ones_2_fu_445_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Range1_all_zeros_fu_354_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Range1_all_zeros_2_fu_450_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Range1_all_ones_1_fu_567_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "Range1_all_zeros_1_fu_572_p2" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d4_A.v:92]
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/fifo_w16_d5_A.v:92]
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_CvtColokbM.v:92]
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/start_for_Mat2AXIlbW.v:92]
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_empty_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "internal_full_n" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                               11
+*
+                  WRIDLE |                             0010 |                               00
+                  WRDATA |                             0100 |                               01
+                  WRRESP |                             1000 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'hls_contrast_stretch_AXILiteS_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                               10
+*
+                  RDIDLE |                              010 |                               00
+                  RDDATA |                              100 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'hls_contrast_stretch_AXILiteS_s_axi'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 886.492 ; gain = 550.703
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     18 Bit       Adders := 17    
+	   2 Input     17 Bit       Adders := 1     
+	   3 Input     17 Bit       Adders := 1     
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 10    
+	   3 Input      9 Bit       Adders := 4     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 8     
+	   2 Input      4 Bit       Adders := 6     
+	   2 Input      3 Bit       Adders := 7     
+	   2 Input      2 Bit       Adders := 16    
++---XORs : 
+	   2 Input      8 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 22    
++---Registers : 
+	               32 Bit    Registers := 7     
+	               30 Bit    Registers := 1     
+	               29 Bit    Registers := 2     
+	               24 Bit    Registers := 8     
+	               17 Bit    Registers := 20    
+	               16 Bit    Registers := 30    
+	               12 Bit    Registers := 7     
+	               11 Bit    Registers := 15    
+	                9 Bit    Registers := 21    
+	                8 Bit    Registers := 136   
+	                6 Bit    Registers := 1     
+	                4 Bit    Registers := 10    
+	                3 Bit    Registers := 7     
+	                2 Bit    Registers := 50    
+	                1 Bit    Registers := 253   
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 14    
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 22    
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 28    
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 5     
+	   3 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 3     
+	   2 Input      3 Bit        Muxes := 11    
+	   2 Input      2 Bit        Muxes := 23    
+	   4 Input      2 Bit        Muxes := 11    
+	   2 Input      1 Bit        Muxes := 197   
+	   3 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module hls_contrast_stretch_AXILiteS_s_axi 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                6 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 2     
+	   5 Input     16 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+Module Block_Mat_exit1573_p 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 3     
+Module AXIvideo2Mat 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 6     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
+	                8 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 25    
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 13    
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      6 Bit        Muxes := 1     
+	   2 Input      5 Bit        Muxes := 1     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 5     
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 26    
+Module CvtColor_1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 3     
++---XORs : 
+	   2 Input      1 Bit         XORs := 9     
++---Registers : 
+	               32 Bit    Registers := 2     
+	               30 Bit    Registers := 1     
+	               29 Bit    Registers := 2     
+	               16 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 19    
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 29    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 7     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 9     
+	   3 Input      1 Bit        Muxes := 2     
+Module hls_contrast_strefYi_div_u 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     18 Bit       Adders := 17    
++---Registers : 
+	               17 Bit    Registers := 18    
+	               16 Bit    Registers := 16    
+	                9 Bit    Registers := 17    
+	                8 Bit    Registers := 2     
+	                2 Bit    Registers := 18    
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 16    
+	   2 Input      8 Bit        Muxes := 1     
+Module hls_contrast_strefYi_div 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     17 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               17 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     17 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+Module Loop_loop_height_pro 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     17 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
+	   3 Input      9 Bit       Adders := 2     
++---Registers : 
+	               17 Bit    Registers := 1     
+	               12 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 74    
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 93    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module CvtColor 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 3     
++---XORs : 
+	   2 Input      8 Bit         XORs := 2     
+	   2 Input      1 Bit         XORs := 12    
++---Registers : 
+	               32 Bit    Registers := 4     
+	               16 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
+	                8 Bit    Registers := 12    
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 27    
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   3 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 3     
+Module Mat2AXIvideo 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     12 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               24 Bit    Registers := 2     
+	               12 Bit    Registers := 3     
+	               11 Bit    Registers := 3     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 7     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	   2 Input     24 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 2     
+	   3 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 8     
+	   4 Input      2 Bit        Muxes := 7     
+	   2 Input      1 Bit        Muxes := 14    
+Module fifo_w8_d3_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module fifo_w16_d1_A_shiftReg 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module fifo_w16_d1_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module fifo_w16_d4_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module fifo_w16_d5_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module fifo_w12_d3_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module fifo_w8_d1_A_shiftReg 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module fifo_w8_d1_A 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 4     
+Module start_for_Loop_lojbC 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module start_for_CvtColokbM 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module start_for_Mat2AXIlbW 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+Module start_for_CvtColomb6 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5544] ROM "data41" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter2_tmp_24_reg_707_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:492]
+WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter3_tmp_24_reg_707_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:496]
+WARNING: [Synth 8-6014] Unused sequential element i_op_assign_5_reg_748_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:328]
+WARNING: [Synth 8-6014] Unused sequential element i_op_assign_6_reg_753_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:342]
+WARNING: [Synth 8-6014] Unused sequential element r_V_6_i_reg_718_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:302]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:302]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor_1.v:302]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stredEe.v:26]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_stredEe.v:26]
+DSP Report: Generating DSP hls_contrast_strebkb_U30/hls_contrast_strebkb_DSP48_0_U/in00, operation Mode is: A*B.
+DSP Report: operator hls_contrast_strebkb_U30/hls_contrast_strebkb_DSP48_0_U/in00 is absorbed into DSP hls_contrast_strebkb_U30/hls_contrast_strebkb_DSP48_0_U/in00.
+DSP Report: Generating DSP p_Val2_2_reg_723_reg, operation Mode is: (C'+(A:0x74bc6)*B'')'.
+DSP Report: register B is absorbed into DSP p_Val2_2_reg_723_reg.
+DSP Report: register B is absorbed into DSP p_Val2_2_reg_723_reg.
+DSP Report: register r_V_6_i_reg_718_reg is absorbed into DSP p_Val2_2_reg_723_reg.
+DSP Report: register p_Val2_2_reg_723_reg is absorbed into DSP p_Val2_2_reg_723_reg.
+DSP Report: operator hls_contrast_strecud_U31/hls_contrast_strecud_DSP48_1_U/p is absorbed into DSP p_Val2_2_reg_723_reg.
+DSP Report: operator hls_contrast_strecud_U31/hls_contrast_strecud_DSP48_1_U/m is absorbed into DSP p_Val2_2_reg_723_reg.
+DSP Report: Generating DSP hls_contrast_stredEe_U32/hls_contrast_stredEe_DSP48_2_U/p, operation Mode is: C+(A:0x259168)*B''.
+DSP Report: register B is absorbed into DSP hls_contrast_stredEe_U32/hls_contrast_stredEe_DSP48_2_U/p.
+DSP Report: register B is absorbed into DSP hls_contrast_stredEe_U32/hls_contrast_stredEe_DSP48_2_U/p.
+DSP Report: operator hls_contrast_stredEe_U32/hls_contrast_stredEe_DSP48_2_U/p is absorbed into DSP hls_contrast_stredEe_U32/hls_contrast_stredEe_DSP48_2_U/p.
+DSP Report: operator hls_contrast_stredEe_U32/hls_contrast_stredEe_DSP48_2_U/m is absorbed into DSP hls_contrast_stredEe_U32/hls_contrast_stredEe_DSP48_2_U/p.
+DSP Report: Generating DSP hls_contrast_streeOg_U33/hls_contrast_streeOg_DSP48_3_U/p, operation Mode is: (C:0x20000000)+(A:0x2da1ca)*B2.
+DSP Report: register i_op_assign_5_reg_748_reg is absorbed into DSP hls_contrast_streeOg_U33/hls_contrast_streeOg_DSP48_3_U/p.
+DSP Report: operator hls_contrast_streeOg_U33/hls_contrast_streeOg_DSP48_3_U/p is absorbed into DSP hls_contrast_streeOg_U33/hls_contrast_streeOg_DSP48_3_U/p.
+DSP Report: operator hls_contrast_streeOg_U33/hls_contrast_streeOg_DSP48_3_U/m is absorbed into DSP hls_contrast_streeOg_U33/hls_contrast_streeOg_DSP48_3_U/p.
+DSP Report: Generating DSP hls_contrast_streeOg_U34/hls_contrast_streeOg_DSP48_3_U/p, operation Mode is: (C:0x20000000)+(A:0x241893)*B2.
+DSP Report: register i_op_assign_6_reg_753_reg is absorbed into DSP hls_contrast_streeOg_U34/hls_contrast_streeOg_DSP48_3_U/p.
+DSP Report: operator hls_contrast_streeOg_U34/hls_contrast_streeOg_DSP48_3_U/p is absorbed into DSP hls_contrast_streeOg_U34/hls_contrast_streeOg_DSP48_3_U/p.
+DSP Report: operator hls_contrast_streeOg_U34/hls_contrast_streeOg_DSP48_3_U/m is absorbed into DSP hls_contrast_streeOg_U34/hls_contrast_streeOg_DSP48_3_U/p.
+WARNING: [Synth 8-6014] Unused sequential element hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[16].remd_tmp_reg[17] was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:58]
+WARNING: [Synth 8-6014] Unused sequential element hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/remd_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_strefYi.v:145]
+WARNING: [Synth 8-6014] Unused sequential element tmp2_reg_829_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:320]
+WARNING: [Synth 8-6014] Unused sequential element tmp_39_reg_784_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:451]
+WARNING: [Synth 8-6014] Unused sequential element ap_reg_pp0_iter2_i_op_assign_reg_789_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:318]
+WARNING: [Synth 8-6014] Unused sequential element i_op_assign_2_reg_795_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:290]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streg8j.v:26]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:320]
+WARNING: [Synth 8-6014] Unused sequential element  was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/hls_contrast_streg8j.v:26]
+WARNING: [Synth 8-6014] Unused sequential element i_op_assign_reg_789_reg was removed.  [u:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.srcs/sources_1/bd/design_1/ipshared/ed09/hdl/verilog/CvtColor.v:450]
+DSP Report: Generating DSP hls_contrast_streg8j_U60/hls_contrast_streg8j_DSP48_4_U/p, operation Mode is: C'+(A:0x59cac0)*B2.
+DSP Report: register i_op_assign_reg_789_reg is absorbed into DSP hls_contrast_streg8j_U60/hls_contrast_streg8j_DSP48_4_U/p.
+DSP Report: register C is absorbed into DSP hls_contrast_streg8j_U60/hls_contrast_streg8j_DSP48_4_U/p.
+DSP Report: operator hls_contrast_streg8j_U60/hls_contrast_streg8j_DSP48_4_U/p is absorbed into DSP hls_contrast_streg8j_U60/hls_contrast_streg8j_DSP48_4_U/p.
+DSP Report: operator hls_contrast_streg8j_U60/hls_contrast_streg8j_DSP48_4_U/m is absorbed into DSP hls_contrast_streg8j_U60/hls_contrast_streg8j_DSP48_4_U/p.
+DSP Report: Generating DSP tmp2_reg_829_reg, operation Mode is: (C'+(A:0x3fe9fbe7)*B2)'.
+DSP Report: register i_op_assign_2_reg_795_reg is absorbed into DSP tmp2_reg_829_reg.
+DSP Report: register C is absorbed into DSP tmp2_reg_829_reg.
+DSP Report: register tmp2_reg_829_reg is absorbed into DSP tmp2_reg_829_reg.
+DSP Report: operator hls_contrast_strehbi_U61/hls_contrast_strehbi_DSP48_5_U/p is absorbed into DSP tmp2_reg_829_reg.
+DSP Report: operator hls_contrast_strehbi_U61/hls_contrast_strehbi_DSP48_5_U/m is absorbed into DSP tmp2_reg_829_reg.
+DSP Report: Generating DSP hls_contrast_streibs_U63/hls_contrast_streibs_DSP48_6_U/p, operation Mode is: PCIN+(A:0x3fd24dd2)*B''.
+DSP Report: register i_op_assign_reg_789_reg is absorbed into DSP hls_contrast_streibs_U63/hls_contrast_streibs_DSP48_6_U/p.
+DSP Report: register ap_reg_pp0_iter2_i_op_assign_reg_789_reg is absorbed into DSP hls_contrast_streibs_U63/hls_contrast_streibs_DSP48_6_U/p.
+DSP Report: operator hls_contrast_streibs_U63/hls_contrast_streibs_DSP48_6_U/p is absorbed into DSP hls_contrast_streibs_U63/hls_contrast_streibs_DSP48_6_U/p.
+DSP Report: operator hls_contrast_streibs_U63/hls_contrast_streibs_DSP48_6_U/m is absorbed into DSP hls_contrast_streibs_U63/hls_contrast_streibs_DSP48_6_U/p.
+DSP Report: Generating DSP hls_contrast_streg8j_U62/hls_contrast_streg8j_DSP48_4_U/p, operation Mode is: C'+(A:0x7178d4)*B2.
+DSP Report: register i_op_assign_2_reg_795_reg is absorbed into DSP hls_contrast_streg8j_U62/hls_contrast_streg8j_DSP48_4_U/p.
+DSP Report: register C is absorbed into DSP hls_contrast_streg8j_U62/hls_contrast_streg8j_DSP48_4_U/p.
+DSP Report: operator hls_contrast_streg8j_U62/hls_contrast_streg8j_DSP48_4_U/p is absorbed into DSP hls_contrast_streg8j_U62/hls_contrast_streg8j_DSP48_4_U/p.
+DSP Report: operator hls_contrast_streg8j_U62/hls_contrast_streg8j_DSP48_4_U/m is absorbed into DSP hls_contrast_streg8j_U62/hls_contrast_streg8j_DSP48_4_U/p.
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[15]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[14]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[13]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_rows_V_dout[12]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[15]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[14]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[13]
+WARNING: [Synth 8-3331] design Mat2AXIvideo has unconnected port img_cols_V_dout[12]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TKEEP[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[2]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[1]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TSTRB[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TID[0]
+WARNING: [Synth 8-3331] design AXIvideo2Mat has unconnected port stream_in_TDEST[0]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[31]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[30]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[29]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[28]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[27]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[26]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[25]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[24]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[23]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[22]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[21]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[20]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[19]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[18]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[17]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WDATA[16]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WSTRB[3]
+WARNING: [Synth 8-3331] design hls_contrast_stretch_AXILiteS_s_axi has unconnected port WSTRB[2]
+INFO: [Synth 8-3886] merging instance 'inst/CvtColor_1_U0/signbit_1_reg_791_reg[0]' (FDE) to 'inst/CvtColor_1_U0/tmp_1_reg_808_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/CvtColor_1_U0/signbit_reg_763_reg[0]' (FDE) to 'inst/CvtColor_1_U0/tmp_s_reg_780_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/extLd_reg_299_reg[8] )
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][0]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][1]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][16]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][1]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][1]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][2]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][2]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][3]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][3]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][4]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][4]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][5]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][5]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][6]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][6]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][7]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][8]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][8]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][9]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][9]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][10]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][10]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][11]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][11]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][12]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][12]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][13]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][13]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][14]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][14]' (FDRE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/ap_done_reg_reg )
+INFO: [Synth 8-3886] merging instance 'inst/CvtColor_U0/tmp_3_reg_823_reg[1]' (FDE) to 'inst/CvtColor_U0/signbit_reg_806_reg[0]'
+INFO: [Synth 8-3886] merging instance 'inst/CvtColor_U0/tmp_7_reg_856_reg[1]' (FDE) to 'inst/CvtColor_U0/signbit_3_reg_839_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\CvtColor_U0/ap_done_reg_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\CvtColor_1_U0/ap_done_reg_reg )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (inst/\Block_Mat_exit1573_p_U0/ap_CS_fsm_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Block_Mat_exit1573_p_U0/ap_done_reg_reg )
+INFO: [Synth 8-3886] merging instance 'inst/CvtColor_U0/signbit_2_reg_885_reg[0]' (FDE) to 'inst/CvtColor_U0/tmp_5_reg_902_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\AXIvideo2Mat_U0/ap_done_reg_reg )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Mat2AXIvideo_U0/ap_done_reg_reg )
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[16]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[17]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[18]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[19]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[20]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[21]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[22]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[23]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[24]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[25]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[26]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[27]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[28]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[29]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3886] merging instance 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[30]' (FDE) to 'inst/hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31] )
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][9]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][10]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][10]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][11]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][11]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][12]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][12]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][13]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][13]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][14]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][14]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][15] )
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][10]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][11]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].remd_tmp_reg[1][15]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][11]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][11]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][12]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][12]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][13]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][13]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][14]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][14]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][15] )
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][11]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][12]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].remd_tmp_reg[2][15]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][12]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][12]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][13]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][13]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][14]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][14]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][15] )
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][12]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][13]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].remd_tmp_reg[3][15]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][13]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][13]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][14]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][14]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][15] )
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[4].remd_tmp_reg[5][13]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[4].remd_tmp_reg[5][14]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].remd_tmp_reg[4][15]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[4].remd_tmp_reg[5][14]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[4].remd_tmp_reg[5][14]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[4].remd_tmp_reg[5][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[4].remd_tmp_reg[5][15] )
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[5].remd_tmp_reg[6][14]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[5].remd_tmp_reg[6][15]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[4].remd_tmp_reg[5][15]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[5].remd_tmp_reg[6][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[5].remd_tmp_reg[6][15] )
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[5].remd_tmp_reg[6][15]' (FDE) to 'inst/Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[6].remd_tmp_reg[7][15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (inst/\Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[6].remd_tmp_reg[7][15] )
+WARNING: [Synth 8-3332] Sequential element (hls_contrast_stretch_AXILiteS_s_axi_U/rdata_reg[31]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit1573_p_U0/ap_done_reg_reg) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (Block_Mat_exit1573_p_U0/ap_CS_fsm_reg[0]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (AXIvideo2Mat_U0/ap_done_reg_reg) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/ap_done_reg_reg) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[28]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[27]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[26]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[25]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[24]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[23]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[22]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[21]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[20]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[19]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[18]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[17]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[16]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[15]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[14]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[13]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[12]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[11]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[10]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[9]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[8]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[7]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[6]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[5]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[4]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[3]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[2]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[1]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_1_reg_728_reg[0]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[31]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[30]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[28]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[27]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[26]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[25]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[24]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[23]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[22]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[21]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[20]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[19]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[18]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[17]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[16]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[15]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[14]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[13]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[12]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[11]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[10]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[9]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[8]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[7]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[6]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[5]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[4]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[3]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[2]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[1]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_2_reg_758_reg[0]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[31]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[30]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[28]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[27]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[26]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[25]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[24]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[23]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[22]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[21]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[20]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[19]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[18]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[17]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[16]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[15]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[14]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[13]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[12]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[11]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[10]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[9]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[8]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[7]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[6]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[5]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[4]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[3]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[2]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[1]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (CvtColor_1_U0/r_V_3_reg_786_reg[0]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/remd_tmp_reg[0][15]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[0].dividend_tmp_reg[1][0]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].dividend_tmp_reg[2][1]) is unused and will be removed from module hls_contrast_stretch.
+WARNING: [Synth 8-3332] Sequential element (Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].dividend_tmp_reg[2][0]) is unused and will be removed from module hls_contrast_stretch.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 886.492 ; gain = 550.703
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-----------------------------+--------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                  | DSP Mapping                    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------------------+--------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|hls_contrast_strebkb_DSP48_0 | A*B                            | 22     | 8      | -      | -      | 30     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|CvtColor_1                   | (C'+(A:0x74bc6)*B'')'          | 20     | 9      | 29     | -      | 29     | 0    | 2    | 1    | -    | -     | 0    | 1    | 
+|CvtColor_1                   | C+(A:0x259168)*B''             | 23     | 9      | 30     | -      | 30     | 0    | 2    | 0    | -    | -     | 0    | 0    | 
+|CvtColor_1                   | (C:0x20000000)+(A:0x2da1ca)*B2 | 23     | 9      | 31     | -      | 32     | 0    | 1    | 0    | -    | -     | 0    | 0    | 
+|CvtColor_1                   | (C:0x20000000)+(A:0x241893)*B2 | 23     | 9      | 31     | -      | 32     | 0    | 1    | 0    | -    | -     | 0    | 0    | 
+|CvtColor                     | C'+(A:0x59cac0)*B2             | 24     | 8      | 31     | -      | 32     | 0    | 1    | 1    | -    | -     | 0    | 0    | 
+|CvtColor                     | (C'+(A:0x3fe9fbe7)*B2)'        | 22     | 8      | 31     | -      | 32     | 0    | 1    | 1    | -    | -     | 0    | 1    | 
+|CvtColor                     | PCIN+(A:0x3fd24dd2)*B''        | 23     | 8      | -      | -      | 32     | 0    | 2    | -    | -    | -     | 0    | 0    | 
+|CvtColor                     | C'+(A:0x7178d4)*B2             | 24     | 8      | 31     | -      | 32     | 0    | 1    | 1    | -    | -     | 0    | 0    | 
++-----------------------------+--------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 946.559 ; gain = 610.770
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 956.402 ; gain = 620.613
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[0]' (FDRE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[1]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[1]' (FDRE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[2]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[2]' (FDRE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[3]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[3]' (FDRE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[4]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[4]' (FDRE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[5]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[5]' (FDRE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[6]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[6]' (FDRE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter3_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[0]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[1]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[2]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[3]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[4]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[5]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[6]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter4_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[0]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[1]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[2]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[3]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[4]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[5]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[6]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter5_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[0]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[1]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[2]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[3]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[4]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[5]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[6]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter6_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[0]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[1]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[2]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[3]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[4]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[5]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[6]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter7_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter8_tmp_2_reg_173_reg[0]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter8_tmp_2_reg_173_reg[7]'
+INFO: [Synth 8-3886] merging instance 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter8_tmp_2_reg_173_reg[1]' (FDE) to 'inst/Loop_loop_height_pro_U0/ap_phi_reg_pp0_iter8_tmp_2_reg_173_reg[7]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 991.023 ; gain = 655.234
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 991.023 ; gain = 655.234
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 991.023 ; gain = 655.234
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 991.023 ; gain = 655.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 991.023 ; gain = 655.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 991.023 ; gain = 655.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 991.023 ; gain = 655.234
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++---------------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name          | RTL Name                                                                                                                                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++---------------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|hls_contrast_stretch | CvtColor_1_U0/ap_reg_pp0_iter4_tmp_23_reg_701_reg[7]                                                                                       | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|hls_contrast_stretch | CvtColor_1_U0/ap_reg_pp0_iter4_tmp_25_reg_712_reg[7]                                                                                       | 3      | 8     | NO           | NO                 | YES               | 8      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[1].dividend_tmp_reg[2][16]   | 3      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[2].dividend_tmp_reg[3][16]   | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[3].dividend_tmp_reg[4][16]   | 5      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[4].dividend_tmp_reg[5][16]   | 6      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[5].dividend_tmp_reg[6][16]   | 7      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[6].dividend_tmp_reg[7][16]   | 8      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[7].dividend_tmp_reg[8][16]   | 9      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[8].dividend_tmp_reg[9][16]   | 10     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[9].dividend_tmp_reg[10][16]  | 11     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[10].dividend_tmp_reg[11][16] | 12     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[11].dividend_tmp_reg[12][16] | 13     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[12].dividend_tmp_reg[13][16] | 14     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[13].dividend_tmp_reg[14][16] | 15     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[14].dividend_tmp_reg[15][16] | 16     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[15].dividend_tmp_reg[16][16] | 17     | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/ap_reg_pp0_iter22_exitcond_i_i_i_reg_318_reg[0]                                                                    | 21     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/ap_reg_pp0_iter22_tmp_i_i_reg_348_reg[0]                                                                           | 20     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/ap_reg_pp0_iter22_tmp_1_i_i_reg_344_reg[0]                                                                         | 20     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[16].sign_tmp_reg[17][1]      | 18     | 1     | NO           | NO                 | YES               | 0      | 1       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[16].dividend_tmp_reg[17][7]  | 8      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[16].dividend_tmp_reg[17][6]  | 7      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[16].dividend_tmp_reg[17][5]  | 6      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[16].dividend_tmp_reg[17][4]  | 5      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/hls_contrast_strefYi_U47/hls_contrast_strefYi_div_U/hls_contrast_strefYi_div_u_0/loop[16].dividend_tmp_reg[17][3]  | 4      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/ap_reg_pp0_iter23_tmp_8_reg_334_reg[7]                                                                             | 22     | 8     | NO           | NO                 | NO                | 0      | 8       | 
+|hls_contrast_stretch | Loop_loop_height_pro_U0/ap_reg_pp0_iter23_tmp_reg_339_reg[7]                                                                               | 22     | 8     | NO           | NO                 | NO                | 0      | 8       | 
++---------------------+--------------------------------------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | SRL_SIG_reg[3] | 8      | 8          | 8      | 0       | 0      | 0      | 0      | 
+|dsrl__1     | SRL_SIG_reg[4] | 16     | 16         | 16     | 0       | 0      | 0      | 0      | 
+|dsrl__2     | SRL_SIG_reg[5] | 16     | 16         | 16     | 0       | 0      | 0      | 0      | 
+|dsrl__3     | SRL_SIG_reg[3] | 12     | 12         | 12     | 0       | 0      | 0      | 0      | 
+|dsrl__4     | SRL_SIG_reg[3] | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
+|dsrl__5     | SRL_SIG_reg[4] | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
+|dsrl__6     | SRL_SIG_reg[5] | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
+|dsrl__7     | SRL_SIG_reg[2] | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
++------------+----------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+----------+------+
+|      |Cell      |Count |
++------+----------+------+
+|1     |CARRY4    |   115|
+|2     |DSP48E1   |     1|
+|3     |DSP48E1_1 |     1|
+|4     |DSP48E1_2 |     1|
+|5     |DSP48E1_3 |     2|
+|6     |DSP48E1_4 |     2|
+|7     |DSP48E1_5 |     1|
+|8     |DSP48E1_6 |     1|
+|9     |LUT1      |   188|
+|10    |LUT2      |   338|
+|11    |LUT3      |   459|
+|12    |LUT4      |   401|
+|13    |LUT5      |   228|
+|14    |LUT6      |   227|
+|15    |SRL16E    |   140|
+|16    |SRLC32E   |    20|
+|17    |FDRE      |  1844|
+|18    |FDSE      |   100|
++------+----------+------+
+
+Report Instance Areas: 
++------+------------------------------------------+------------------------------------+------+
+|      |Instance                                  |Module                              |Cells |
++------+------------------------------------------+------------------------------------+------+
+|1     |top                                       |                                    |  4069|
+|2     |  inst                                    |hls_contrast_stretch                |  4069|
+|3     |    AXIvideo2Mat_U0                       |AXIvideo2Mat                        |   458|
+|4     |    Block_Mat_exit1573_p_U0               |Block_Mat_exit1573_p                |     2|
+|5     |    CvtColor_1_U0                         |CvtColor_1                          |   423|
+|6     |      hls_contrast_strebkb_U30            |hls_contrast_strebkb                |    23|
+|7     |        hls_contrast_strebkb_DSP48_0_U    |hls_contrast_strebkb_DSP48_0        |    23|
+|8     |      hls_contrast_stredEe_U32            |hls_contrast_stredEe                |     3|
+|9     |        hls_contrast_stredEe_DSP48_2_U    |hls_contrast_stredEe_DSP48_2        |     3|
+|10    |      hls_contrast_streeOg_U33            |hls_contrast_streeOg                |    13|
+|11    |        hls_contrast_streeOg_DSP48_3_U    |hls_contrast_streeOg_DSP48_3_41     |    13|
+|12    |      hls_contrast_streeOg_U34            |hls_contrast_streeOg_40             |    17|
+|13    |        hls_contrast_streeOg_DSP48_3_U    |hls_contrast_streeOg_DSP48_3        |    17|
+|14    |    CvtColor_U0                           |CvtColor                            |   327|
+|15    |      hls_contrast_streg8j_U60            |hls_contrast_streg8j                |     2|
+|16    |        hls_contrast_streg8j_DSP48_4_U    |hls_contrast_streg8j_DSP48_4_39     |     2|
+|17    |      hls_contrast_streg8j_U62            |hls_contrast_streg8j_38             |     5|
+|18    |        hls_contrast_streg8j_DSP48_4_U    |hls_contrast_streg8j_DSP48_4        |     5|
+|19    |      hls_contrast_streibs_U63            |hls_contrast_streibs                |     3|
+|20    |        hls_contrast_streibs_DSP48_6_U    |hls_contrast_streibs_DSP48_6        |     3|
+|21    |    Loop_loop_height_pro_U0               |Loop_loop_height_pro                |  1450|
+|22    |      hls_contrast_strefYi_U47            |hls_contrast_strefYi                |  1071|
+|23    |        hls_contrast_strefYi_div_U        |hls_contrast_strefYi_div            |  1071|
+|24    |          hls_contrast_strefYi_div_u_0    |hls_contrast_strefYi_div_u          |  1016|
+|25    |    Mat2AXIvideo_U0                       |Mat2AXIvideo                        |   281|
+|26    |    hls_contrast_stretch_AXILiteS_s_axi_U |hls_contrast_stretch_AXILiteS_s_axi |   156|
+|27    |    img0_cols_V_c84_U                     |fifo_w16_d1_A                       |    59|
+|28    |      U_fifo_w16_d1_A_ram                 |fifo_w16_d1_A_shiftReg_37           |    49|
+|29    |    img0_cols_V_c_U                       |fifo_w16_d1_A_0                     |    59|
+|30    |      U_fifo_w16_d1_A_ram                 |fifo_w16_d1_A_shiftReg_36           |    49|
+|31    |    img0_data_stream_0_s_U                |fifo_w8_d1_A                        |    34|
+|32    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_35            |    25|
+|33    |    img0_data_stream_1_s_U                |fifo_w8_d1_A_1                      |    34|
+|34    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_34            |    25|
+|35    |    img0_data_stream_2_s_U                |fifo_w8_d1_A_2                      |    34|
+|36    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_33            |    25|
+|37    |    img0_rows_V_c83_U                     |fifo_w16_d1_A_3                     |    59|
+|38    |      U_fifo_w16_d1_A_ram                 |fifo_w16_d1_A_shiftReg_32           |    49|
+|39    |    img0_rows_V_c_U                       |fifo_w16_d1_A_4                     |    59|
+|40    |      U_fifo_w16_d1_A_ram                 |fifo_w16_d1_A_shiftReg              |    49|
+|41    |    img1_data_stream_0_s_U                |fifo_w8_d1_A_5                      |    31|
+|42    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_31            |    24|
+|43    |    img1_data_stream_1_s_U                |fifo_w8_d1_A_6                      |    31|
+|44    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_30            |    24|
+|45    |    img1_data_stream_2_s_U                |fifo_w8_d1_A_7                      |    31|
+|46    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_29            |    24|
+|47    |    img2_cols_V_c_U                       |fifo_w16_d4_A                       |    37|
+|48    |      U_fifo_w16_d4_A_ram                 |fifo_w16_d4_A_shiftReg_28           |    20|
+|49    |    img2_data_stream_0_s_U                |fifo_w8_d1_A_8                      |    33|
+|50    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_27            |    24|
+|51    |    img2_data_stream_1_s_U                |fifo_w8_d1_A_9                      |    33|
+|52    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_26            |    24|
+|53    |    img2_data_stream_2_s_U                |fifo_w8_d1_A_10                     |    33|
+|54    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_25            |    24|
+|55    |    img2_rows_V_c_U                       |fifo_w16_d4_A_11                    |    36|
+|56    |      U_fifo_w16_d4_A_ram                 |fifo_w16_d4_A_shiftReg              |    20|
+|57    |    img3_cols_V_c_U                       |fifo_w16_d5_A                       |    32|
+|58    |      U_fifo_w16_d5_A_ram                 |fifo_w16_d5_A_shiftReg_24           |    16|
+|59    |    img3_data_stream_0_s_U                |fifo_w8_d1_A_12                     |    33|
+|60    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_23            |    24|
+|61    |    img3_data_stream_1_s_U                |fifo_w8_d1_A_13                     |    33|
+|62    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg_22            |    24|
+|63    |    img3_data_stream_2_s_U                |fifo_w8_d1_A_14                     |    33|
+|64    |      U_fifo_w8_d1_A_ram                  |fifo_w8_d1_A_shiftReg               |    24|
+|65    |    img3_rows_V_c_U                       |fifo_w16_d5_A_15                    |    32|
+|66    |      U_fifo_w16_d5_A_ram                 |fifo_w16_d5_A_shiftReg              |    16|
+|67    |    max_c_U                               |fifo_w8_d3_A                        |    33|
+|68    |      U_fifo_w8_d3_A_ram                  |fifo_w8_d3_A_shiftReg_21            |    19|
+|69    |    min_c_U                               |fifo_w8_d3_A_16                     |    33|
+|70    |      U_fifo_w8_d3_A_ram                  |fifo_w8_d3_A_shiftReg_20            |    13|
+|71    |    p_cols_assign_cast_lo_U               |fifo_w12_d3_A                       |    28|
+|72    |      U_fifo_w12_d3_A_ram                 |fifo_w12_d3_A_shiftReg_19           |    15|
+|73    |    p_rows_assign_cast_lo_U               |fifo_w12_d3_A_17                    |    28|
+|74    |      U_fifo_w12_d3_A_ram                 |fifo_w12_d3_A_shiftReg              |    15|
+|75    |    start_for_CvtColokbM_U                |start_for_CvtColokbM                |    18|
+|76    |    start_for_CvtColomb6_U                |start_for_CvtColomb6                |    13|
+|77    |    start_for_Loop_lojbC_U                |start_for_Loop_lojbC                |    14|
+|78    |    start_for_Mat2AXIlbW_U                |start_for_Mat2AXIlbW                |    15|
+|79    |    tmp_3_cast_loc_c_U                    |fifo_w8_d3_A_18                     |    24|
+|80    |      U_fifo_w8_d3_A_ram                  |fifo_w8_d3_A_shiftReg               |    11|
++------+------------------------------------------+------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 991.023 ; gain = 655.234
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 399 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:33 . Memory (MB): peak = 991.023 ; gain = 282.078
+Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:42 . Memory (MB): peak = 991.023 ; gain = 655.234
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 124 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+274 Infos, 230 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:41 ; elapsed = 00:00:45 . Memory (MB): peak = 991.023 ; gain = 666.734
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'U:/Xilinx/Projects/2018_demo_gamma_1/vivado_proj/Zybo-Z7-20-HDMI.runs/design_1_hls_contrast_stretch_0_0_synth_1/design_1_hls_contrast_stretch_0_0.dcp' has been generated.

@@ -1,7 +1,7 @@
 Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
-| Date         : Sat Mar 12 15:08:30 2022
+| Date         : Sun Mar 13 11:24:11 2022
 | Host         : DESKTOP-M0FE9RU running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -173,12 +173,14 @@ Table of Contents
 | design_1_proc_sys_reset_0_0          |    1 |
 | design_1_hls_saturation_enhan_0_0    |    1 |
 | design_1_hls_gamma_correction_0_0    |    1 |
+| design_1_hls_contrast_stretch_0_0    |    1 |
 | design_1_dvi2rgb_1_0                 |    1 |
 | design_1_axis_subset_converter_out_0 |    1 |
 | design_1_axis_subset_converter_in_0  |    1 |
 | design_1_axi_vdma_0_0                |    1 |
 | design_1_axi_gpio_video_0            |    1 |
 | design_1_axi_dynclk_0_0              |    1 |
+| design_1_axi_clock_converter_1_0     |    1 |
 | design_1_axi_clock_converter_0_1     |    1 |
 | design_1_axi_clock_converter_0_0     |    1 |
 | design_1_auto_pc_1                   |    1 |
