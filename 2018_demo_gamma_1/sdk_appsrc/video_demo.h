@@ -41,7 +41,6 @@
 #define DEMO_PATTERN_3 3
 #define DEMO_PATTERN_4 4
 
-
 #define DEMO_MAX_FRAME (1920*1080*3)
 #define DEMO_STRIDE (1920 * 3)
 
@@ -62,10 +61,14 @@ void DemoSetHLS(VideoCapture *videoPtr);
 void SatSet(VideoCapture *videoPtr);
 void DemoChangeSat();
 void DemoSatMenu();
+void SatSetSoftware(double sat_fac, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void DemoChangeSatSoftware();
 // Gamma
 void GammaSet(VideoCapture *videoPtr);
 void DemoChangeGF();
 void DemoGFMenu();
+void GammaSetSoftware(double gf, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void DemoChangeGFSoftware();
 // Contrast
 void ContSet(VideoCapture *videoPtr);
 void DemoChangeCont();
@@ -74,18 +77,33 @@ void DemoChangeContMax();
 void DemoContMenu();
 void DemoContMenuMin();
 void DemoContMenuMax();
-
+void DemoChangeContSoftware();
+void DemoChangeContSoftwareMin();
+void DemoChangeContSoftwareMax();
+void ContSetSoftware(u8 cont_min, u8 cont_max, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+// Main menu
 void DemoPrintMenu();
+// Resolution
 void DemoChangeRes();
 void DemoCRMenu();
+// Test Patterns
 void DemoTestPatternMenu();
 void DemoChangeTestPattern();
-void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
+// Single Frame Translations
+void DemoSingleFrameMenu();
+void DemoChooseTranslation();
+void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
 void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
 void DemoTestScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
 void DemoNearestNeighbor(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
 void DemoISR(void *callBackRef, void *pVideo);
+// Color Space Translations
+void rgb_to_YCbCr(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void YCbCr_to_rgb(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void rgb_to_hsv(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void hsv_to_rgb(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+
 
 /* ------------------------------------------------------------ */
 
