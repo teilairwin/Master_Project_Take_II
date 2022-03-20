@@ -366,24 +366,30 @@ void SatSet(VideoCapture *videoPtr)
 
 void SatSetSoftware(double sat_fac, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
 {
-	u32 i;
-	double max_sat = 255;
-	double src_sat;
-	double var_int;
+	u32 row, col, pixel_index, byte_index;
+	int max_sat = 255;
+	int src_sat;
+	int var_int;
 	double gry_fct;
 
-	for (i = 0; i < height * width; i++)
+	for (row = 0; row < height; row++)
 	{
-		src_sat = srcFrame[i];
-		var_int = max_sat - src_sat;
-		gry_fct = src_sat/255;
-		if (sat_fac >= 0)
+		for (col = 0; col < width; col++)
 		{
-			destFrame[i] = src_sat + sat_fac * var_int * gry_fct;
-		}
-		else
-		{
-			destFrame[i] = src_sat + sat_fac * src_sat;
+			pixel_index = row * width + col;
+			byte_index = 3 * pixel_index;
+			// hue = srcFrame[byte_index];
+			src_sat = srcFrame[byte_index + 1];
+			var_int = max_sat - src_sat;
+			gry_fct = src_sat/255;
+			if (sat_fac >= 0)
+			{
+				destFrame[byte_index + 1] = src_sat + sat_fac * var_int * gry_fct;
+			}
+			else
+			{
+				destFrame[byte_index + 1] = src_sat + sat_fac * src_sat;
+			}
 		}
 	}
 	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
@@ -487,7 +493,7 @@ void DemoChangeSatSoftware()
 		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
 	}
 
-	//convert the frame to Hue Light Value (HSV) color space
+	//convert the frame to Hue Saturation Value (HSV) color space
 	rgb_to_hsv(srcFrame, tempFrame, width, height, stride);
 
 	while (!satSet)
@@ -565,15 +571,19 @@ void GammaSet(VideoCapture *videoPtr)
 
 void GammaSetSoftware(double gf, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
 {
-	u32 i;
-
+	u32 row, col, pixel_index, byte_index;
 	double gamma = 1/gf;
 	double src_temp;
-	for (i = 0; i < height * width; i++)
+	for (row = 0; row < height; row++)
 	{
-		src_temp = (double)(srcFrame[i])/255;
-		//gf_temp = pow(src_temp,gamma);
-		destFrame[i] = (int) (255*src_temp*gamma);
+		for (col = 0; col < width; col++)
+		{
+			pixel_index = row * width + col;
+			byte_index = 3 * pixel_index;
+			src_temp = (srcFrame[byte_index])/255;
+			// destFrame[byte_index] = 255 * pow(src_temp,gamma);
+			destFrame[byte_index] = (int) (src_temp * gamma);
+		}
 	}
 	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
 }
@@ -766,9 +776,9 @@ void ContSet(VideoCapture *videoPtr)
  * 				|
  * 				|							0, 		src.cont < min
  * 				|
- *              |  (source.cont - min)
- * dest.cont =  |  ------------------- * 255 ,      min <= src.cont <= max
- *              |      (max - min)
+ *              |   (source.cont - min)
+ * dest.cont =  |   ------------------- * 255,      min <= src.cont <= max
+ *              |       (max - min)
  *              |
  *              |						  255,		src.cont > max
  *              |_
@@ -776,21 +786,26 @@ void ContSet(VideoCapture *videoPtr)
  */
 void ContSetSoftware(u8 cont_min, u8 cont_max, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
 {
-	int i;
+	u32 row, col, pixel_index, byte_index;
 
-	for (i = 0; i < height * width; i++)
+	for (row = 0; row < height; row++)
 	{
-		if (srcFrame[i] < cont_min)
+		for (col = 0; col < width; col++)
 		{
-			destFrame[i] = 0;
-		}
-		else if (srcFrame[i] > cont_max)
-		{
-			destFrame[i] = 255;
-		}
-		else
-		{
-			destFrame[i] = 255 * (srcFrame[i] - cont_min)/(cont_max - cont_min);
+			pixel_index = row * width + col;
+			byte_index = pixel_index * 3;
+			if (srcFrame[byte_index] < cont_min)
+			{
+				destFrame[byte_index] = 0;
+			}
+			else if (srcFrame[byte_index] > cont_max)
+			{
+				destFrame[byte_index] = 255;
+			}
+			else
+			{
+				destFrame[byte_index] = 255 * (srcFrame[byte_index] - cont_min)/(cont_max - cont_min);
+			}
 		}
 	}
 }
@@ -943,7 +958,7 @@ void DemoChangeContSoftwareMin()
 	u8 *tempFrame = videoCapt.framePtr[videoCapt.curFrame+1];
 	// use temp frame for colorspace conversion
 	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+2];
-	u8 width = videoCapt.timing.HActiveVideo * 3;
+	u8 width = videoCapt.timing.HActiveVideo;
 	u8 height = videoCapt.timing.VActiveVideo;
 	u8 stride = videoCapt.stride;
 	int minSet = 0;
@@ -998,7 +1013,7 @@ void DemoChangeContSoftwareMin()
 }
 void DemoChangeContMax()
 {
-	int contSet = 0;
+	int maxSet = 0;
 	int status;
     int max;
     int chars = 0;
@@ -1010,7 +1025,7 @@ void DemoChangeContMax()
 		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
 	}
 
-	while (!contSet)
+	while (!maxSet)
 	{
 		DemoContMenuMax();
 
@@ -1039,7 +1054,7 @@ void DemoChangeContMax()
 		{
 			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
 		}
-        contSet = 1;
+        maxSet = 1;
 	}
 }
 
@@ -1048,7 +1063,7 @@ void DemoChangeContSoftwareMax()
 	u8 *srcFrame = videoCapt.framePtr[videoCapt.curFrame];
 	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+1];
 	u8 *tempFrame = videoCapt.framePtr[videoCapt.curFrame+2];
-	u8 width = videoCapt.timing.HActiveVideo * 3;
+	u8 width = videoCapt.timing.HActiveVideo;
 	u8 height = videoCapt.timing.VActiveVideo;
 	u8 stride = videoCapt.stride;
 	int maxSet = 0;
@@ -2127,7 +2142,7 @@ void YCbCr_to_rgb(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride
 
 	for(row = 0; row < height; row++)
 	{
-		for(col = 0; col < (width); col++)
+		for(col = 0; col < width; col++)
 		{
 			pixel_index = row * width + col;
 			byte_index = pixel_index * 3;
