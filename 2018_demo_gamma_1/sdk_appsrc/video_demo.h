@@ -18,6 +18,7 @@
 /*  Revision History:													*/
 /* 																		*/
 /*		11/25/2015(SamB): Created										*/
+/*		March 2022: Updated for CMPE 295B Spring 2022					*/
 /*																		*/
 /************************************************************************/
 
@@ -42,7 +43,9 @@
 #define DEMO_PATTERN_4 4
 
 #define DEMO_MAX_FRAME (1920*1080*3)
-#define DEMO_STRIDE (1920 * 3)
+#define DEMO_STRIDE (1920*3)
+#define BYTES_PER_PIXEL 3
+
 
 /*
  * Configure the Video capture driver to start streaming on signal
@@ -53,10 +56,10 @@
 /* ------------------------------------------------------------ */
 /*					Procedure Declarations						*/
 /* ------------------------------------------------------------ */
-
+double pow(double x, double y);
 void DemoInitialize();
 void DemoRun();
-void DemoSetHLS(VideoCapture *videoPtr);
+void DemoSetHLS();//VideoCapture *videoPtr);
 // Saturation
 void SatSet(VideoCapture *videoPtr);
 void DemoChangeSat();
@@ -82,7 +85,7 @@ void DemoChangeContSoftwareMin();
 void DemoChangeContSoftwareMax();
 void ContSetSoftware(u8 cont_min, u8 cont_max, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
 // Main menu
-void DemoPrintMenu();
+void DemoMainMenu();
 // Resolution
 void DemoChangeRes();
 void DemoCRMenu();
@@ -94,9 +97,9 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
 void DemoSingleFrameMenu();
 void DemoChooseTranslation();
 void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
-void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
-void DemoTestScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
-void DemoNearestNeighbor(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
+void DemoBilinearInterpolationScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
+void DemoPixelAverageScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
+void DemoNearestNeighborScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
 void DemoISR(void *callBackRef, void *pVideo);
 // Color Space Translations
 void rgb_to_YCbCr(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);

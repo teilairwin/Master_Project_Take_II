@@ -34,7 +34,8 @@
 #include "intc/intc.h"
 #include <stdio.h> 
 #include "xuartps.h"
-#include "math.h"
+#include <math.h>
+#include "D:\Xilinx_2018\SDK\2018.2\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\math.h"
 #include <ctype.h>
 #include <stdlib.h>
 #include "xil_types.h"
@@ -248,7 +249,7 @@ void DemoInitialize()
 }
 
 
-void DemoSetHLS(VideoCapture *videoPtr)
+void DemoSetHLS()//VideoCapture *videoPtr)
 { 
     GammaSet(&videoCapt);
     SatSet(&videoCapt);
@@ -270,7 +271,7 @@ void DemoRun()
 	while (userInput != 'q')
 	{
 		fRefresh = 0;
-		DemoPrintMenu();
+		DemoMainMenu();
 		// Wait for data on UART
 		while (!XUartPs_IsReceiveData(UART_BASEADDR) && !fRefresh)
 		{}
@@ -301,30 +302,33 @@ void DemoRun()
 				VideoStop(&videoCapt);
 			else {
 				DemoSetHLS(&videoCapt);
-                VideoStart(&videoCapt); 
+                VideoStart(&videoCapt);
             }
 			break;
 		case '4': //change video frame buffer
+			nextFrame = (videoCapt.curFrame + 1) % 3;
+			/*
 			nextFrame = videoCapt.curFrame + 1;
 			if (nextFrame >= DISPLAY_NUM_FRAMES)
 			{
 				nextFrame = 0;
-			}
+			}*/
 			VideoChangeFrame(&videoCapt, nextFrame);
 			break;
 		case '5': //change display frame buffer
-			nextFrame = dispCtrl.curFrame + 1;
+			nextFrame = (dispCtrl.curFrame + 1) % 3;
+			/*
 			if (nextFrame >= DISPLAY_NUM_FRAMES)
 			{
 				nextFrame = 0;
-			}
+			}*/
 			DisplayChangeFrame(&dispCtrl, nextFrame);
 			break;
 		case '6':
 			DemoChangeGF();
 			break;
 		case '7':
-			DemoChangeSat(); 
+			DemoChangeSat();
 			break;
 		case '8':
 			DemoChangeCont();
@@ -367,9 +371,9 @@ void SatSet(VideoCapture *videoPtr)
 void SatSetSoftware(double sat_fac, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
 {
 	u32 row, col, pixel_index, byte_index;
-	int max_sat = 255;
-	int src_sat;
-	int var_int;
+	double max_sat = 255.0;
+	double src_sat;
+	double var_int;
 	double gry_fct;
 
 	for (row = 0; row < height; row++)
@@ -379,16 +383,16 @@ void SatSetSoftware(double sat_fac, u8 *srcFrame, u8 *destFrame, u32 width, u32 
 			pixel_index = row * width + col;
 			byte_index = 3 * pixel_index;
 			// hue = srcFrame[byte_index];
-			src_sat = srcFrame[byte_index + 1];
+			src_sat = (double) srcFrame[byte_index + 1];
 			var_int = max_sat - src_sat;
 			gry_fct = src_sat/255;
 			if (sat_fac >= 0)
 			{
-				destFrame[byte_index + 1] = src_sat + sat_fac * var_int * gry_fct;
+				destFrame[byte_index + 1] = (int) (src_sat + sat_fac * var_int * gry_fct);
 			}
 			else
 			{
-				destFrame[byte_index + 1] = src_sat + sat_fac * src_sat;
+				destFrame[byte_index + 1] = (int) (src_sat + sat_fac * src_sat);
 			}
 		}
 	}
@@ -568,7 +572,9 @@ void GammaSet(VideoCapture *videoPtr)
 	XHls_gamma_correction_Set_height(&gamma_lut, videoPtr->timing.VActiveVideo);
 	XHls_gamma_correction_Set_gamma(&gamma_lut, gamma_lut.FactorSel);
 }
-
+/*double pow(double x, double y){
+	return pow(x,y);
+}*/
 void GammaSetSoftware(double gf, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
 {
 	u32 row, col, pixel_index, byte_index;
@@ -581,7 +587,7 @@ void GammaSetSoftware(double gf, u8 *srcFrame, u8 *destFrame, u32 width, u32 hei
 			pixel_index = row * width + col;
 			byte_index = 3 * pixel_index;
 			src_temp = (srcFrame[byte_index])/255;
-			// destFrame[byte_index] = 255 * pow(src_temp,gamma);
+			//destFrame[byte_index] = 255 * pow(src_temp,gamma);
 			destFrame[byte_index] = (int) (src_temp * gamma);
 		}
 	}
@@ -596,9 +602,9 @@ void DemoChangeGFSoftware()
 	char userInput = 0;
 	u8 *srcFrame = videoCapt.framePtr[videoCapt.curFrame];
 	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+1];
-	u8 width = videoCapt.timing.HActiveVideo;
-	u8 height = videoCapt.timing.VActiveVideo;
-	u8 stride = videoCapt.stride;
+	u32 width = videoCapt.timing.HActiveVideo;
+	u32 height = videoCapt.timing.VActiveVideo;
+	u32 stride = videoCapt.stride;
 
 	// Flush UART FIFO
 	while (XUartPs_IsReceiveData(UART_BASEADDR))
@@ -955,12 +961,12 @@ void DemoChangeContMin()
 void DemoChangeContSoftwareMin()
 {
 	u8 *srcFrame = videoCapt.framePtr[videoCapt.curFrame];
-	u8 *tempFrame = videoCapt.framePtr[videoCapt.curFrame+1];
+	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+1];
 	// use temp frame for colorspace conversion
-	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+2];
-	u8 width = videoCapt.timing.HActiveVideo;
-	u8 height = videoCapt.timing.VActiveVideo;
-	u8 stride = videoCapt.stride;
+	u8 *tempFrame = videoCapt.framePtr[videoCapt.curFrame+2];
+	u32 width = videoCapt.timing.HActiveVideo;
+	u32 height = videoCapt.timing.VActiveVideo;
+	u32 stride = videoCapt.stride;
 	int minSet = 0;
 	int status;
     int min;
@@ -1063,9 +1069,9 @@ void DemoChangeContSoftwareMax()
 	u8 *srcFrame = videoCapt.framePtr[videoCapt.curFrame];
 	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+1];
 	u8 *tempFrame = videoCapt.framePtr[videoCapt.curFrame+2];
-	u8 width = videoCapt.timing.HActiveVideo;
-	u8 height = videoCapt.timing.VActiveVideo;
-	u8 stride = videoCapt.stride;
+	u32 width = videoCapt.timing.HActiveVideo;
+	u32 height = videoCapt.timing.VActiveVideo;
+	u32 stride = videoCapt.stride;
 	int maxSet = 0;
 	int status;
     int max;
@@ -1116,7 +1122,7 @@ void DemoChangeContSoftwareMax()
 }
 
 // --------------------------------- Menus ----------------------------------------
-void DemoPrintMenu()
+void DemoMainMenu()
 {
 	xil_printf("\x1B[H"); //Set cursor to top left of terminal
 	xil_printf("\x1B[2J"); //Clear terminal
@@ -1140,7 +1146,7 @@ void DemoPrintMenu()
 	xil_printf("2 - Go to Single Frame Translation Menu \n\r");
 	xil_printf("3 - Start/Stop Video stream into Video Framebuffer\n\r");
 	xil_printf("4 - Change Video Frame Buffer Index\n\r");
-	xil_printf("5 - Change DIsplay Frame Buffer Index\n\r");
+	xil_printf("5 - Change Display Frame Buffer Index\n\r");
 	xil_printf("6 - Change Gamma Factor Value\n\r");
 	xil_printf("7 - Change Saturation Enhance Factor Value\n\r");
 	xil_printf("8 - Change Contrast Stretch Limits\n\r");
@@ -1306,7 +1312,7 @@ void DemoChooseTranslation()
 				nextFrame = 0;
 			}
 			VideoStop(&videoCapt);
-			DemoScaleFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+			DemoBilinearInterpolationScale(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
 			DemoSetHLS(&videoCapt);
 			VideoStart(&videoCapt);
 			DisplayChangeFrame(&dispCtrl, nextFrame);
@@ -1319,7 +1325,7 @@ void DemoChooseTranslation()
 				nextFrame = 0;
 			}
 			VideoStop(&videoCapt);
-			DemoNearestNeighbor(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+			DemoNearestNeighborScale(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
 			DemoSetHLS(&videoCapt);
 			VideoStart(&videoCapt);
 			DisplayChangeFrame(&dispCtrl, nextFrame);
@@ -1332,7 +1338,7 @@ void DemoChooseTranslation()
 				nextFrame = 0;
 			}
 			VideoStop(&videoCapt);
-			DemoTestScaleFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+			DemoPixelAverageScale(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
 			DemoSetHLS(&videoCapt);
 			VideoStart(&videoCapt);
 			DisplayChangeFrame(&dispCtrl, nextFrame);
@@ -1589,51 +1595,50 @@ void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 str
 	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
 }
 
-void DemoNearestNeighbor(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
+void DemoNearestNeighborScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
 {
-	float xInc, yInc; // Width/height of a destination frame pixel in the source frame coordinate system
-	float xcoSrc, ycoSrc; // Location of the destination pixel being operated on in the source frame coordinate system
-    float x1y1; //Used to store the color data of the nearest source pixel to the destination pixel
-	int ix1y1; //index into the source frame for the nearest source pixel to the destination pixel
-	int xcoDest, ycoDest; // Location of the destination pixel being operated on in the destination coordinate system
-	int iy1; //Used to store the index of the first source pixel in the line with y1
-	int iDest; //index of the pixel data in the destination frame being operated on
+	float xFact, yFact; // Width/height (scale factor) of a destination frame pixel / source frame pixel
+	float src_col, src_row; // Theoretical Location of the calculated destination pixel being operated on in the source frame coordinate system
+    //float src_data; //Used to store the color data of the nearest source pixel to the destination pixel
+	//int dest_data; //index into the source frame for the nearest source pixel to the destination pixel
+	u32 dest_col, dest_row; // Location of the destination pixel being operated on in the destination coordinate system
+	u32 pixel_index_src, pixel_index_dest;
+	u32 byte_index_src, byte_index_dest;
 
-	int i;
+	xFact = ((float) srcWidth - 1.0) / ((float) destWidth);
+	yFact = ((float) srcHeight - 1.0) / ((float) destHeight);
 
-	xInc = ((float) srcWidth - 1.0) / ((float) destWidth);
-		yInc = ((float) srcHeight - 1.0) / ((float) destHeight);
-
-		ycoSrc = 0.0;
-		for (ycoDest = 0; ycoDest < destHeight; ycoDest++)
+	src_row = 0.0;
+	for (dest_row = 0; dest_row < destHeight; dest_row++)
+	{
+		src_col = 0.0;
+		for (dest_col = 0; dest_col < destWidth; dest_col++)
 		{
-			iy1 = ((int) ycoSrc) * stride;
-			iDest = ycoDest * stride;
-			xcoSrc = 0.0;
-			for (xcoDest = 0; xcoDest < destWidth; xcoDest++)
-			{
-				ix1y1 = iy1 + ((int) xcoSrc) * 3;
-				for (i = 0; i < 3; i++)
-				{
-					x1y1 = (float) srcFrame[ix1y1 + i];
-					destFrame[iDest] = (u8) (x1y1);
-					iDest++;
-				}
-				xcoSrc += xInc;
-			}
-			ycoSrc += yInc;
+			pixel_index_dest = dest_row * destWidth + dest_col;
+			byte_index_dest = pixel_index_dest * 3;
+
+			pixel_index_src = ((int) src_row) * srcWidth + (int) src_col;
+			byte_index_src = pixel_index_src * 3;
+
+			destFrame[byte_index_dest] = srcFrame[byte_index_src];
+			destFrame[byte_index_dest+1] = srcFrame[byte_index_src+1];
+			destFrame[byte_index_dest+2] = srcFrame[byte_index_src+2];
+
+			src_col += xFact;
 		}
+		src_row += yFact;
+	}
 
-		// Flush the framebuffer memory range to ensure changes are written to the actual memory, and therefore accessible by the VDMA.
-		Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+	// Flush the framebuffer memory range to ensure changes are written to the actual memory, and therefore accessible by the VDMA.
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
 
-		return;
+	return;
 }
 
 /*
  * Bilinear interpolation algorithm. Assumes both frames have the same stride.
  */
-void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
+void DemoBilinearInterpolationScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
 {
 	float xInc, yInc; // Width/height of a destination frame pixel in the source frame coordinate system
 	float xcoSrc, ycoSrc; // Location of the destination pixel being operated on in the source frame coordinate system
@@ -1702,7 +1707,7 @@ void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u3
 	return;
 }
 
-void DemoTestScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
+void DemoPixelAverageScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
 {
 	float xInc, yInc; // Width/height of a destination frame pixel in the source frame coordinate system
 	float xcoSrc, ycoSrc; // Location of the destination pixel being operated on in the source frame coordinate system
@@ -1753,7 +1758,8 @@ void DemoTestScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight
 
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 {
-	u32 xcoi, ycoi;
+	u32 col, row;
+	u32 pixel_index, byte_index;
 	u32 iPixelAddr;
 	u8 wRed, wBlue, wGreen;
 	u32 wCurrentInt;
@@ -1778,23 +1784,23 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 		fBlue = 0.0;
 		fRed = 256.0;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for(col = 0; col < (width*3); col+=3)
 		{
 			/*
 			 * Convert color intensities to integers < 256, and trim values >=256
 			 */
 			wRed = (fRed >= 256.0) ? 255 : ((u8) fRed);
 			wBlue = (fBlue >= 256.0) ? 255 : ((u8) fBlue);
-			iPixelAddr = xcoi;
+			iPixelAddr = col;
 			fGreen = 0.0;
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
 
 				wGreen = (fGreen >= 256.0) ? 255 : ((u8) fGreen);
 				frame[iPixelAddr] = wRed;
 				frame[iPixelAddr + 1] = wBlue;
 				frame[iPixelAddr + 2] = wGreen;
-				if (ycoi < yMid)
+				if (row < yMid)
 				{
 					fGreen += yInc;
 				}
@@ -1810,17 +1816,17 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 				iPixelAddr += stride;
 			}
 
-			if (xcoi < xLeft)
+			if (col < xLeft)
 			{
 				fBlue = 0.0;
 				fRed -= xInc;
 			}
-			else if (xcoi < xMid)
+			else if (col < xMid)
 			{
 				fBlue += xInc;
 				fRed += xInc;
 			}
-			else if (xcoi < xRight)
+			else if (col < xRight)
 			{
 				fBlue -= xInc;
 				fRed -= xInc;
@@ -1844,7 +1850,7 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 		fColor = 0.0;
 		wCurrentInt = 1;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for(col = 0; col < (width*3); col+=3)
 		{
 
 			/*
@@ -1874,9 +1880,9 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 					wGreen = 0;
 			}
 
-			iPixelAddr = xcoi;
+			iPixelAddr = col;
 
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
 				frame[iPixelAddr] = wRed;
 				frame[iPixelAddr + 1] = wBlue;
@@ -1908,7 +1914,7 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 		fColor = 0.0;
 		wCurrentInt = 1;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for(col = 0; col < (width*3); col+=3)
 		{
 			 //Just draw white in the last partial interval (when width is not divisible by 7)
 			if (wCurrentInt > 10)
@@ -1935,9 +1941,9 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 					wGreen = 0;
 			}
 
-			iPixelAddr = xcoi;
+			iPixelAddr = col;
 
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
 				frame[iPixelAddr] = wRed;
 				frame[iPixelAddr + 1] = wBlue;
@@ -1963,7 +1969,7 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 		fColor = 0.0;
 		wCurrentInt = 1;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for(col = 0; col < (width*3); col+=3)
 		{
 			 //Just draw white in the last partial interval (when width is not divisible by 7)
 			if (wCurrentInt > 5)
@@ -1990,9 +1996,9 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 					wGreen = 0;
 			}
 
-			iPixelAddr = xcoi;
+			iPixelAddr = col;
 
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
 				frame[iPixelAddr] = wRed;
 				frame[iPixelAddr + 1] = wBlue;
@@ -2012,15 +2018,16 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
 		break;
 	case DEMO_PATTERN_4:
-		xInt = width / 20; //Twenty intervals, each with width/10 pixels
-		xInc = 256.0 / ((double) xInt); //256 color intensities per interval. Notice that overflow is handled for this pattern.
+		xInt = width / 7; //7 intervals
+		xInc = 256.0 / ((double) xInt); //
 
 		fColor = 0.0;
 		wCurrentInt = 1;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for (row = 0; row < height; row++)
 		{
+			for(col = 0; col < width; col++)
 			 //Just draw white in the last partial interval (when width is not divisible by 7)
-			if (wCurrentInt > 20)
+			if (wCurrentInt > 7)
 			{
 				wRed = 255;
 				wBlue = 255;
@@ -2044,14 +2051,15 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 					wGreen = 0;
 			}
 
-			iPixelAddr = xcoi;
+			pixel_index = row * width + col;
+			byte_index = 3 * pixel_index;
 
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
-				frame[iPixelAddr] = wRed;
-				frame[iPixelAddr + 1] = wBlue;
-				frame[iPixelAddr + 2] = wGreen;
-				iPixelAddr += stride;
+				frame[byte_index] = wRed;
+				frame[byte_index + 1] = wBlue;
+				frame[byte_index + 2] = wGreen;
+
 			}
 
 			fColor += xInc;
@@ -2092,7 +2100,7 @@ void rgb_to_YCbCr(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride
 	//constants
 	double y_r = 0.299;
 	double y_g = 0.587;
-	double y_b = 0.144;
+	double y_b = 0.114;
 
 	double cb_r = -0.172;
 	double cb_g = -0.339;
