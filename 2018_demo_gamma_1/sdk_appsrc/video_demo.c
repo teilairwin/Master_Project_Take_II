@@ -34,7 +34,8 @@
 #include "intc/intc.h"
 #include <stdio.h> 
 #include "xuartps.h"
-#include "math.h"
+#include <math.h>
+#include "D:\Xilinx_2018\SDK\2018.2\gnu\aarch32\nt\gcc-arm-none-eabi\arm-none-eabi\libc\usr\include\math.h"
 #include <ctype.h>
 #include <stdlib.h>
 #include "xil_types.h"
@@ -67,7 +68,7 @@ XAxiVdma vdma;
 VideoCapture videoCapt;
 INTC intc;
 /*
- * Gama Structs
+ * Gamma Structs
  */
 XHls_gamma_correction_Config     *gamma_lut_Config;
 XHls_gamma_correction            gamma_lut;
@@ -248,15 +249,14 @@ void DemoInitialize()
 }
 
 
-void DemoSetHLS(VideoCapture *videoPtr)
+void DemoSetHLS()//VideoCapture *videoPtr)
 { 
     GammaSet(&videoCapt);
     SatSet(&videoCapt);
     ContSet(&videoCapt); 
 	return;
 }
-   
-    
+
 void DemoRun()
 {
 	int nextFrame = 0;
@@ -271,13 +271,11 @@ void DemoRun()
 	while (userInput != 'q')
 	{
 		fRefresh = 0;
-		DemoPrintMenu();
-
-		/* Wait for data on UART */
+		DemoMainMenu();
+		// Wait for data on UART
 		while (!XUartPs_IsReceiveData(UART_BASEADDR) && !fRefresh)
 		{}
-
-		/* Store the first character in the UART receive FIFO and echo it */
+		// Store the first character in the UART receive FIFO and echo it
 		if (XUartPs_IsReceiveData(UART_BASEADDR))
 		{
 			userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
@@ -290,77 +288,67 @@ void DemoRun()
 
 		switch (userInput)
 		{
-		case '1':
+		case '0':
 			DemoChangeRes();
 			break;
-		case '2':
+		case '1':
 			DemoChangeTestPattern();
 			break;
-		case '3':
-			nextFrame = videoCapt.curFrame + 1;
-			if (nextFrame >= DISPLAY_NUM_FRAMES)
-			{
-				nextFrame = 0;
-			}
-			VideoStop(&videoCapt);
-			DemoInvertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, DEMO_STRIDE);
-			DemoSetHLS(&videoCapt);
-            VideoStart(&videoCapt);
-			DisplayChangeFrame(&dispCtrl, nextFrame);
+		case '2':
+			DemoChooseTranslation();
 			break;
-		case '4':
-			nextFrame = videoCapt.curFrame + 1;
-			if (nextFrame >= DISPLAY_NUM_FRAMES)
-			{
-				nextFrame = 0;
-			}
-			VideoStop(&videoCapt);
-			DemoScaleFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
-			DemoSetHLS(&videoCapt);
-            VideoStart(&videoCapt);
-			DisplayChangeFrame(&dispCtrl, nextFrame);
-			break;
-		case '5':
-			nextFrame = videoCapt.curFrame + 1;
-			if (nextFrame >= DISPLAY_NUM_FRAMES)
-			{
-				nextFrame = 0;
-			}
-			VideoStop(&videoCapt);
-			DemoNearestNeighbor(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
-			DemoSetHLS(&videoCapt);
-            VideoStart(&videoCapt);
-			DisplayChangeFrame(&dispCtrl, nextFrame);
-			break;
-		case '6':
-			nextFrame = videoCapt.curFrame + 1;
-			if (nextFrame >= DISPLAY_NUM_FRAMES)
-			{
-				nextFrame = 0;
-			}
-			VideoStop(&videoCapt);
-			DemoTestScaleFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
-			DemoSetHLS(&videoCapt);
-            VideoStart(&videoCapt);
-			DisplayChangeFrame(&dispCtrl, nextFrame);
-			break;
-		case '7':
+		case '3': //video stop/start
 			if (videoCapt.state == VIDEO_STREAMING)
 				VideoStop(&videoCapt);
 			else {
 				DemoSetHLS(&videoCapt);
-                VideoStart(&videoCapt); 
+                VideoStart(&videoCapt);
             }
 			break;
-		case '8':
+		case '4': //change video frame buffer
+			nextFrame = (videoCapt.curFrame + 1) % 3;
+			/*
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}*/
+			VideoChangeFrame(&videoCapt, nextFrame);
+			break;
+		case '5': //change display frame buffer
+			nextFrame = (dispCtrl.curFrame + 1) % 3;
+			/*
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}*/
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			break;
+		case '6':
 			DemoChangeGF();
 			break;
-		case '9':
-			DemoChangeSat(); 
+		case '7':
+			DemoChangeSat();
 			break;
-		case '0':
+		case '8':
 			DemoChangeCont();
 			break;
+		case '9':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			while (!XUartPs_IsReceiveData(UART_BASEADDR) && !fRefresh)
+			{
+				VideoStop(&videoCapt);
+				DemoInvertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, DEMO_STRIDE);
+				DemoSetHLS(&videoCapt);
+				VideoStart(&videoCapt);
+			}
+            //VideoStartInverted(&videoCapt);
+			//DisplayChangeFrame(&dispCtrl, nextFrame);
 		case 'q':
 			break;
 		case 'r':
@@ -370,7 +358,6 @@ void DemoRun()
 			TimerDelay(500000);
 		}
 	}
-
 	return;
 }
 
@@ -380,9 +367,41 @@ void SatSet(VideoCapture *videoPtr)
 	XHls_saturation_enhance_Set_height(&sat_enh, videoPtr->timing.VActiveVideo);
 	XHls_saturation_enhance_Set_sat(&sat_enh, sat_enh.SatSel);
 }
+
+void SatSetSoftware(double sat_fac, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 row, col, pixel_index, byte_index;
+	double max_sat = 255.0;
+	double src_sat;
+	double var_int;
+	double gry_fct;
+
+	for (row = 0; row < height; row++)
+	{
+		for (col = 0; col < width; col++)
+		{
+			pixel_index = row * width + col;
+			byte_index = 3 * pixel_index;
+			// hue = srcFrame[byte_index];
+			src_sat = (double) srcFrame[byte_index + 1];
+			var_int = max_sat - src_sat;
+			gry_fct = src_sat/255;
+			if (sat_fac >= 0)
+			{
+				destFrame[byte_index + 1] = (int) (src_sat + sat_fac * var_int * gry_fct);
+			}
+			else
+			{
+				destFrame[byte_index + 1] = (int) (src_sat + sat_fac * src_sat);
+			}
+		}
+	}
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+}
+
 void DemoChangeSat()
 {
-	int fResSet = 0;
+	int satSet = 0;
 	int status;
 	char userInput = 0;
 
@@ -392,7 +411,7 @@ void DemoChangeSat()
 		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
 	}
 
-	while (!fResSet)
+	while (!satSet)
 	{
 		DemoSatMenu();
 
@@ -409,45 +428,45 @@ void DemoChangeSat()
 		case '0':
             sat_enh.SatSel = 0;
 			SatSet(&videoCapt);
-			fResSet = 1;
+			satSet = 1;
 			break;
 		case '1':
             sat_enh.SatSel = 1;
 			SatSet(&videoCapt);
-			fResSet = 1;
+			satSet = 1;
 			break;
 		case '2':
             sat_enh.SatSel = 2;
 			SatSet(&videoCapt);
-			fResSet = 1;
+			satSet = 1;
 			break; 
 		case '3':
             sat_enh.SatSel = 3;
 			SatSet(&videoCapt);
-			fResSet = 1;
+			satSet = 1;
 			break;
 		case '4':
             sat_enh.SatSel = 4;
 			SatSet(&videoCapt);
-			fResSet = 1;
+			satSet = 1;
 			break;
 		case '5':
             sat_enh.SatSel = 5;
 			SatSet(&videoCapt);
-			fResSet = 1;
+			satSet = 1;
 			break;
 		case '6':
             sat_enh.SatSel = 6;
 			SatSet(&videoCapt);
-			fResSet = 1;
+			satSet = 1;
 			break;
 		case '7':
             sat_enh.SatSel = 7;
 			SatSet(&videoCapt);
-			fResSet = 1;
+			satSet = 1;
 			break; 
 		case 'q':
-			fResSet = 1;
+			satSet = 1;
 			break;
 		default :
 			xil_printf("\n\rInvalid Selection");
@@ -460,12 +479,210 @@ void DemoChangeSat()
 	}
 }
 
+void DemoChangeSatSoftware()
+{
+	int satSet = 0;
+	int status;
+	char userInput = 0;
+	double sat_fac;
+	u8 *srcFrame = videoCapt.framePtr[videoCapt.curFrame];
+	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+1];
+	u8 *tempFrame = videoCapt.framePtr[videoCapt.curFrame+2];
+	u8 width = videoCapt.timing.HActiveVideo;
+	u8 height = videoCapt.timing.VActiveVideo;
+	u8 stride = videoCapt.stride;
 
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	//convert the frame to Hue Saturation Value (HSV) color space
+	rgb_to_hsv(srcFrame, tempFrame, width, height, stride);
+
+	while (!satSet)
+	{
+		DemoSatMenu();
+
+		while (!XUartPs_IsReceiveData(UART_BASEADDR))
+		{}
+		userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+		xil_printf("%c", userInput);
+		status = XST_SUCCESS;
+		switch (userInput)
+		{
+		case '0':
+			sat_fac = 0;
+			SatSetSoftware(sat_fac,tempFrame,srcFrame,width,height,stride);
+			satSet = 1;
+			break;
+		case '1':
+			sat_fac = 1;
+			SatSetSoftware(sat_fac,tempFrame,srcFrame,width,height,stride);
+			satSet = 1;
+			break;
+		case '2':
+			sat_fac = 2;
+			SatSetSoftware(sat_fac,tempFrame,srcFrame,width,height,stride);
+			satSet = 1;
+			break;
+		case '3':
+			sat_fac = 3;
+			SatSetSoftware(sat_fac,tempFrame,srcFrame,width,height,stride);
+			satSet = 1;
+			break;
+		case '4':
+			sat_fac = 4;
+			SatSetSoftware(sat_fac,tempFrame,srcFrame,width,height,stride);
+			satSet = 1;
+			break;
+		case '5':
+			sat_fac = 5;
+			SatSetSoftware(sat_fac,tempFrame,srcFrame,width,height,stride);
+			satSet = 1;
+			break;
+		case '6':
+			sat_fac = 6;
+			SatSetSoftware(sat_fac,tempFrame,srcFrame,width,height,stride);
+			satSet = 1;
+			break;
+		case '7':
+			sat_fac = 7;
+			SatSetSoftware(sat_fac,tempFrame,srcFrame,width,height,stride);
+			satSet = 1;
+			break;
+		case 'q':
+			satSet = 1;
+			break;
+		default :
+			xil_printf("\n\rInvalid Selection");
+			TimerDelay(500000);
+		}
+		//convert back to rgb colorspace
+		hsv_to_rgb(srcFrame, destFrame, width, height, stride);
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+	}
+}
 void GammaSet(VideoCapture *videoPtr)
 {
 	XHls_gamma_correction_Set_width(&gamma_lut, videoPtr->timing.HActiveVideo);
 	XHls_gamma_correction_Set_height(&gamma_lut, videoPtr->timing.VActiveVideo);
 	XHls_gamma_correction_Set_gamma(&gamma_lut, gamma_lut.FactorSel);
+}
+/*double pow(double x, double y){
+	return pow(x,y);
+}*/
+void GammaSetSoftware(double gf, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 row, col, pixel_index, byte_index;
+	double gamma = 1/gf;
+	double src_temp;
+	for (row = 0; row < height; row++)
+	{
+		for (col = 0; col < width; col++)
+		{
+			pixel_index = row * width + col;
+			byte_index = 3 * pixel_index;
+			src_temp = (srcFrame[byte_index])/255;
+			//destFrame[byte_index] = 255 * pow(src_temp,gamma);
+			destFrame[byte_index] = (int) (src_temp * gamma);
+		}
+	}
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+}
+
+void DemoChangeGFSoftware()
+{
+	int gfSet = 0;
+	double gf;
+	int status;
+	char userInput = 0;
+	u8 *srcFrame = videoCapt.framePtr[videoCapt.curFrame];
+	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+1];
+	u32 width = videoCapt.timing.HActiveVideo;
+	u32 height = videoCapt.timing.VActiveVideo;
+	u32 stride = videoCapt.stride;
+
+	// Flush UART FIFO
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	while (!gfSet)
+	{
+		DemoGFMenu();
+
+		/* Wait for data on UART */
+		while (!XUartPs_IsReceiveData(UART_BASEADDR))
+		{}
+
+		/* Store the first character in the UART receive FIFO and echo it */
+		userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+		xil_printf("%c", userInput);
+		status = XST_SUCCESS;
+		switch (userInput)
+		{
+		case '0':
+            gf = 1.0;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case '1':
+            gf = 0.4;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case '2':
+            gf = 0.2;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case '3':
+            gf = 1.2;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case '4':
+            gf = 1.4;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case '5':
+            gf = 1.6;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case '6':
+            gf = 1.8;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case '7':
+            gf = 2.0;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case '8':
+            gf = 2.2;
+			GammaSetSoftware(gf, srcFrame, destFrame, width, height, stride);
+			gfSet = 1;
+			break;
+		case 'q':
+			gfSet = 1;
+			break;
+		default :
+			xil_printf("\n\rInvalid Selection");
+			TimerDelay(500000);
+		}
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+	}
 }
 void DemoChangeGF()
 {
@@ -560,6 +777,45 @@ void ContSet(VideoCapture *videoPtr)
 	XHls_contrast_stretch_Set_max(&cont_str, cont_str.ContMax);
 }
 
+/* Linear Contrast Stretch Algorithm:
+ * 				 _
+ * 				|
+ * 				|							0, 		src.cont < min
+ * 				|
+ *              |   (source.cont - min)
+ * dest.cont =  |   ------------------- * 255,      min <= src.cont <= max
+ *              |       (max - min)
+ *              |
+ *              |						  255,		src.cont > max
+ *              |_
+ *
+ */
+void ContSetSoftware(u8 cont_min, u8 cont_max, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 row, col, pixel_index, byte_index;
+
+	for (row = 0; row < height; row++)
+	{
+		for (col = 0; col < width; col++)
+		{
+			pixel_index = row * width + col;
+			byte_index = pixel_index * 3;
+			if (srcFrame[byte_index] < cont_min)
+			{
+				destFrame[byte_index] = 0;
+			}
+			else if (srcFrame[byte_index] > cont_max)
+			{
+				destFrame[byte_index] = 255;
+			}
+			else
+			{
+				destFrame[byte_index] = 255 * (srcFrame[byte_index] - cont_min)/(cont_max - cont_min);
+			}
+		}
+	}
+}
+
 void DemoChangeCont()
 {
 	int fResSet = 0;
@@ -596,6 +852,54 @@ void DemoChangeCont()
 			break;
 		case 'q':
 			fResSet = 1;
+			break;
+		default :
+			xil_printf("\n\rInvalid Selection");
+			TimerDelay(500000);
+		}
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+	}
+}
+
+void DemoChangeContSoftware()
+{
+	int contSet = 0;
+	int status;
+	char userInput = 0;
+
+	/* Flush UART FIFO */
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	while (!contSet)
+	{
+		DemoContMenu();
+
+		/* Wait for data on UART */
+		while (!XUartPs_IsReceiveData(UART_BASEADDR))
+		{}
+
+		/* Store the first character in the UART receive FIFO and echo it */
+		userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+		xil_printf("%c", userInput);
+		status = XST_SUCCESS;
+		switch (userInput)
+		{
+		case '0':
+			DemoChangeContSoftwareMin();
+			contSet = 1;
+			break;
+		case '1':
+			DemoChangeContSoftwareMax();
+			contSet = 1;
+			break;
+		case 'q':
+			contSet = 1;
 			break;
 		default :
 			xil_printf("\n\rInvalid Selection");
@@ -653,9 +957,69 @@ void DemoChangeContMin()
         fResSet = 1;
 	}
 }
+
+void DemoChangeContSoftwareMin()
+{
+	u8 *srcFrame = videoCapt.framePtr[videoCapt.curFrame];
+	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+1];
+	// use temp frame for colorspace conversion
+	u8 *tempFrame = videoCapt.framePtr[videoCapt.curFrame+2];
+	u32 width = videoCapt.timing.HActiveVideo;
+	u32 height = videoCapt.timing.VActiveVideo;
+	u32 stride = videoCapt.stride;
+	int minSet = 0;
+	int status;
+    int min;
+    int max = 255;
+    int chars = 0;
+	char userInput[3];
+
+	// convert RGB frame to YCbCr Color Space
+	rgb_to_YCbCr(srcFrame, tempFrame, width, height, stride);
+
+	/* Flush UART FIFO */
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	while (!minSet)
+	{
+		DemoContMenuMin();
+
+        for(chars=0; chars <= 2; chars++)
+        {
+	    	/* Wait for data on UART */
+	    	while (!XUartPs_IsReceiveData(UART_BASEADDR))
+	    	{}
+
+	    	/* Store the  in the UART receive FIFO and echo it */
+	    	userInput[chars] = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	    	xil_printf("%c", userInput[chars]);
+        }
+		status = XST_SUCCESS;
+        min = atoi(userInput);
+
+		if((min >= 0)&&(min <= 254))
+        {
+
+			ContSetSoftware(min, max, tempFrame, destFrame, width, height, stride);
+			// convert YCbCr Color space frame back to RGB
+			YCbCr_to_rgb(destFrame, tempFrame, width, height, stride);
+        }
+        else{
+			xil_printf("\n\rInvalid Selection");
+        }
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+        minSet = 1;
+	}
+}
 void DemoChangeContMax()
 {
-	int fResSet = 0;
+	int maxSet = 0;
 	int status;
     int max;
     int chars = 0;
@@ -667,7 +1031,7 @@ void DemoChangeContMax()
 		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
 	}
 
-	while (!fResSet)
+	while (!maxSet)
 	{
 		DemoContMenuMax();
 
@@ -696,12 +1060,69 @@ void DemoChangeContMax()
 		{
 			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
 		}
-        fResSet = 1;
+        maxSet = 1;
+	}
+}
+
+void DemoChangeContSoftwareMax()
+{
+	u8 *srcFrame = videoCapt.framePtr[videoCapt.curFrame];
+	u8 *destFrame = videoCapt.framePtr[videoCapt.curFrame+1];
+	u8 *tempFrame = videoCapt.framePtr[videoCapt.curFrame+2];
+	u32 width = videoCapt.timing.HActiveVideo;
+	u32 height = videoCapt.timing.VActiveVideo;
+	u32 stride = videoCapt.stride;
+	int maxSet = 0;
+	int status;
+    int max;
+    int min = 0;
+    int chars = 0;
+	char userInput[3];
+
+	rgb_to_YCbCr(srcFrame, destFrame, width, height, stride);
+
+	/* Flush UART FIFO */
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	while (!maxSet)
+	{
+		DemoContMenuMax();
+
+        for(chars=0; chars <= 2; chars++)
+        {
+	    	/* Wait for data on UART */
+	    	while (!XUartPs_IsReceiveData(UART_BASEADDR))
+	    	{}
+
+	    	/* Store the first character in the UART receive FIFO and echo it */
+	    	userInput[chars] = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	    	xil_printf("%c", userInput[chars]);
+        }
+		status = XST_SUCCESS;
+        max = atoi(userInput);
+
+		if((max >= 1)&&(max <= 255))
+        {
+            ContSetSoftware(min, max, destFrame, tempFrame, width, height, stride);
+            // convert YCbCr Color space frame back to RGB
+            YCbCr_to_rgb(tempFrame, destFrame, width, height, stride);
+        }
+        else{
+			xil_printf("\n\rInvalid Selection");
+        }
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+        maxSet = 1;
 	}
 }
 
 // --------------------------------- Menus ----------------------------------------
-void DemoPrintMenu()
+void DemoMainMenu()
 {
 	xil_printf("\x1B[H"); //Set cursor to top left of terminal
 	xil_printf("\x1B[2J"); //Clear terminal
@@ -720,16 +1141,16 @@ void DemoPrintMenu()
 	xil_printf("*Video Frame Index: %29d*\n\r", videoCapt.curFrame);
 	xil_printf("**************************************************\n\r");
 	xil_printf("\n\r");
-	xil_printf("1 - Change Display Resolution\n\r");
-	xil_printf("2 - Print Test Pattern to Display\n\r");
-	xil_printf("3 - Grab Video Frame and invert colors\n\r");
-	xil_printf("4 - Grab Video Frame and scale to Display resolution using bilinear interpolation \n\r");
-	xil_printf("5 - Grab Video Frame and scale to Display resolution using nearest neighbor interpolation\n\r");
-	xil_printf("6 - Grab Video Frame and scale to Display resolution using pixel averaging algorithm\n\r");
-	xil_printf("7 - Start/Stop Video stream into Video Framebuffer\n\r");
-	xil_printf("8 - Change Gamma Factor Value\n\r");
-	xil_printf("9 - Change Saturation Enhance Factor Value\n\r");
-	xil_printf("0 - Change Contrast Stretch Limits\n\r");
+	xil_printf("0 - Change Display Resolution\n\r");
+	xil_printf("1 - Print Test Pattern to Display\n\r");
+	xil_printf("2 - Go to Single Frame Translation Menu \n\r");
+	xil_printf("3 - Start/Stop Video stream into Video Framebuffer\n\r");
+	xil_printf("4 - Change Video Frame Buffer Index\n\r");
+	xil_printf("5 - Change Display Frame Buffer Index\n\r");
+	xil_printf("6 - Change Gamma Factor Value\n\r");
+	xil_printf("7 - Change Saturation Enhance Factor Value\n\r");
+	xil_printf("8 - Change Contrast Stretch Limits\n\r");
+	xil_printf("9 - Start inverted video\n\r");
 	xil_printf("q - Quit\n\r");
 	xil_printf("\n\r");
 	xil_printf("\n\r");
@@ -825,6 +1246,155 @@ void DemoGFMenu()
 	xil_printf("q - Quit (don't change factor)\n\r");
 	xil_printf("\n\r");
 	xil_printf("Select a new Gamma Factor:");
+}
+
+void DemoSingleFrameMenu()
+{
+	xil_printf("\x1B[H"); //Set cursor to top left of terminal
+	xil_printf("\x1B[2J"); //Clear terminal
+	xil_printf("**************************************************\n\r");
+	xil_printf("*          Single Frame Translations             *\n\r");
+	xil_printf("**************************************************\n\r");
+	xil_printf("\n\r");
+	xil_printf("0 - Grab Video Frame and invert colors\n\r");
+	xil_printf("1 - Grab Video Frame and scale to Display resolution using bilinear interpolation \n\r");
+	xil_printf("2 - Grab Video Frame and scale to Display resolution using nearest neighbor interpolation\n\r");
+	xil_printf("3 - Grab Video Frame and scale to Display resolution using pixel averaging algorithm\n\r");
+	xil_printf("4 - Gamma Factor Selection Software Algorithm\n\r");
+	xil_printf("5 - Saturation Enhancement Software Algorithm\n\r");
+	xil_printf("6 - Contrast Stretch Software Algorithm\n\r");
+	xil_printf("q - Quit (go back to main menu)\n\r");
+	xil_printf("\n\r");
+	xil_printf("Select a Translation:");
+}
+
+void DemoChooseTranslation()
+{
+	int nextFrame;
+	int tranSet = 0;
+	int status;
+	char userInput = 0;
+
+	// Flush UART FIFO
+	while (XUartPs_IsReceiveData(UART_BASEADDR))
+	{
+		XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+	}
+
+	while (!tranSet)
+	{
+		DemoSingleFrameMenu();
+		while (!XUartPs_IsReceiveData(UART_BASEADDR))
+		{}
+		// Store the first character in the UART receive FIFO and echo it
+		userInput = XUartPs_ReadReg(UART_BASEADDR, XUARTPS_FIFO_OFFSET);
+		xil_printf("%c", userInput);
+		status = XST_SUCCESS;
+		switch (userInput)
+		{
+		case '0':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoInvertFrame(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, DEMO_STRIDE);
+			DemoSetHLS(&videoCapt);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			tranSet = 1;
+			break;
+		case '1':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoBilinearInterpolationScale(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+			DemoSetHLS(&videoCapt);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			tranSet = 1;
+			break;
+		case '2':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoNearestNeighborScale(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+			DemoSetHLS(&videoCapt);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			tranSet = 1;
+			break;
+		case '3':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoPixelAverageScale(pFrames[videoCapt.curFrame], pFrames[nextFrame], videoCapt.timing.HActiveVideo, videoCapt.timing.VActiveVideo, dispCtrl.vMode.width, dispCtrl.vMode.height, DEMO_STRIDE);
+			DemoSetHLS(&videoCapt);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			tranSet = 1;
+			break;
+		case '4':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoChangeGFSoftware();
+			DemoSetHLS(&videoCapt);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			tranSet = 1;
+			break;
+		case '5':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoChangeSatSoftware();
+			DemoSetHLS(&videoCapt);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			tranSet = 1;
+			break;
+		case '6':
+			nextFrame = videoCapt.curFrame + 1;
+			if (nextFrame >= DISPLAY_NUM_FRAMES)
+			{
+				nextFrame = 0;
+			}
+			VideoStop(&videoCapt);
+			DemoChangeContSoftware();
+			DemoSetHLS(&videoCapt);
+			VideoStart(&videoCapt);
+			DisplayChangeFrame(&dispCtrl, nextFrame);
+			tranSet = 1;
+			break;
+		case 'q':
+			tranSet = 1;
+			break;
+		default :
+			xil_printf("\n\rInvalid Selection");
+			TimerDelay(500000);
+		}
+		if (status == XST_DMA_ERROR)
+		{
+			xil_printf("\n\rWARNING: AXI VDMA Error detected and cleared\n\r");
+		}
+	}
 }
 
 void DemoChangeRes()
@@ -1025,52 +1595,50 @@ void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 str
 	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
 }
 
-void DemoNearestNeighbor(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
+void DemoNearestNeighborScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
 {
-	// float x_ratio, y_ratio;
-	float xInc, yInc; // Width/height of a destination frame pixel in the source frame coordinate system
-	float xcoSrc, ycoSrc; // Location of the destination pixel being operated on in the source frame coordinate system
-    float x1y1; //Used to store the color data of the nearest source pixel to the destination pixel
-	int ix1y1; //index into the source frame for the nearest source pixel to the destination pixel
-	int xcoDest, ycoDest; // Location of the destination pixel being operated on in the destination coordinate system
-	int iy1; //Used to store the index of the first source pixel in the line with y1
-	int iDest; //index of the pixel data in the destination frame being operated on
+	float xFact, yFact; // Width/height (scale factor) of a destination frame pixel / source frame pixel
+	float src_col, src_row; // Theoretical Location of the calculated destination pixel being operated on in the source frame coordinate system
+    //float src_data; //Used to store the color data of the nearest source pixel to the destination pixel
+	//int dest_data; //index into the source frame for the nearest source pixel to the destination pixel
+	u32 dest_col, dest_row; // Location of the destination pixel being operated on in the destination coordinate system
+	u32 pixel_index_src, pixel_index_dest;
+	u32 byte_index_src, byte_index_dest;
 
-	int i;
+	xFact = ((float) srcWidth - 1.0) / ((float) destWidth);
+	yFact = ((float) srcHeight - 1.0) / ((float) destHeight);
 
-	xInc = ((float) srcWidth - 1.0) / ((float) destWidth);
-		yInc = ((float) srcHeight - 1.0) / ((float) destHeight);
-
-		ycoSrc = 0.0;
-		for (ycoDest = 0; ycoDest < destHeight; ycoDest++)
+	src_row = 0.0;
+	for (dest_row = 0; dest_row < destHeight; dest_row++)
+	{
+		src_col = 0.0;
+		for (dest_col = 0; dest_col < destWidth; dest_col++)
 		{
-			iy1 = ((int) ycoSrc) * stride;
-			iDest = ycoDest * stride;
-			xcoSrc = 0.0;
-			for (xcoDest = 0; xcoDest < destWidth; xcoDest++)
-			{
-				ix1y1 = iy1 + ((int) xcoSrc) * 3;
-				for (i = 0; i < 3; i++)
-				{
-					x1y1 = (float) srcFrame[ix1y1 + i];
-					destFrame[iDest] = (u8) (x1y1);
-					iDest++;
-				}
-				xcoSrc += xInc;
-			}
-			ycoSrc += yInc;
+			pixel_index_dest = dest_row * destWidth + dest_col;
+			byte_index_dest = pixel_index_dest * 3;
+
+			pixel_index_src = ((int) src_row) * srcWidth + (int) src_col;
+			byte_index_src = pixel_index_src * 3;
+
+			destFrame[byte_index_dest] = srcFrame[byte_index_src];
+			destFrame[byte_index_dest+1] = srcFrame[byte_index_src+1];
+			destFrame[byte_index_dest+2] = srcFrame[byte_index_src+2];
+
+			src_col += xFact;
 		}
+		src_row += yFact;
+	}
 
-		// Flush the framebuffer memory range to ensure changes are written to the actual memory, and therefore accessible by the VDMA.
-		Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+	// Flush the framebuffer memory range to ensure changes are written to the actual memory, and therefore accessible by the VDMA.
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
 
-		return;
+	return;
 }
 
 /*
  * Bilinear interpolation algorithm. Assumes both frames have the same stride.
  */
-void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
+void DemoBilinearInterpolationScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
 {
 	float xInc, yInc; // Width/height of a destination frame pixel in the source frame coordinate system
 	float xcoSrc, ycoSrc; // Location of the destination pixel being operated on in the source frame coordinate system
@@ -1139,7 +1707,7 @@ void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u3
 	return;
 }
 
-void DemoTestScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
+void DemoPixelAverageScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride)
 {
 	float xInc, yInc; // Width/height of a destination frame pixel in the source frame coordinate system
 	float xcoSrc, ycoSrc; // Location of the destination pixel being operated on in the source frame coordinate system
@@ -1190,7 +1758,8 @@ void DemoTestScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight
 
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 {
-	u32 xcoi, ycoi;
+	u32 col, row;
+	u32 pixel_index, byte_index;
 	u32 iPixelAddr;
 	u8 wRed, wBlue, wGreen;
 	u32 wCurrentInt;
@@ -1215,23 +1784,23 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 		fBlue = 0.0;
 		fRed = 256.0;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for(col = 0; col < (width*3); col+=3)
 		{
 			/*
 			 * Convert color intensities to integers < 256, and trim values >=256
 			 */
 			wRed = (fRed >= 256.0) ? 255 : ((u8) fRed);
 			wBlue = (fBlue >= 256.0) ? 255 : ((u8) fBlue);
-			iPixelAddr = xcoi;
+			iPixelAddr = col;
 			fGreen = 0.0;
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
 
 				wGreen = (fGreen >= 256.0) ? 255 : ((u8) fGreen);
 				frame[iPixelAddr] = wRed;
 				frame[iPixelAddr + 1] = wBlue;
 				frame[iPixelAddr + 2] = wGreen;
-				if (ycoi < yMid)
+				if (row < yMid)
 				{
 					fGreen += yInc;
 				}
@@ -1247,17 +1816,17 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 				iPixelAddr += stride;
 			}
 
-			if (xcoi < xLeft)
+			if (col < xLeft)
 			{
 				fBlue = 0.0;
 				fRed -= xInc;
 			}
-			else if (xcoi < xMid)
+			else if (col < xMid)
 			{
 				fBlue += xInc;
 				fRed += xInc;
 			}
-			else if (xcoi < xRight)
+			else if (col < xRight)
 			{
 				fBlue -= xInc;
 				fRed -= xInc;
@@ -1281,7 +1850,7 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 		fColor = 0.0;
 		wCurrentInt = 1;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for(col = 0; col < (width*3); col+=3)
 		{
 
 			/*
@@ -1311,9 +1880,9 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 					wGreen = 0;
 			}
 
-			iPixelAddr = xcoi;
+			iPixelAddr = col;
 
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
 				frame[iPixelAddr] = wRed;
 				frame[iPixelAddr + 1] = wBlue;
@@ -1345,7 +1914,7 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 		fColor = 0.0;
 		wCurrentInt = 1;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for(col = 0; col < (width*3); col+=3)
 		{
 			 //Just draw white in the last partial interval (when width is not divisible by 7)
 			if (wCurrentInt > 10)
@@ -1372,9 +1941,9 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 					wGreen = 0;
 			}
 
-			iPixelAddr = xcoi;
+			iPixelAddr = col;
 
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
 				frame[iPixelAddr] = wRed;
 				frame[iPixelAddr + 1] = wBlue;
@@ -1400,10 +1969,10 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 
 		fColor = 0.0;
 		wCurrentInt = 1;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for(col = 0; col < (width*3); col+=3)
 		{
 			 //Just draw white in the last partial interval (when width is not divisible by 7)
-			if (wCurrentInt > 10)
+			if (wCurrentInt > 5)
 			{
 				wRed = 255;
 				wBlue = 255;
@@ -1427,9 +1996,9 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 					wGreen = 0;
 			}
 
-			iPixelAddr = xcoi;
+			iPixelAddr = col;
 
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
 				frame[iPixelAddr] = wRed;
 				frame[iPixelAddr + 1] = wBlue;
@@ -1449,15 +2018,16 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 		Xil_DCacheFlushRange((unsigned int) frame, DEMO_MAX_FRAME);
 		break;
 	case DEMO_PATTERN_4:
-		xInt = width / 20; //Twenty intervals, each with width/10 pixels
-		xInc = 256.0 / ((double) xInt); //256 color intensities per interval. Notice that overflow is handled for this pattern.
+		xInt = width / 7; //7 intervals
+		xInc = 256.0 / ((double) xInt); //
 
 		fColor = 0.0;
 		wCurrentInt = 1;
-		for(xcoi = 0; xcoi < (width*3); xcoi+=3)
+		for (row = 0; row < height; row++)
 		{
+			for(col = 0; col < width; col++)
 			 //Just draw white in the last partial interval (when width is not divisible by 7)
-			if (wCurrentInt > 10)
+			if (wCurrentInt > 7)
 			{
 				wRed = 255;
 				wBlue = 255;
@@ -1481,14 +2051,15 @@ void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern)
 					wGreen = 0;
 			}
 
-			iPixelAddr = xcoi;
+			pixel_index = row * width + col;
+			byte_index = 3 * pixel_index;
 
-			for(ycoi = 0; ycoi < height; ycoi++)
+			for(row = 0; row < height; row++)
 			{
-				frame[iPixelAddr] = wRed;
-				frame[iPixelAddr + 1] = wBlue;
-				frame[iPixelAddr + 2] = wGreen;
-				iPixelAddr += stride;
+				frame[byte_index] = wRed;
+				frame[byte_index + 1] = wBlue;
+				frame[byte_index + 2] = wGreen;
+
 			}
 
 			fColor += xInc;
@@ -1515,4 +2086,250 @@ void DemoISR(void *callBackRef, void *pVideo)
 	*data = 1; //set fRefresh to 1
 }
 
+/*
+ * The basic equation applied to convert between RGB and YCbCr is:
+ * Y  =  0.299R + 0.587G + 0.114B
+ * Cb = -0.172R - 0.339G + 0.511B + 128
+ * Cr =  0.511R - 0.428G - 0.083B + 128
+ */
+void rgb_to_YCbCr(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 row, col;
+	u32 byte_index = 0;
+	u32 pixel_index = 0;
+	//constants
+	double y_r = 0.299;
+	double y_g = 0.587;
+	double y_b = 0.114;
 
+	double cb_r = -0.172;
+	double cb_g = -0.339;
+	double cb_b = 0.511;
+
+	double cr_r = 0.511;
+	double cr_g = -0.428;
+	double cr_b = -0.083;
+
+	double R,G,B;
+
+	for(row = 0; row < height; row++)
+	{
+		for(col = 0; col < width; col++)
+		{
+			pixel_index = row * width + col;
+			byte_index = pixel_index * 3;
+			R = (double) srcFrame[byte_index];
+			G = (double) srcFrame[byte_index + 1];
+			B = (double) srcFrame[byte_index + 2];
+			destFrame[byte_index] = 	 y_r*R +  y_g*G +  y_b*B;       //RGB -> Y
+			destFrame[byte_index + 1] = cb_r*R + cb_g*G + cb_b*B + 128; //RGB -> Cb
+			destFrame[byte_index + 2] = cr_r*R + cr_g*G + cr_b*B + 128; //RGB -> Cr
+		}
+	}
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+}
+
+/*
+ * https://1library.net/article/yuv-yiq-ycbcr-colour-spaces-ycbcr-colour-spaces.z3j7987y#:~:text=YCbCr%20is%20a%20component%20colour%20space%20used%20by,and%20two%20colour%20components.%20It%20separates%20luminance%20from
+ * The basic equation applied to convert between YCbCr and RGB is:
+ * R = Y + 1.371(Cr - 128)
+ * G = Y - 0.698(Cr - 128)
+ * B = Y + 1.732(Cb - 128)
+ */
+void YCbCr_to_rgb(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 row, col;
+	u32 byte_index = 0;
+	u32 pixel_index = 0;
+	//constants
+	double r_cr = 1.371;
+	double g_cr = -0.698;
+	double b_cb = 1.732;
+
+	double Y,Cr,Cb;
+
+	for(row = 0; row < height; row++)
+	{
+		for(col = 0; col < width; col++)
+		{
+			pixel_index = row * width + col;
+			byte_index = pixel_index * 3;
+			Y = (double) srcFrame[byte_index];
+			Cb = (double) srcFrame[byte_index + 1];
+			Cr = (double) srcFrame[byte_index + 2];
+			destFrame[byte_index] = 	  Y + r_cr * (Cr - 128);  //YCrCb -> R
+			destFrame[byte_index + 1] = Y + g_cr * (Cr - 128);  //YCrCb -> G
+			destFrame[byte_index + 2] = Y + b_cb * (Cb - 128);  //YCrCb -> B
+		}
+	}
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+}
+
+void rgb_to_hsv(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 row, col;
+	u32 byte_index = 0;
+	u32 pixel_index = 0;
+	double max, min;
+	u8 hue_index;
+	// normalized RGB values
+	double R_prime;
+	double G_prime;
+	double B_prime;
+
+
+	for(row = 0; row < height; row++)
+	{
+		for(col = 0; col < width; col++)
+		{
+			pixel_index = row * width + col;
+			byte_index = pixel_index * 3;
+			// normalize the values by dividing by 255
+			R_prime = (double) srcFrame[byte_index] / 255;
+			G_prime = (double) srcFrame[byte_index + 1] / 255;
+			B_prime = (double) srcFrame[byte_index + 2] / 255;
+
+			// find max and min values and set value to index into hue function
+			if (R_prime >= G_prime && R_prime >= B_prime){
+					max = R_prime;
+					if (G_prime >= B_prime){
+						hue_index = 1;
+						min = B_prime;
+					}
+					else {
+						hue_index = 2;
+						min = G_prime;
+					}
+				}
+			else if (G_prime >= R_prime && G_prime >= B_prime){
+					max = G_prime;
+					hue_index = 3;
+					if (R_prime >= B_prime){
+						min = B_prime;
+					}
+					else{
+						min = R_prime;
+					}
+				}
+			else if (B_prime >= R_prime && B_prime >= G_prime){
+				max = B_prime;
+				hue_index = 4;
+				if (R_prime >= G_prime){
+					min = G_prime;
+				}
+				else{
+					min = R_prime;
+				}
+			}
+			if(max == min){
+				hue_index = 0;
+			}
+
+			//calculate hue
+			switch(hue_index)
+			{
+			case '0':
+				destFrame[byte_index] = 0;
+				break;
+			case '1':
+				destFrame[byte_index] = 60 * (G_prime - B_prime)/(max - min);
+				break;
+			case '2':
+				destFrame[byte_index] = 60 * (G_prime - B_prime)/(max - min) + 360;
+				break;
+			case '3':
+				destFrame[byte_index] = 60 * (B_prime - R_prime)/(max - min) + 120;
+				break;
+			case '4':
+				destFrame[byte_index] = 60 * (R_prime - G_prime)/(max - min) + 240;
+				break;
+			}
+			//calculate S value
+			if ( max == 0 ){
+				destFrame[byte_index + 1] = 0;
+			}
+			else{
+				destFrame[byte_index + 1] = 255 * (max - min) / max;
+			}
+			//V is just the max value
+			destFrame[byte_index + 2] = 255 * max;
+		}
+	}
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+}
+
+/*
+ * https://1library.net/article/yuv-yiq-ycbcr-colour-spaces-ycbcr-colour-spaces.z3j7987y#:~:text=YCbCr%20is%20a%20component%20colour%20space%20used%20by,and%20two%20colour%20components.%20It%20separates%20luminance%20from
+ * The basic equation applied to convert between YCbCr and RGB is:
+ * R = Y + 1.371(Cr - 128)
+ * G = Y - 0.698(Cr - 128)
+ * B = Y + 1.732(Cb - 128)
+ */
+void hsv_to_rgb(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride)
+{
+	u32 row, col;
+	u32 byte_index = 0;
+	u32 pixel_index = 0;
+	double m;
+	// normalized RGB values
+	double H, S, V, C, X;
+	double R_prime, G_prime, B_prime;
+	int H_prime;
+
+	for(row = 0; row < height; row++)
+	{
+		for(col = 0; col < width; col++)
+		{
+			pixel_index = row * width + col;
+			byte_index = pixel_index * 3;
+
+			// Get HSV values from Pixel
+			H = srcFrame[byte_index];
+			S = (double) srcFrame[byte_index + 1];
+			V = (double) srcFrame[byte_index + 2];
+
+			// find H'
+			H_prime = (H / 60);
+			// find Chroma C = V * S
+			C = S * V;
+			X = C * (1 - (H_prime % 2 - 1));
+
+			if (H_prime >= 0 && H_prime < 1){
+				R_prime = C;
+				G_prime = X;
+				B_prime = 0;
+			}
+			else if (H_prime >= 1 && H_prime < 2){
+				R_prime = X;
+				G_prime = C;
+				B_prime = 0;
+			}
+			else if (H_prime >= 2 && H_prime < 3){
+				R_prime = 0;
+				G_prime = C;
+				B_prime = X;
+			}
+			else if (H_prime >= 3 && H_prime < 4){
+				R_prime = 0;
+				G_prime = X;
+				B_prime = C;
+			}
+			else if (H_prime >= 4 && H_prime < 5){
+				R_prime = X;
+				G_prime = 0;
+				B_prime = C;
+			}
+			else if (H_prime >= 5 && H_prime < 6){
+				R_prime = C;
+				G_prime = 0;
+				B_prime = X;
+			}
+			//calculate RGB values
+			m = V - C;
+			destFrame[byte_index] = 255 * (R_prime + m);
+			destFrame[byte_index + 1] = 255 * (G_prime + m);
+			destFrame[byte_index + 2] = 255 * (B_prime + m);
+		}
+	}
+	Xil_DCacheFlushRange((unsigned int) destFrame, DEMO_MAX_FRAME);
+}

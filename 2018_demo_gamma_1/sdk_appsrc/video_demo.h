@@ -18,6 +18,7 @@
 /*  Revision History:													*/
 /* 																		*/
 /*		11/25/2015(SamB): Created										*/
+/*		March 2022: Updated for CMPE 295B Spring 2022					*/
 /*																		*/
 /************************************************************************/
 
@@ -41,9 +42,10 @@
 #define DEMO_PATTERN_3 3
 #define DEMO_PATTERN_4 4
 
-
 #define DEMO_MAX_FRAME (1920*1080*3)
-#define DEMO_STRIDE (1920 * 3)
+#define DEMO_STRIDE (1920*3)
+#define BYTES_PER_PIXEL 3
+
 
 /*
  * Configure the Video capture driver to start streaming on signal
@@ -54,18 +56,22 @@
 /* ------------------------------------------------------------ */
 /*					Procedure Declarations						*/
 /* ------------------------------------------------------------ */
-
+double pow(double x, double y);
 void DemoInitialize();
 void DemoRun();
-void DemoSetHLS(VideoCapture *videoPtr);
+void DemoSetHLS();//VideoCapture *videoPtr);
 // Saturation
 void SatSet(VideoCapture *videoPtr);
 void DemoChangeSat();
 void DemoSatMenu();
+void SatSetSoftware(double sat_fac, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void DemoChangeSatSoftware();
 // Gamma
 void GammaSet(VideoCapture *videoPtr);
 void DemoChangeGF();
 void DemoGFMenu();
+void GammaSetSoftware(double gf, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void DemoChangeGFSoftware();
 // Contrast
 void ContSet(VideoCapture *videoPtr);
 void DemoChangeCont();
@@ -74,18 +80,33 @@ void DemoChangeContMax();
 void DemoContMenu();
 void DemoContMenuMin();
 void DemoContMenuMax();
-
-void DemoPrintMenu();
+void DemoChangeContSoftware();
+void DemoChangeContSoftwareMin();
+void DemoChangeContSoftwareMax();
+void ContSetSoftware(u8 cont_min, u8 cont_max, u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+// Main menu
+void DemoMainMenu();
+// Resolution
 void DemoChangeRes();
 void DemoCRMenu();
+// Test Patterns
 void DemoTestPatternMenu();
 void DemoChangeTestPattern();
-void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
 void DemoPrintTest(u8 *frame, u32 width, u32 height, u32 stride, int pattern);
-void DemoScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
-void DemoTestScaleFrame(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
-void DemoNearestNeighbor(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
+// Single Frame Translations
+void DemoSingleFrameMenu();
+void DemoChooseTranslation();
+void DemoInvertFrame(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void DemoBilinearInterpolationScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
+void DemoPixelAverageScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
+void DemoNearestNeighborScale(u8 *srcFrame, u8 *destFrame, u32 srcWidth, u32 srcHeight, u32 destWidth, u32 destHeight, u32 stride);
 void DemoISR(void *callBackRef, void *pVideo);
+// Color Space Translations
+void rgb_to_YCbCr(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void YCbCr_to_rgb(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void rgb_to_hsv(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+void hsv_to_rgb(u8 *srcFrame, u8 *destFrame, u32 width, u32 height, u32 stride);
+
 
 /* ------------------------------------------------------------ */
 
